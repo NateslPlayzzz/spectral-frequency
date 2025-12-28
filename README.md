@@ -101,7 +101,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 💜 Credits
 
-Created by [Your Name]
+Created by [NateslPlayzzz]
 
 Inspired by [Phasmophobia](https://store.steampowered.com/app/739630/Phasmophobia/)
 

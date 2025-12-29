@@ -4,6 +4,30 @@ All notable changes to Spectral Frequency will be documented in this file.
 
 ---
 
+## [Beta 3.0] - 2025-12-29
+
+### Added
+- **Flashlight** - New tool that emits light and slows exposure buildup
+- **UV Flashlight** - Reveals ghostly fingerprints left by certain ghosts
+- **UV Evidence** - New evidence type; marks fade after 2 minutes
+- **Specter** - New ghost type (EMF + UV) - territorial spirit
+- **Poltergeist** - New ghost type (Spirit Box + UV) - playful trickster
+- **`/trigger sf.help`** - Simplified help menu shortcut
+- **UV Evidence advancement** - For revealing your first fingerprint
+- **Contain Specter advancement**
+- **Contain Poltergeist advancement**
+
+### Changed
+- Guidebook expanded to 13 pages with new tools and ghosts
+- Evidence Guide updated with UV column and all 7 ghosts
+- Help/Tools page updated with Flashlight and UV Flashlight recipes
+- Disturb function now spawns all 7 ghost types (1/7 chance each)
+
+### Fixed
+- Ghost spawn positioning improvements
+
+---
+
 ## [Beta 2.0] - 2025-12-28
 
 ### Added
@@ -44,18 +68,18 @@ All notable changes to Spectral Frequency will be documented in this file.
 - **Spirit Box** - Communicates with ghosts at night
 - **Thermometer** - Measures temperature drops near anomalies
 - **Containment Device** - Captures anomalies with progress bar
-- **Whisper** - Low threat ghost (Spirit Box evidence)
-- **Shadow** - Medium threat ghost (EMF + Freezing evidence)
-- **Wraith** - High threat ghost (EMF + Spirit Box + Freezing)
-- **Exposure/Sanity system** - 3 escalating stages of effects
-- **Disturbed Grave Soil** - Summons random anomalies
 - **Investigator's Guidebook** - In-game documentation
-- **5 base advancements** - First Contact, Night Shift, etc.
-- **Thematic crafting recipes** - Using Echo Shards, Soul Sand, etc.
-- **Help trigger** - `/trigger sf.help` for recipes
+- **Disturbed Grave Soil** - Summons random anomalies
+- **Whisper** - Low threat ghost (Spirit Box evidence)
+- **Shadow** - Medium threat ghost (EMF evidence)
+- **Wraith** - High threat ghost (EMF + Spirit Box evidence)
+- **Exposure/Sanity system** - 3 escalating stages of effects
+- **5 base advancements** - First Contact, Night Shift, Ghostbuster, etc.
+- **Thematic crafting recipes** - Using Echo Shards, Soul Sand, Crying Obsidian
+- **Help trigger** - `/trigger sf.help_main` for recipes
 
 ### Technical
-- Custom NBT items using carrot_on_a_stick
+- Custom NBT items using carrot_on_a_stick, recovery_compass, breeze_rod, glass_bottle
 - Scoreboard-based detection systems
 - Predicate-based randomization
-- 1.21.11 pack format (94)
+- Minecraft 1.21.11 pack format (94)

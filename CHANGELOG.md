@@ -2,6 +2,49 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+
+---
+
+## [Beta 4.0] - December 31, 2025
+### "Freezing Update"
+
+#### Added
+- **Freezing Evidence** — New evidence type exclusive to certain ghosts
+  - Shadow and Wraith now cause freezing temperatures
+  - Other ghosts only show "Cool" on thermometer
+- **Thermometer Visual Overhaul**
+  - Temperature bar that shrinks as you approach freezing ghost
+  - Color gradient (green → yellow → blue → white)
+  - Breath/frost particles near freezing ghosts
+- **Evidence Detection Notifications**
+  - "EMF SPIKE!" when detecting EMF evidence
+  - Spirit Box response notification with visual bar
+  - "Freezing temperatures detected!" for freezing evidence
+  - Ghost Writing completion notification
+- **Strange Signals** — 1% chance during Spirit Box scans to receive mysterious lore messages
+- **Ghost Resistance** — Ghosts now fight back during containment (slip mechanic)
+- **Custom Model Data** — All 7 tools now have custom_model_data for resource pack support
+  - Thermometer: 1001
+  - EMF Detector: 1002
+  - Spirit Box: 1003
+  - Containment Device: 1004
+  - Spectral Journal: 1005
+  - Flashlight: 1006
+  - UV Flashlight: 1007
+- **New Advancements**
+  - "Frostbite" — Detect freezing temperatures near an anomaly
+  - "Off The Charts" — Detect an EMF spike
+  - "Is Anyone There?" — Get a Spirit Box response
+  - "Beyond the Veil" — Receive a strange signal (secret)
+
+#### Changed
+- Thermometer now functions as true evidence tool, not just proximity detector
+- Containment progress bar synced with resistance mechanic
+- Help/evidence page updated with Freezing column
+- Guidebook updated with Freezing information
+
+#### Fixed
+- Minor ghost spawn positioning improvements
 ---
 
 ## [Beta 3.0] - 2025-12-29

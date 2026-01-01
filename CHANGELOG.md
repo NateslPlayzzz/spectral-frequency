@@ -3,6 +3,50 @@
 All notable changes to Spectral Frequency will be documented in this file.
 
 
+## [Beta 5.0] - January 1, 2026
+### "Atmosphere Update"
+
+#### Added
+- **Ghost Events System** — Ghosts now interact with the world
+  - Light Flicker — Lights dim, darkness pulses
+  - Door Slam — Loud slams echo nearby
+  - Object Throw — Items get launched (requires nearby items)
+  - Ambient Sounds — Creepy sounds play randomly
+  - Temperature Drop — Visible breath, frost particles
+  - Block Interaction — Noteblock tunes, clicking sounds
+- **Ghost-Specific Event Rates**
+  - Poltergeist: Very active (50% chance)
+  - Wraith/Phantom/Specter/Hollow: Medium (35-40%)
+  - Shadow/Whisper: Low (25%)
+  - Shade: Very rare (10%)
+- **Hollow Ghost** — New ghost type
+  - Evidence: Spirit Box + Freezing + UV
+  - Threat Level: Medium
+  - Behavior: Mimics voices, echoes, confuses players
+  - Unique Spirit Box responses that mimic player voices
+- **Strange Signals Expansion** — 5 new mysterious messages
+  - "THE VEIL IS THIN"
+  - "THE FORGOTTEN WATCHES"
+  - "BETWEEN WORLDS"
+  - "NOT ALONE"
+  - "THEY BROKE THROUGH"
+- **Custom Model Data Migration** — All tools updated to string format for resource pack support
+  - Format: `spectral_frequency:toolname`
+
+#### Changed
+- Ghost spawn pool now includes 8 ghost types
+- Evidence help page updated with Hollow
+- Spirit Box scan updated with Hollow responses
+- Ambient system updated with Hollow effects
+- Containment system updated with Hollow strain/progress
+- Strange Signals now has 10 possible messages (up from 5)
+
+#### Technical
+- Added `sf.event_timer` scoreboard
+- Added `sf.event_cooldown` scoreboard
+- Added event system functions (roll, select, 6 event types)
+- Added new predicates for event chances
+- Custom model data changed from `floats` to `strings` format
 ---
 
 ## [Beta 4.0] - December 31, 2025

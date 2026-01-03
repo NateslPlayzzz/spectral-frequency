@@ -3,6 +3,66 @@
 All notable changes to Spectral Frequency will be documented in this file.
 
 
+## [Beta 6.0] - January 2, 2026
+### "Manifestation Update"
+
+#### Added
+- **Manifestation System** — Ghosts can now hunt and kill players
+  - Breach warning gives 40 seconds to prepare
+  - Three escalating stages of tension
+  - Ghost actively chases during manifestation
+  - Different ghosts have different hunt speeds
+- **Breach Warning Stages**
+  - Stage 1: Heartbeat... something stirs
+  - Stage 2: "It's getting angry..." — find a hiding spot!
+  - Stage 3: Countdown — 5... 4... 3... 2... 1...
+- **Hiding Mechanic** — Crouch under solid blocks to survive
+  - Closets, basements, anywhere with a solid ceiling
+  - Ghost cannot find hidden players
+- **Death System** — Consequences for getting caught
+  - Ghost escapes (must find a new one)
+  - +100 exposure penalty
+  - Teleported away from location
+- **Survival Rewards**
+  - -100 exposure on surviving manifestation
+  - "Close Call" advancement unlocked
+- **Contained Ghost Potions** — Collectible trophies
+  - Unique color per ghost type
+  - Custom name and lore description
+  - Enchantment glint effect
+- **Flashlight Flicker** — Flashlight flickers during breach and manifestation
+- **UV Ghost Reveal** — UV Flashlight reveals ghost during manifestation
+  - Ghost gets glowing effect
+  - Particles surround revealed ghost
+
+#### Changed
+- Load message updated (organized scoreboards, clean formatting)
+- Join message updated (atmospheric title, welcome text)
+- Ghost hunt speeds vary by type:
+  - Slow: Whisper (6), Shade (8)
+  - Medium: Shadow, Phantom, Specter, Poltergeist, Hollow (12)
+  - Fast: Wraith (18)
+
+#### Technical
+- Added `sf.manifest_active` scoreboard
+- Added `sf.manifest_timer` scoreboard
+- Added `sf.breach_timer` scoreboard
+- Added `sf.is_hiding` scoreboard
+- Added `sf.hunt_cooldown` scoreboard
+- Added `sf.ghost_speed` scoreboard
+- Added `sf.flicker_timer` scoreboard
+- Added `sf.flicker_roll` scoreboard
+- Added `predicate/is_sneaking.json`
+- Added manifestation functions (start, end, tick, chase, wander)
+- Added breach functions (start, tick, stage_1, stage_2, stage_3, check_trigger)
+- Added hiding/check.mcfunction
+- Added death/on_death.mcfunction
+- Added flashlight flicker functions
+- Added UV ghost reveal functions
+- Added contained ghost give functions (one per ghost)
+
+---
+
 ## [Beta 5.0] - January 1, 2026
 ### "Atmosphere Update"
 
@@ -47,6 +107,7 @@ All notable changes to Spectral Frequency will be documented in this file.
 - Added event system functions (roll, select, 6 event types)
 - Added new predicates for event chances
 - Custom model data changed from `floats` to `strings` format
+
 ---
 
 ## [Beta 4.0] - December 31, 2025
@@ -89,6 +150,7 @@ All notable changes to Spectral Frequency will be documented in this file.
 
 #### Fixed
 - Minor ghost spawn positioning improvements
+
 ---
 
 ## [Beta 3.0] - 2025-12-29

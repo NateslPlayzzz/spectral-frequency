@@ -2,6 +2,51 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+## Beta 7.0 - Ghost Identity (January 7, 2026)
+
+### 🛡️ Defense Tools
+- **Warding Totem** — Place to create a 6-block protective zone for 45 seconds. Ghosts cannot enter.
+- **Soul Incense** — Emergency escape tool. Repels ghost 10 blocks + gives speed boost.
+
+### 👻 Ghost Behaviors
+Every ghost now has unique hunt behavior:
+- **Whisper** — Stops chasing when players stay silent
+- **Shadow** — Kills flashlights within 5 blocks
+- **Wraith** — Phases through walls, completely silent
+- **Phantom** — Vanishes when you look directly at it
+- **Shade** — Won't hunt if 2+ players nearby
+- **Specter** — Leaves UV trail during hunts
+- **Poltergeist** — Knocks players back during chase
+- **Hollow** — Events trigger twice
+
+### 📖 Lore
+- First lore page drops on first successful containment
+- Dr. E. Vance's Field Notes — Day 1
+
+### 💀 Unique Death Messages
+Each ghost now has personalized death messages when they claim you.
+
+### 📻 Spirit Box Hints
+Ghosts occasionally hint at their weaknesses through the Spirit Box.
+
+### 🏆 New Advancements
+- **Hold the Line** — Use a Warding Totem
+- **Emergency Exit** — Use Soul Incense
+- **Researcher** — Find your first research notes
+- **Silent Treatment** — Stop a Whisper by staying silent
+- **Strength in Numbers** — Prevent a Shade hunt with teamwork
+- **Lights Out** — Have your flashlight killed by Shadow
+- **Through the Wall** — Witness a Wraith phase through walls
+- **Now You See Me** — Make a Phantom vanish by looking at it
+
+### 🔧 Fixes & Polish
+- Flashlight no longer gives night vision (preserves darkness)
+- Ghosts now stay grounded during hunts (gravity + step up)
+- Updated all give commands to match recipe format
+- Help menu now includes Defense Tools page
+- Updated load message to Beta 7.0
+  
+-------------
 
 ## [Beta 6.0] - January 2, 2026
 ### "Manifestation Update"

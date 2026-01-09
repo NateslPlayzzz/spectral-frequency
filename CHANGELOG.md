@@ -2,6 +2,74 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+## Beta 8.0 - Don't Trust Your Senses (January 10, 2026)
+
+### 🧠 Sanity System
+- 5 sanity stages: Clear, Mild, Unsettled, Unstable, Critical
+- Bossbar displays current sanity level
+- Passive exposure gain when near ghosts (distance-based)
+- Stage-based decay: higher stages recover slower
+- Flashlight and Warding Totem aid recovery
+
+### 👁️ Hallucinations
+- High sanity causes fake evidence readings
+- EMF can show false signals
+- Thermometer can show fake freezing
+- Spirit Box can give fake responses (even without a ghost nearby)
+- Reality becomes unreliable
+
+### 👻 New Ghost: Revenant
+- Behavior: Fast when observed, slow when hidden
+- Evidence: EMF, Freezing, Ghost Writing
+- Containment: 25 seconds (hardest yet)
+- "It never stopped."
+
+### 📷 New Tool: Photo Camera
+- Capture ghost photos as proof of encounter
+- Aim at ghost and use to photograph
+- Collect photos of each ghost type
+- Recipe: Glass Pane + Echo Shard + Iron Ingots
+
+### 📖 Lore Expansion
+- Page 2 drops on second successful containment
+- Dr. Vance discovers the portal structure
+- Ancient symbols. Unknown meaning.
+- The investigation continues.
+
+### 🏆 New Advancements
+- **Snapshot** — Capture your first ghost photo
+- **Can't Catch Me** — Survive a Revenant hunt
+- **Losing It** — Reach critical sanity
+
+### 📊 Current Content
+- 10 Tools
+- 9 Ghosts
+- 5 Evidence Types
+
+---
+
+### Community
+Nexus Labs Discord is now live — bug reports, suggestions, lore discussion, and more.
+
+---
+
+<!--
+AUTOMATED LOG — SITE 7B MONITORING SYSTEM
+STATUS: ACTIVE
+FREQUENCY: 7.83 Hz
+SUBJECT: E.V.
+LAST TRANSMISSION: ...find me...
+
+pastebin.com/EnzDDYzh
+
+THE VEIL IS THIN
+THE FORGOTTEN REMEMBERS
+⟟⏁ ⍙⏃⟟⏁⌇
+
+DO NOT RESPOND TO UNKNOWN SIGNALS
+-->
+```
+
 ## Beta 7.0 - Ghost Identity (January 7, 2026)
 
 ### 🛡️ Defense Tools

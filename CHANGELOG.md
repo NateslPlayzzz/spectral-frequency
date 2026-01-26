@@ -2,6 +2,49 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+
+## [Beta 10.0] - January 26, 2026
+### "Veil Torn"
+
+#### Added
+- **The Dread** — New EXTREME threat ghost
+  - Evidence: EMF, Spirit Box, Freezing
+  - Skips breach warning — hunts IMMEDIATELY
+  - 28 second containment time with 25% slip chance
+  - Loud, thundering footsteps during hunts
+- **Motion Sensor** — New detection tool
+  - Base item: Tripwire Hook
+  - Detects ghost movement in 8-16 block range
+  - Color-coded alerts: Green → Yellow → Orange → Red
+- **Veil Tears** — Natural ghost spawning system
+  - Spontaneous tears appear in Deep Dark biomes
+  - 15-second warning sequence before ghost emerges
+  - Can spawn ANY ghost, including The Dread
+  - Treat as immediate breach situation
+- **Death Messages** — Unique messages for each ghost type
+  - Color-coded ghost names in death messages
+  - 11 unique messages reflecting each ghost's personality
+
+#### Changed
+- **Hiding System Overhaul**
+  - Now uses sneak_time statistic (crouch to hide)
+  - Must be under solid block (2-block ceiling)
+  - Removed darkness requirement
+  - Shows "👁 Hidden" or "⚠ EXPOSED" during hunts
+  - 3-second detection cooldown prevents spam
+- **Flashlight Flicker** — Fixed flickering behavior, 5% chance with 3-second cooldown
+- **Exposure Initialization** — Now properly sets on player join
+
+#### Fixed
+- Hiding detection no longer spams messages
+- Ghost spawn ground correction improved
+- Flashlight flicker no longer triggers constantly
+
+#### Technical
+- Added `sf.sneak_time` scoreboard (custom:sneak_time)
+- Added `sf.was_sneaking`, `sf.was_hiding`, `sf.detect_cd` scoreboards
+- Updated version display to 10.0
+
 ## Beta 8.0 - Don't Trust Your Senses (January 10, 2026)
 
 ### 🧠 Sanity System

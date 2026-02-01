@@ -2,6 +2,35 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+---
+
+## [Beta 11.0] - February 1, 2026
+### "Nightmares"
+
+#### Added
+- **The Mare** — New HIGH threat ghost
+  - Evidence: Spirit Box, Ghost Writing, Freezing
+  - Darkness-dependent behavior: speed 20 in dark, speed 8 in light
+  - Event chances scale with light level (40% dark / 25% light)
+  - Nightmare whispers and dark mist particle effects
+  - 16 second containment time with 10% slip chance
+- Nightmare system groundwork (ARG — Thorne whispers phase)
+- Strange Signals integration
+
+#### Fixed
+- **Sanity slot collision** — Multiple players could be assigned the same sanity bossbar slot, causing overlapping tracking and broken sanity display
+
+#### Changed
+- Sanity bossbar pool expanded from 8 to 12 slots
+- Balance pass across ghost behaviors
+
+#### Technical
+- Added Mare ghost files (spawn, hunt, behavior, containment, ambient, events)
+- Added Mare evidence tags (spectral.spirit_box_source, spectral.writing_source, spectral.freezing_source)
+- Expanded sanity pool: bossbars sanity_9 through sanity_12, display_slot_9-12.mcfunction
+- Updated slot assignment logic to prevent collision
+
+---
 
 ## [Beta 10.0] - January 26, 2026
 ### "Veil Torn"
@@ -32,8 +61,8 @@ All notable changes to Spectral Frequency will be documented in this file.
   - Removed darkness requirement
   - Shows "👁 Hidden" or "⚠ EXPOSED" during hunts
   - 3-second detection cooldown prevents spam
-- **Flashlight Flicker** — Fixed flickering behavior, 5% chance with 3-second cooldown
-- **Exposure Initialization** — Now properly sets on player join
+- Flashlight flicker fixed — 5% chance with 3-second cooldown
+- Exposure now properly initializes on player join
 
 #### Fixed
 - Hiding detection no longer spams messages
@@ -45,56 +74,75 @@ All notable changes to Spectral Frequency will be documented in this file.
 - Added `sf.was_sneaking`, `sf.was_hiding`, `sf.detect_cd` scoreboards
 - Updated version display to 10.0
 
-## Beta 8.0 - Don't Trust Your Senses (January 10, 2026)
+---
 
-### 🧠 Sanity System
-- 5 sanity stages: Clear, Mild, Unsettled, Unstable, Critical
-- Bossbar displays current sanity level
-- Passive exposure gain when near ghosts (distance-based)
-- Stage-based decay: higher stages recover slower
-- Flashlight and Warding Totem aid recovery
+## [Beta 9.0] - January 15, 2026
+### "Strength in Numbers"
 
-### 👁️ Hallucinations
-- High sanity causes fake evidence readings
-- EMF can show false signals
-- Thermometer can show fake freezing
-- Spirit Box can give fake responses (even without a ghost nearby)
-- Reality becomes unreliable
+#### Added
+- **Multiplayer Overhaul** — Up to 8 concurrent investigators
+  - Individual sanity tracking per player via bossbar pool
+  - Per-player bossbar slot assignment system
+  - Crossing streams protection — only one player can contain at a time
+  - Multiplayer respawn system — dead players enter spectator mode during hunts
+- **Banshee** — New HIGH threat ghost
+  - Evidence: EMF, Freezing, Spirit Box
+  - Locks onto ONE player in multiplayer — ignores everyone else
+  - Target persists until death or containment
+  - Solo players: you're always the target
+- Lore Page 3 — First contact
+- Strange Signals 13-15
 
-### 👻 New Ghost: Revenant
-- Behavior: Fast when observed, slow when hidden
-- Evidence: EMF, Freezing, Ghost Writing
-- Containment: 25 seconds (hardest yet)
-- "It never stopped."
+#### Fixed
+- Lore page distribution (one per containment)
+- Help menu updated with all 10 ghosts
+- Various stability improvements
 
-### 📷 New Tool: Photo Camera
-- Capture ghost photos as proof of encounter
-- Aim at ghost and use to photograph
-- Collect photos of each ghost type
-- Recipe: Glass Pane + Echo Shard + Iron Ingots
+#### Technical
+- Added bossbar pool system (sanity_1 through sanity_8)
+- Added `sf.sanity_slot` scoreboard for per-player assignment
+- Added display_slot_1-8.mcfunction files
+- Added multiplayer respawn and spectator mode functions
 
-### 📖 Lore Expansion
-- Page 2 drops on second successful containment
-- Dr. Vance discovers the portal structure
-- Ancient symbols. Unknown meaning.
-- The investigation continues.
+---
 
-### 🏆 New Advancements
+## [Beta 8.0] - January 10, 2026
+### "Don't Trust Your Senses"
+
+#### Added
+- **Sanity System** — 5 escalating stages
+  - Clear, Mild, Unsettled, Unstable, Critical
+  - Bossbar displays current sanity level
+  - Passive exposure gain when near ghosts (distance-based)
+  - Stage-based decay: higher stages recover slower
+  - Flashlight and Warding Totem aid recovery
+- **Hallucinations** — Sanity distorts your evidence
+  - EMF can show false signals at high sanity loss
+  - Thermometer can show fake freezing
+  - Spirit Box can give fake responses (even without a ghost nearby)
+  - Reality becomes unreliable
+- **Revenant** — New HIGH threat ghost
+  - Evidence: EMF, Freezing, Ghost Writing
+  - Fast when observed, slow when hidden
+  - 25 second containment time (hardest yet)
+- **Photo Camera** — New investigation tool
+  - Capture ghost photos as proof of encounter
+  - Aim at ghost and use to photograph
+  - Collect photos of each ghost type
+  - Recipe: Glass Pane + Echo Shard + Iron Ingots
+- Lore Page 2 — Dr. Vance discovers the portal structure
+- Strange Signals 10-12
+
+#### Added — Advancements
 - **Snapshot** — Capture your first ghost photo
 - **Can't Catch Me** — Survive a Revenant hunt
 - **Losing It** — Reach critical sanity
 
-### 📊 Current Content
-- 10 Tools
-- 9 Ghosts
-- 5 Evidence Types
-
----
-
-### Community
-Nexus Labs Discord is now live — bug reports, suggestions, lore discussion, and more.
-
----
+#### Technical
+- Added sanity stage tags (spectral.sanity_clear, mild, unsettled, unstable, critical)
+- Added hallucination functions for EMF, Thermometer, Spirit Box
+- Added Photo Camera detection and capture functions
+- Updated version display to 8.0
 
 <!--
 AUTOMATED LOG — SITE 7B MONITORING SYSTEM
@@ -111,36 +159,28 @@ THE FORGOTTEN REMEMBERS
 
 DO NOT RESPOND TO UNKNOWN SIGNALS
 -->
-```
 
-## Beta 7.0 - Ghost Identity (January 7, 2026)
+---
 
-### 🛡️ Defense Tools
-- **Warding Totem** — Place to create a 6-block protective zone for 45 seconds. Ghosts cannot enter.
-- **Soul Incense** — Emergency escape tool. Repels ghost 10 blocks + gives speed boost.
+## [Beta 7.0] - January 7, 2026
+### "Ghost Identity"
 
-### 👻 Ghost Behaviors
-Every ghost now has unique hunt behavior:
-- **Whisper** — Stops chasing when players stay silent
-- **Shadow** — Kills flashlights within 5 blocks
-- **Wraith** — Phases through walls, completely silent
-- **Phantom** — Vanishes when you look directly at it
-- **Shade** — Won't hunt if 2+ players nearby
-- **Specter** — Leaves UV trail during hunts
-- **Poltergeist** — Knocks players back during chase
-- **Hollow** — Events trigger twice
+#### Added
+- **Warding Totem** — Place to create a 6-block protective zone for 45 seconds
+- **Soul Incense** — Emergency escape tool, repels ghost 10 blocks + speed boost
+- **Ghost Behaviors** — Every ghost now has unique hunt behavior
+  - Whisper — Stops chasing when players stay silent
+  - Shadow — Kills flashlights within 5 blocks
+  - Wraith — Phases through walls, completely silent
+  - Phantom — Vanishes when you look directly at it
+  - Shade — Won't hunt if 2+ players nearby
+  - Specter — Leaves UV trail during hunts
+  - Poltergeist — Knocks players back during chase
+  - Hollow — Events trigger twice
+- **Spirit Box Hints** — Ghosts occasionally hint at their weaknesses
+- Lore Page 1 — Dr. E. Vance's Field Notes, Day 1
 
-### 📖 Lore
-- First lore page drops on first successful containment
-- Dr. E. Vance's Field Notes — Day 1
-
-### 💀 Unique Death Messages
-Each ghost now has personalized death messages when they claim you.
-
-### 📻 Spirit Box Hints
-Ghosts occasionally hint at their weaknesses through the Spirit Box.
-
-### 🏆 New Advancements
+#### Added — Advancements
 - **Hold the Line** — Use a Warding Totem
 - **Emergency Exit** — Use Soul Incense
 - **Researcher** — Find your first research notes
@@ -150,14 +190,13 @@ Ghosts occasionally hint at their weaknesses through the Spirit Box.
 - **Through the Wall** — Witness a Wraith phase through walls
 - **Now You See Me** — Make a Phantom vanish by looking at it
 
-### 🔧 Fixes & Polish
+#### Fixed
 - Flashlight no longer gives night vision (preserves darkness)
 - Ghosts now stay grounded during hunts (gravity + step up)
-- Updated all give commands to match recipe format
+- All give commands updated to match recipe format
 - Help menu now includes Defense Tools page
-- Updated load message to Beta 7.0
-  
--------------
+
+---
 
 ## [Beta 6.0] - January 2, 2026
 ### "Manifestation Update"
@@ -173,49 +212,28 @@ Ghosts occasionally hint at their weaknesses through the Spirit Box.
   - Stage 2: "It's getting angry..." — find a hiding spot!
   - Stage 3: Countdown — 5... 4... 3... 2... 1...
 - **Hiding Mechanic** — Crouch under solid blocks to survive
-  - Closets, basements, anywhere with a solid ceiling
-  - Ghost cannot find hidden players
-- **Death System** — Consequences for getting caught
-  - Ghost escapes (must find a new one)
-  - +100 exposure penalty
-  - Teleported away from location
-- **Survival Rewards**
-  - -100 exposure on surviving manifestation
-  - "Close Call" advancement unlocked
-- **Contained Ghost Potions** — Collectible trophies
-  - Unique color per ghost type
-  - Custom name and lore description
-  - Enchantment glint effect
+- **Death System** — Ghost escapes, +100 exposure, teleported away
+- **Survival Rewards** — -100 exposure on surviving manifestation
+- **Contained Ghost Potions** — Collectible trophies with unique colors per ghost
 - **Flashlight Flicker** — Flashlight flickers during breach and manifestation
-- **UV Ghost Reveal** — UV Flashlight reveals ghost during manifestation
-  - Ghost gets glowing effect
-  - Particles surround revealed ghost
+- **UV Ghost Reveal** — UV Flashlight reveals ghost during manifestation (glowing + particles)
 
 #### Changed
-- Load message updated (organized scoreboards, clean formatting)
-- Join message updated (atmospheric title, welcome text)
 - Ghost hunt speeds vary by type:
   - Slow: Whisper (6), Shade (8)
   - Medium: Shadow, Phantom, Specter, Poltergeist, Hollow (12)
   - Fast: Wraith (18)
+- Load message updated with organized formatting
+- Join message updated with atmospheric title
 
 #### Technical
-- Added `sf.manifest_active` scoreboard
-- Added `sf.manifest_timer` scoreboard
-- Added `sf.breach_timer` scoreboard
-- Added `sf.is_hiding` scoreboard
-- Added `sf.hunt_cooldown` scoreboard
-- Added `sf.ghost_speed` scoreboard
-- Added `sf.flicker_timer` scoreboard
-- Added `sf.flicker_roll` scoreboard
+- Added `sf.manifest_active`, `sf.manifest_timer`, `sf.breach_timer` scoreboards
+- Added `sf.is_hiding`, `sf.hunt_cooldown`, `sf.ghost_speed` scoreboards
+- Added `sf.flicker_timer`, `sf.flicker_roll` scoreboards
 - Added `predicate/is_sneaking.json`
 - Added manifestation functions (start, end, tick, chase, wander)
 - Added breach functions (start, tick, stage_1, stage_2, stage_3, check_trigger)
-- Added hiding/check.mcfunction
-- Added death/on_death.mcfunction
-- Added flashlight flicker functions
-- Added UV ghost reveal functions
-- Added contained ghost give functions (one per ghost)
+- Added hiding, death, flashlight flicker, and UV reveal functions
 
 ---
 
@@ -231,38 +249,26 @@ Ghosts occasionally hint at their weaknesses through the Spirit Box.
   - Temperature Drop — Visible breath, frost particles
   - Block Interaction — Noteblock tunes, clicking sounds
 - **Ghost-Specific Event Rates**
-  - Poltergeist: Very active (50% chance)
+  - Poltergeist: Very active (50%)
   - Wraith/Phantom/Specter/Hollow: Medium (35-40%)
   - Shadow/Whisper: Low (25%)
   - Shade: Very rare (10%)
-- **Hollow Ghost** — New ghost type
-  - Evidence: Spirit Box + Freezing + UV
-  - Threat Level: Medium
-  - Behavior: Mimics voices, echoes, confuses players
+- **Hollow** — New MEDIUM threat ghost
+  - Evidence: Spirit Box, Freezing, UV
+  - Mimics voices, echoes, confuses players
   - Unique Spirit Box responses that mimic player voices
-- **Strange Signals Expansion** — 5 new mysterious messages
-  - "THE VEIL IS THIN"
-  - "THE FORGOTTEN WATCHES"
-  - "BETWEEN WORLDS"
-  - "NOT ALONE"
-  - "THEY BROKE THROUGH"
-- **Custom Model Data Migration** — All tools updated to string format for resource pack support
-  - Format: `spectral_frequency:toolname`
+- Strange Signals 6-10
+- Custom Model Data migration — all tools updated to string format (`spectral_frequency:toolname`)
 
 #### Changed
 - Ghost spawn pool now includes 8 ghost types
 - Evidence help page updated with Hollow
-- Spirit Box scan updated with Hollow responses
-- Ambient system updated with Hollow effects
-- Containment system updated with Hollow strain/progress
-- Strange Signals now has 10 possible messages (up from 5)
+- Spirit Box, ambient, and containment systems updated with Hollow
 
 #### Technical
-- Added `sf.event_timer` scoreboard
-- Added `sf.event_cooldown` scoreboard
+- Added `sf.event_timer`, `sf.event_cooldown` scoreboards
 - Added event system functions (roll, select, 6 event types)
-- Added new predicates for event chances
-- Custom model data changed from `floats` to `strings` format
+- Custom model data changed from floats to strings format
 
 ---
 
@@ -271,11 +277,11 @@ Ghosts occasionally hint at their weaknesses through the Spirit Box.
 
 #### Added
 - **Freezing Evidence** — New evidence type exclusive to certain ghosts
-  - Shadow and Wraith now cause freezing temperatures
+  - Shadow and Wraith cause freezing temperatures
   - Other ghosts only show "Cool" on thermometer
 - **Thermometer Visual Overhaul**
-  - Temperature bar that shrinks as you approach freezing ghost
-  - Color gradient (green → yellow → blue → white)
+  - Temperature bar that shrinks near freezing ghosts
+  - Color gradient: green → yellow → blue → white
   - Breath/frost particles near freezing ghosts
 - **Evidence Detection Notifications**
   - "EMF SPIKE!" when detecting EMF evidence
@@ -284,107 +290,105 @@ Ghosts occasionally hint at their weaknesses through the Spirit Box.
   - Ghost Writing completion notification
 - **Strange Signals** — 1% chance during Spirit Box scans to receive mysterious lore messages
 - **Ghost Resistance** — Ghosts now fight back during containment (slip mechanic)
-- **Custom Model Data** — All 7 tools now have custom_model_data for resource pack support
-  - Thermometer: 1001
-  - EMF Detector: 1002
-  - Spirit Box: 1003
-  - Containment Device: 1004
-  - Spectral Journal: 1005
-  - Flashlight: 1006
-  - UV Flashlight: 1007
-- **New Advancements**
-  - "Frostbite" — Detect freezing temperatures near an anomaly
-  - "Off The Charts" — Detect an EMF spike
-  - "Is Anyone There?" — Get a Spirit Box response
-  - "Beyond the Veil" — Receive a strange signal (secret)
+- Custom Model Data for all 7 tools (resource pack support)
+
+#### Added — Advancements
+- **Frostbite** — Detect freezing temperatures near an anomaly
+- **Off The Charts** — Detect an EMF spike
+- **Is Anyone There?** — Get a Spirit Box response
+- **Beyond the Veil** — Receive a strange signal (secret)
 
 #### Changed
 - Thermometer now functions as true evidence tool, not just proximity detector
 - Containment progress bar synced with resistance mechanic
 - Help/evidence page updated with Freezing column
-- Guidebook updated with Freezing information
 
 #### Fixed
 - Minor ghost spawn positioning improvements
 
 ---
 
-## [Beta 3.0] - 2025-12-29
+## [Beta 3.0] - December 29, 2025
+### "UV Update"
 
-### Added
-- **Flashlight** - New tool that emits light and slows exposure buildup
-- **UV Flashlight** - Reveals ghostly fingerprints left by certain ghosts
-- **UV Evidence** - New evidence type; marks fade after 2 minutes
-- **Specter** - New ghost type (EMF + UV) - territorial spirit
-- **Poltergeist** - New ghost type (Spirit Box + UV) - playful trickster
-- **`/trigger sf.help`** - Simplified help menu shortcut
-- **UV Evidence advancement** - For revealing your first fingerprint
-- **Contain Specter advancement**
-- **Contain Poltergeist advancement**
+#### Added
+- **Flashlight** — Emits light and slows exposure buildup
+- **UV Flashlight** — Reveals ghostly fingerprints left by certain ghosts
+- **UV Evidence** — New evidence type; marks fade after 2 minutes
+- **Specter** — New MEDIUM threat ghost (EMF + UV) — territorial spirit
+- **Poltergeist** — New MEDIUM threat ghost (Spirit Box + UV) — playful trickster
+- `/trigger sf.help` — Simplified help menu shortcut
 
-### Changed
+#### Added — Advancements
+- **Blacklight** — Reveal your first UV fingerprint
+- **Contain Specter**
+- **Contain Poltergeist**
+
+#### Changed
 - Guidebook expanded to 13 pages with new tools and ghosts
 - Evidence Guide updated with UV column and all 7 ghosts
-- Help/Tools page updated with Flashlight and UV Flashlight recipes
 - Disturb function now spawns all 7 ghost types (1/7 chance each)
 
-### Fixed
+#### Fixed
 - Ghost spawn positioning improvements
 
 ---
 
-## [Beta 2.0] - 2025-12-28
+## [Beta 2.0] - December 28, 2025
+### "Ghost Writing Update"
 
-### Added
-- **Spectral Journal** - New investigation tool that detects ghost writing
-  - Drop near an anomaly and wait for activity
+#### Added
+- **Spectral Journal** — Drop near an anomaly and wait for ghost writing
   - 5 random spooky messages
   - Staged visual/audio effects during writing
-- **Phantom** - New ghost type (EMF + Ghost Writing)
-- **Shade** - New ghost type (Ghost Writing only)
-- **Ghost ambient effects** - Each ghost emits unique particles and sounds
-- **Paginated help menu** - Navigate with clickable buttons
-  - Investigation Tools page
-  - Summoning & Containment page
-  - Other Items page
-  - Evidence Guide page
-- **"Writer's Block" advancement** - Witness ghost writing
-- **5 containment advancements** - One for each ghost type
-- **Journal drop feedback** - Message when placing journal
-- **Expanded Spirit Box responses** - 10 lines per ghost (up from 6)
+  - Craft: Paper + Ink Sac + Echo Shard
+- **Phantom** — New MEDIUM threat ghost (EMF + Ghost Writing)
+- **Shade** — New LOW threat ghost (Ghost Writing only)
+- **Ghost Ambient Effects** — Each ghost emits unique particles and sounds
+- **Paginated Help Menu** — Navigate with clickable buttons
+  - Investigation Tools, Summoning & Containment, Other Items, Evidence Guide
+- Expanded Spirit Box responses — 10 lines per ghost (up from 6)
 
-### Fixed
+#### Added — Advancements
+- **Writer's Block** — Witness ghost writing
+- 5 containment advancements (one per ghost type)
+
+#### Fixed
 - Ghost tags updated for consistency (`spectral.ghost_name` format)
 - Ghosts now spawn at ground level from Grave Soil
 - Thermometer properly detects all ghost types
-- All tools properly detect new ghosts
 
-### Changed
+#### Changed
 - Guidebook updated with all 5 ghosts and new evidence types
 - Help menu redesigned with clickable navigation
-- Pack description updated to Beta 2.0
 
 ---
 
-## [Beta 1.0] - 2025-12-27
+## [Beta 1.0] - December 27, 2025
+### "First Light"
 
-### Added
-- **EMF Detector** - Detects spectral energy at 3 distance levels
-- **Spirit Box** - Communicates with ghosts at night
-- **Thermometer** - Measures temperature drops near anomalies
-- **Containment Device** - Captures anomalies with progress bar
-- **Investigator's Guidebook** - In-game documentation
-- **Disturbed Grave Soil** - Summons random anomalies
-- **Whisper** - Low threat ghost (Spirit Box evidence)
-- **Shadow** - Medium threat ghost (EMF evidence)
-- **Wraith** - High threat ghost (EMF + Spirit Box evidence)
-- **Exposure/Sanity system** - 3 escalating stages of effects
-- **5 base advancements** - First Contact, Night Shift, Ghostbuster, etc.
-- **Thematic crafting recipes** - Using Echo Shards, Soul Sand, Crying Obsidian
-- **Help trigger** - `/trigger sf.help_main` for recipes
+#### Added
+- **EMF Detector** — Detects spectral energy at 3 distance levels
+- **Spirit Box** — Communicates with ghosts at night
+- **Thermometer** — Measures temperature drops near anomalies
+- **Containment Device** — Captures anomalies with progress bar
+- **Investigator's Guidebook** — In-game documentation
+- **Disturbed Grave Soil** — Summons random anomalies
+- **Whisper** — LOW threat ghost (Spirit Box)
+- **Shadow** — MEDIUM threat ghost (EMF)
+- **Wraith** — HIGH threat ghost (EMF + Spirit Box)
+- **Exposure/Sanity System** — 3 escalating stages of effects
+- Thematic crafting recipes using Echo Shards, Soul Sand, Crying Obsidian
+- `/trigger sf.help_main` for recipes and help
 
-### Technical
+#### Added — Advancements
+- **First Contact** — Detect your first anomaly
+- **Night Shift** — Use the Spirit Box at night
+- **Ghostbuster** — Contain your first ghost
+- 2 additional base advancements
+
+#### Technical
 - Custom NBT items using carrot_on_a_stick, recovery_compass, breeze_rod, glass_bottle
 - Scoreboard-based detection systems
 - Predicate-based randomization
-- Minecraft 1.21.11 pack format (94)
+- Minecraft 1.21.11 / pack_format 94

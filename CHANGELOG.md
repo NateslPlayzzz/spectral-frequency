@@ -2,8 +2,7 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
-## Beta 12.0 — "Field Guide" (February 4, 2026)
-
+## Beta 12.0 — "Field Guide" (February 3, 2026)
 ### Added
 - **Investigator's Guidebook** — 25-page comprehensive guide to paranormal investigation (crafted with Book + Amethyst Shard)
 - 8 new advancements:

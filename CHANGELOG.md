@@ -2,6 +2,31 @@
 
 All notable changes to Spectral Frequency will be documented in this file.
 
+## Beta 12.0 — "Field Guide" (February 4, 2026)
+
+### Added
+- **Investigator's Guidebook** — 25-page comprehensive guide to paranormal investigation (crafted with Book + Amethyst Shard)
+- 8 new advancements:
+  - Field Guide — Craft the Investigator's Guidebook
+  - Motion Detected — Detect a ghost with the Motion Sensor
+  - Blink — Witness a Specter teleport
+  - Thrown Around — Have items thrown by a Poltergeist
+  - Empty Inside — Encounter a Hollow in complete darkness
+  - Wail — Hear a Banshee's scream
+  - Stare Into the Abyss — Survive an encounter with The Dread (hidden)
+  - Afraid of the Dark — Encounter a Mare in darkness
+
+### Fixed
+- **CRITICAL:** The Dread now gives correct evidence (EMF, Spirit Box, Freezing) — was incorrectly giving Ghost Writing + UV since Beta 10
+- Mare ghost: Fixed missing Marker tag causing visible hitbox, added CustomName, removed erroneous UV evidence tag
+- Help menu evidence table completely rebuilt with correct evidence for all 12 ghosts
+- Help menu now correctly shows "12 Ghosts · 12 Tools"
+- Guidebook recipe corrected in help text (Book + Amethyst Shard)
+- All help page numbers corrected to /6
+
+### Changed
+- Version strings updated throughout
+  
 ---
 
 ## [Beta 11.0] - February 1, 2026

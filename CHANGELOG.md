@@ -1,7 +1,58 @@
 # Changelog
 
 All notable changes to Spectral Frequency will be documented in this file.
+## [Beta 13.0] - February 5, 2026
+### "Foundation"
 
+#### Added
+- **Complete File Restructure** — Entire datapack reorganized from flat files into hierarchical folders
+  - `ghost/` — Behavior, spawning, hunts, containment, events
+  - `tool/` — Each tool in its own folder
+  - `player/` — Sanity, hiding, death, on-join
+  - `core/` — Load, tick, scheduled loops, uninstall
+  - `evidence/` — Evidence detection systems
+  - `world/` — Environmental effects, Veil Tears
+  - `ui/` — Help system, player messages
+  - `lore/` — Strange Signal messages, narrative content
+  - `util/` — Shared utility functions
+  - `debug/` — Debug toggle, info display
+- **Tiered Performance Loops** — Game logic moved off main tick
+  - 1-second loop: Tool detection, evidence checking, sanity updates
+  - 5-second loop: Ambient effects, environmental checks
+  - 30-second loop: Veil Tear spawning, entity cleanup
+  - Tick: Ghost movement, immediate player checks only
+- **Research Notes** — 12 unique written books, one per ghost
+  - Drops on first containment of each ghost type
+  - Pieces together the story of UMBRA and Dr. Silas Thorne
+  - Each note is a fragment from a different research case file
+- **Corrupted Note** — Mysterious fragment with a chance to drop on any containment
+  - Obfuscated text, dark styling
+  - Content is... difficult to read
+- **Containment Specialist** — Challenge advancement for containing all 12 ghost types
+- **Watching Event** — Ghosts observe nearby investigators
+  - Unique particles and sound
+  - Respects distance and cooldown
+- **Debug Mode** — `/function spectral:debug/toggle`
+  - Real-time ghost count, hunt status, breach status
+  - Player sanity state, exposure, hiding status
+  - Active Veil Tears, UV marks, totems
+- **Debug Info** — `/function spectral:debug/info` for full game state snapshot
+- **Clean Uninstall** — `/function spectral:core/uninstall`
+  - Removes all scoreboards, storage, entities, scheduled functions
+  - Complete cleanup, no orphaned data
+
+#### Changed
+- All 334 functions reorganized across 11 top-level folders
+- Tick logic distributed to scheduled intervals (1s/5s/30s)
+- Ghost behavior dispatch uses early-return routing
+- Evidence checking moved from per-tick to 1-second loop
+
+#### Technical
+- 428 total files (functions, advancements, recipes, predicates, loot tables)
+- 3 scheduled loops via `schedule function` (self-rescheduling)
+- `schedule clear` on load prevents duplicate loops
+- Ghost dispatch uses `return run` for efficient tag-based routing
+ ---
 ## Beta 12.0 — "Field Guide" (February 3, 2026)
 ### Added
 - **Investigator's Guidebook** — 25-page comprehensive guide to paranormal investigation (crafted with Book + Amethyst Shard)

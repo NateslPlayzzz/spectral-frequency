@@ -4,6 +4,8 @@
 # Performance scores are deliberately retained until reward/score finishes
 # for the resolving player.
 
+tag @s add sf.case_resolver
+
 # Remove any residual containment authority before case ownership is erased.
 function sf:tool/contain/clear_all
 
@@ -14,10 +16,10 @@ title @a[tag=sf.case_participant,tag=!sf.case_resolver] subtitle {"text":"the ma
 execute as @a[tag=sf.case_participant,scores={sf.claimed=1..}] run function sf:case/release_claimed
 execute as @a[tag=sf.case_participant] run function sf:case/reset
 
-kill @e[type=marker,tag=sf.ghost]
+kill @e[type=minecraft:marker,tag=sf.ghost]
 kill @e[tag=sf.uv_trace]
 kill @e[tag=sf.remnant]
-kill @e[type=marker,tag=sf.ward]
+kill @e[type=minecraft:marker,tag=sf.ward]
 
 tag @a remove spectral.seen
 tag @a remove sf.case_participant

@@ -4,8 +4,12 @@
 scoreboard players set @s sf.claimed 1
 scoreboard players set @s sf.coherence 0
 scoreboard players set @s sf.revive_progress 0
-scoreboard players set @s sf.contain_active 0
-scoreboard players set @s sf.contain_progress 0
+
+# A Taken containment operator must release the shared target before losing
+# active player control.
+execute if entity @s[tag=sf.contain_operator] run function sf:tool/contain/release_target
+function sf:tool/contain/clear_player
+
 scoreboard players set @s sf.flashlight_on 0
 scoreboard players set @s sf.writing_active 0
 scoreboard players set @s sf.writing_timer 0

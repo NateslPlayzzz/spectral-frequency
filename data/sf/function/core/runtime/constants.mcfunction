@@ -3,6 +3,8 @@
 
 scoreboard players set #hundred sf.data 100
 scoreboard players set #two sf.data 2
+scoreboard players set #four sf.data 4
+scoreboard players set #ten sf.data 10
 scoreboard players set #neg sf.data -1
 scoreboard players set #fifty sf.data 50
 scoreboard players set #revive_scale sf.data 100

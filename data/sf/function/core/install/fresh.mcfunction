@@ -153,6 +153,7 @@ data modify storage sf:system enabled set value true
 data modify storage sf:system purged set value false
 
 data modify storage sf:player_data entries set value []
+data modify storage sf:case state set value "inactive"
 data modify storage sf:forgotten state set value "idle"
 
 # These objectives were created above, so prevent defaults from attempting

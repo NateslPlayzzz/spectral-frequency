@@ -8,12 +8,9 @@ execute store result score #hb_1s sf.data run time query gametime
 # --- Online Memory bossbar ownership ---
 function sf:ui/rebuild_bars
 
+# --- Queued tutorial startup ---
+execute if data storage sf:forgotten {state:"idle"} unless data storage sf:case {state:"active"} as @a[tag=sf.tutorial_waiting,scores={sf.quest=1}] at @s run function sf:quest/tutorial_retry
 
-# --- Persistent signal recovery ---
-execute if data storage sf:forgotten {state:"idle"} as @a[tag=spectral.sf_init,tag=!sf.signal_checked] run function sf:signal/recover
-
-# --- Per-player signal tracking ---
-execute if data storage sf:forgotten {state:"idle"} as @a[tag=sf.seeking] at @s run function sf:signal/seek
 # --- Anchor placement ---
 execute as @a[scores={sf.anchor=1..}] at @s run function sf:memory/place_anchor
 scoreboard players reset @a sf.anchor
@@ -46,13 +43,13 @@ execute as @e[type=marker,tag=sf.ghost,tag=sf.state.cooldown,scores={sf.cooldown
 scoreboard players remove @a[tag=sf.solo_release_pending,scores={sf.revive_progress=1..}] sf.revive_progress 1
 execute as @a[tag=sf.solo_release_pending,scores={sf.revive_progress=..0}] at @s run function sf:player/claim/solo_release
 
-# --- Visible remnant ambience ---
+# --- Visible Remnant ambience ---
 execute as @e[type=minecraft:interaction,tag=sf.remnant_interact] at @s run function sf:player/revive/remnant_tick
 
-# --- Deliberate remnant revival channels ---
+# --- Deliberate Remnant revival channels ---
 execute as @e[type=minecraft:interaction,tag=sf.remnant_interact,tag=sf.remnant_channeling] at @s run function sf:player/revive/channel
 
-# --- Remove stale rescuer state after disconnect or remnant cleanup ---
+# --- Remove stale rescuer state after disconnect or Remnant cleanup ---
 execute as @a[tag=sf.reviving] at @s unless entity @e[type=minecraft:interaction,tag=sf.remnant_interact,tag=sf.remnant_channeling,distance=..4] run function sf:player/revive/clear_player
 
 # --- Warding Totems ---

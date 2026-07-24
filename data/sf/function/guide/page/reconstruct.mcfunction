@@ -12,6 +12,8 @@ tellraw @s [{"text":"  Unique fragments remembered: ","color":"gray"},{"score":{
 
 execute if score @s sf.shard_count matches ..2 run tellraw @s [{"text":"  The records do not yet form a readable structure.","color":"#6A6A78","italic":true}]
 execute if score @s sf.shard_count matches 3..11 run tellraw @s [{"text":"  Several records now resonate with one another.","color":"#D8C8A0","italic":true}]
+
 execute if entity @s[tag=spectral.reconstructed] run tellraw @s [{"text":"  Twelve patterns are aligned. The archive is no longer silent.","color":"#C89BFF","italic":true}]
+execute if entity @s[tag=spectral.reconstructed] run function sf:forgotten/menu_status
 
 tellraw @s [{"text":"  ◀ back","color":"dark_gray","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 7"}}]

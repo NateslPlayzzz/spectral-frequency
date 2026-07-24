@@ -4,8 +4,8 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 ## Confirmed release blockers
 
-- Recovered Documents do not yet have a persistent archive or duplicate protection.
-- Finale/Forgotten lifecycle is not yet safely isolated for multiplayer witnesses.
+- Complete Protocol and Vigil branch regression has not yet been performed in disposable finale worlds.
+- Multiplayer finale witness isolation and nonparticipant behavior require formal testing.
 - Guarded full purge is implemented, but the complete destructive purge/reinstall cycle has not passed disposable-world regression.
 
 
@@ -34,14 +34,17 @@ This file separates confirmed defects, release-audit items, accepted limitations
 - Restricted and Black Archive progression gates still need staged progression regression.
 - Multiplayer archive ownership and offline-profile migration need formal testing.
 - Replacement-copy checks cannot detect copies stored in arbitrary containers.
-- Finale ending documents remain part of the separate witness-lifecycle audit.
+- Protocol and Vigil documents are archive-integrated, but initial branch delivery requires disposable-world verification.
 
 ### Finale and The Forgotten
 
-- Existing selector usage may affect unintended players
-- Lifecycle cleanup is not fully hardened
-- Twelve-fragment activation must be tested only in disposable worlds
-- Branch outcomes and reconnect behavior require formal verification
+- Schema-102 authority, deliberate activation, phase persistence, repair, and per-player outcomes are implemented.
+- Safe idle-state, lock, trigger-refusal, diagnostic, and repair tests passed.
+- Complete Protocol and Vigil branch runs remain untested.
+- Multiplayer witness isolation remains untested.
+- Mid-phase reload, disconnect, reconnect, and offline-witness behavior require formal regression.
+- Ending-document initial delivery and completed-outcome repair require formal regression.
+- Twelve-fragment and branch testing must use disposable worlds.
 
 ### Full purge
 

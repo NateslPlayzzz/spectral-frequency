@@ -4,6 +4,7 @@
 execute if entity @s[tag=spectral.reconstructed] run return 0
 
 tag @s add spectral.reconstructed
+function sf:forgotten/profile/mark_ready
 advancement grant @s only sf:reconstruct
 
 title @s times 20 80 40

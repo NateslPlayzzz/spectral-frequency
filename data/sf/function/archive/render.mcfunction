@@ -43,5 +43,13 @@ execute if data storage sf:temp archive.profile.documents[{id:6}] run tellraw @s
 execute unless data storage sf:temp archive.profile.documents[{id:6}] run tellraw @s [{"text":"  ◇ ","color":"dark_gray"},{"text":"████████ — RECORD ABSENT","color":"#4A4A54"}]
 
 tellraw @s ""
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"protocol"} run tellraw @s ""
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"protocol"} run tellraw @s [{"text":"  FINAL OUTCOME RECORD","color":"#5AC8C8","bold":true}]
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"protocol"} run tellraw @s [{"text":"  ◆ ","color":"#5AC8C8"},{"text":"UMBRA: Asset Debrief","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 17"},"hover_event":{"action":"show_text","value":{"text":"Protocol ending · click for a replacement copy.","color":"#5AC8C8"}}}]
+
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"vigil"} run tellraw @s ""
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"vigil"} run tellraw @s [{"text":"  FINAL OUTCOME RECORD","color":"#C89BFF","bold":true}]
+execute if data storage sf:temp archive.profile.finale{state:"completed",ending:"vigil"} run tellraw @s [{"text":"  ◆ ","color":"#C89BFF"},{"text":"A Letter, Unsent","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 18"},"hover_event":{"action":"show_text","value":{"text":"Vigil ending · click for a replacement copy.","color":"#C89BFF"}}}]
+
 tellraw @s [{"text":"  ◀ Guidebook","color":"dark_gray","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 7"}}]
 tellraw @s [{"text":"═════════════════════════════","color":"dark_gray"}]

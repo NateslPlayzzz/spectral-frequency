@@ -54,33 +54,45 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-040 | Complete kit consumes no claim and creates no duplicates | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-041 | Access equipment reissues without claim consumption | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-042 | Requisition claims remain exhausted after reload/reconnect | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
-| REG-043 | Schema 101 initializes on a clean world | ☐ | ☐ | N/A | ☐ | ☐ | Pending clean-world pass |
-| REG-044 | Pre-schema-to-100-to-101 migration chain runs once | N/A | N/A | ☐ | ☐ | ☐ | Existing schema-100 migration tested; pre-schema fixture pending |
+| REG-043 | Schema 102 initializes on a clean world | ☐ | ☐ | N/A | ☐ | ☐ | Pending clean-world pass |
+| REG-044 | Pre-schema-to-100-to-101-to-102 migration chain runs once | N/A | N/A | ☐ | ☐ | ☐ | 101-to-102 tested; complete fixture pending |
 | REG-045 | Fast loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
 | REG-046 | One-second loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
 | REG-047 | Five-second loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
 | REG-048 | Thirty-second loop self-reschedules indefinitely | ☐ | ☐ | ☐ | ☐ | ☐ | Tested after wrapper fix |
 | REG-049 | Soft uninstall preserves progression and equipment | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-050 | Re-enable restores runtime exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
-| REG-051 | Health report detects stale runtime state | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
+| REG-051 | Health report detects stale runtime state | ☐ | ☐ | ☐ | ☐ | ☐ | Standard and finale diagnostics tested |
 | REG-052 | Recovered Document duplicate protection | ☐ | ☐ | ☐ | ☐ | ☐ | Shallow classification tested; restricted and deep pools pending |
 | REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player reload persistence tested |
-| REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
-| REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
+| REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | UUID authority implemented; multiplayer branch pending |
+| REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Guard paths tested; complete branches pending |
 | REG-056 | Guarded full purge removes only explicitly selected data | ☐ | ☐ | ☐ | ☐ | ☐ | Safety gate tested; destructive cycle pending |
-| REG-057 | Clean reinstall rebuilds schema 101 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
+| REG-057 | Clean reinstall rebuilds schema 102 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
 | REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
 | REG-059 | Individual player repair preserves permanent progression | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
 | REG-060 | Online-player bulk repair preserves independent profiles | N/A | ☐ | ☐ | ☐ | ☐ | Single-player path tested; multiplayer pending |
 | REG-061 | Memory bossbar repair restores ownership, visibility, and value | ☐ | ☐ | ☐ | ☐ | ☐ | Tested after visibility fix |
 | REG-062 | Scheduler repair permanently restores all recurring loops | ☐ | ☐ | ☐ | ☐ | ☐ | Thirty-second failure and recovery tested |
 | REG-063 | Standard-case repair safely closes an active investigation | ☐ | ☐ | ☐ | ☐ | ☐ | Inactive-case path tested; active case pending |
-| REG-064 | Standard-case repair refuses during Forgotten finale state | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; finale regression pending |
+| REG-064 | Standard-case repair refuses during authoritative finale state | ☐ | ☐ | ☐ | ☐ | ☐ | Storage-authority refusal implemented |
 | REG-065 | Physical document copies retain stable custom-data identities | ☐ | ☐ | ☐ | ☐ | ☐ | Documents 1 and 4 tested |
 | REG-066 | Lost physical documents can be reissued without changing archive ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
 | REG-067 | Locked archive triggers cannot bypass ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
-| REG-068 | Restricted and Black Archive progression gates prevent early spoilers | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; staged progression test pending |
-
+| REG-068 | Restricted and Black Archive progression gates prevent early spoilers | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; staged progression pending |
+| REG-069 | Finale activation requires deliberate Guidebook confirmation | ☐ | ☐ | ☐ | ☐ | ☐ | Automatic awakening removed and reload tested |
+| REG-070 | Finale authority permits only one stored UUID witness | N/A | ☐ | ☐ | ☐ | ☐ | Stale-tag cleanup tested; multiplayer pending |
+| REG-071 | Active finale locks cases, tutorials, Radio assignments, and offers | ☐ | ☐ | ☐ | ☐ | ☐ | `repair_required` lock path tested |
+| REG-072 | Pull and threshold remain bound to recorded dimension and location | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live traversal pending |
+| REG-073 | Manifest and Vigil pause safely outside the required area | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live phase pending |
+| REG-074 | Final choice requires actual view ray and sustained intent | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live choice pending |
+| REG-075 | Protocol outcome persists only for its witness | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; complete branch pending |
+| REG-076 | Vigil outcome persists only for its witness | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; complete branch pending |
+| REG-077 | Finale epilogue survives reload and reconnect | ☐ | ☐ | ☐ | ☐ | ☐ | Loop-driven recovery implemented; branch pending |
+| REG-078 | Ending-document ownership and replacement are enforced | ☐ | ☐ | ☐ | ☐ | ☐ | Incomplete-profile refusal tested |
+| REG-079 | Finale repair preserves completed outcomes | ☐ | ☐ | ☐ | ☐ | ☐ | Unresolved repair tested; completed outcome pending |
+| REG-080 | Finale diagnostics detect repair-required and idle artifacts | ☐ | ☐ | ☐ | ☐ | ☐ | `repair_required` detection tested |
+| REG-081 | Finale nonparticipants receive no branch effects or advancements | N/A | ☐ | ☐ | ☐ | ☐ | Architecturally isolated; multiplayer pending |
 ## Release-candidate test worlds
 
 Keep disposable fixtures for:

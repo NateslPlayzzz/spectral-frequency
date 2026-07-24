@@ -8,9 +8,12 @@ execute store result score #hb_1s sf.data run time query gametime
 # --- Online Memory bossbar ownership ---
 function sf:ui/rebuild_bars
 
-# --- Queued tutorial startup ---
-execute unless data storage sf:case {state:"active"} as @a[tag=sf.tutorial_waiting,scores={sf.quest=1}] at @s run function sf:quest/tutorial_retry
 
+# --- Persistent signal recovery ---
+execute if data storage sf:forgotten {state:"idle"} as @a[tag=spectral.sf_init,tag=!sf.signal_checked] run function sf:signal/recover
+
+# --- Per-player signal tracking ---
+execute if data storage sf:forgotten {state:"idle"} as @a[tag=sf.seeking] at @s run function sf:signal/seek
 # --- Anchor placement ---
 execute as @a[scores={sf.anchor=1..}] at @s run function sf:memory/place_anchor
 scoreboard players reset @a sf.anchor
@@ -62,11 +65,20 @@ execute as @e[type=marker,tag=sf.sensor] at @s run function sf:tool/sensor/tick
 execute as @e[type=marker,tag=sf.bench] at @s run particle minecraft:wax_off ~ ~0.3 ~ 0.3 0.3 0.3 0.0 3
 
 # --- Persistent signal recovery ---
-execute as @a[tag=spectral.sf_init,tag=!sf.signal_checked] run function sf:signal/recover
+execute if data storage sf:forgotten {state:"idle"} as @a[tag=spectral.sf_init,tag=!sf.signal_checked] run function sf:signal/recover
 
 # --- Per-player signal tracking ---
-execute as @a[tag=sf.seeking] at @s run function sf:signal/seek
+execute if data storage sf:forgotten {state:"idle"} as @a[tag=sf.seeking] at @s run function sf:signal/seek
 
-# --- Forgotten ---
-execute as @a[tag=spectral.sf_init,scores={sf.recon_pull=1..}] at @s run function sf:forgotten/pull_tick
-execute as @a[tag=sf.forgotten_witness,scores={sf.forgotten_phase=2}] at @s run function sf:forgotten/vigil_tick
+# --- Forgotten authority and resumable phases ---
+function sf:forgotten/authority/refresh
+
+execute if data storage sf:forgotten {state:"pull"} as @a[tag=sf.forgotten_witness,scores={sf.recon_pull=1..}] at @s run function sf:forgotten/pull_tick
+
+execute if data storage sf:forgotten {state:"threshold"} as @a[tag=sf.forgotten_witness] at @s run function sf:forgotten/threshold_tick
+
+execute if data storage sf:forgotten {state:"manifest"} as @a[tag=sf.forgotten_witness] at @s run function sf:forgotten/manifest_tick
+
+execute if data storage sf:forgotten {state:"vigil"} as @a[tag=sf.forgotten_witness] at @s run function sf:forgotten/vigil_tick
+
+execute if data storage sf:forgotten {state:"epilogue"} as @a[tag=sf.forgotten_witness] at @s run function sf:forgotten/epilogue_tick

@@ -14,4 +14,4 @@ execute as @a[tag=spectral.sf_init,scores={sf.flashlight_on=1..}] at @s run func
 # Idle roaming is dispatched exactly once.
 execute as @e[type=marker,tag=sf.ghost,tag=!sf.forgotten,tag=sf.state.idle,tag=sf.roaming] at @s run function sf:ghost/roam/drift
 
-execute as @a[tag=sf.forgotten_witness,scores={sf.forgotten_phase=3}] at @s run function sf:forgotten/choice_tick
+execute if data storage sf:forgotten {state:"choice"} as @a[tag=sf.forgotten_witness,scores={sf.forgotten_phase=4}] at @s run function sf:forgotten/choice_tick

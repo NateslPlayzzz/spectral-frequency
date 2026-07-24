@@ -6,11 +6,12 @@
 
 $execute unless data storage sf:player_data entries[{uuid:$(uuid)}] run tag @s add sf.new_record
 
-$execute unless data storage sf:player_data entries[{uuid:$(uuid)}] run data modify storage sf:player_data entries append value {uuid:$(uuid),profile_schema:101,shards:[],documents:[],quest:0,unlocked:[],requisition:{claims_used:0}}
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}] run data modify storage sf:player_data entries append value {uuid:$(uuid),profile_schema:102,shards:[],documents:[],quest:0,unlocked:[],requisition:{claims_used:0},finale:{state:"none",ending:"none",document:false}}
 
-$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].profile_schema run data modify storage sf:player_data entries[{uuid:$(uuid)}].profile_schema set value 101
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].profile_schema run data modify storage sf:player_data entries[{uuid:$(uuid)}].profile_schema set value 102
 
-$execute if data storage sf:player_data entries[{uuid:$(uuid),profile_schema:100}] run data modify storage sf:player_data entries[{uuid:$(uuid)}].profile_schema set value 101
+$execute if data storage sf:player_data entries[{uuid:$(uuid),profile_schema:100}] run data modify storage sf:player_data entries[{uuid:$(uuid)}].profile_schema set value 102
+$execute if data storage sf:player_data entries[{uuid:$(uuid),profile_schema:101}] run data modify storage sf:player_data entries[{uuid:$(uuid)}].profile_schema set value 102
 
 $execute unless data storage sf:player_data entries[{uuid:$(uuid)}].shards run data modify storage sf:player_data entries[{uuid:$(uuid)}].shards set value []
 
@@ -23,3 +24,14 @@ $execute unless data storage sf:player_data entries[{uuid:$(uuid)}].unlocked run
 $execute unless data storage sf:player_data entries[{uuid:$(uuid)}].requisition run data modify storage sf:player_data entries[{uuid:$(uuid)}].requisition set value {claims_used:0}
 
 $execute unless data storage sf:player_data entries[{uuid:$(uuid)}].requisition.claims_used run data modify storage sf:player_data entries[{uuid:$(uuid)}].requisition.claims_used set value 0
+
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].finale run data modify storage sf:player_data entries[{uuid:$(uuid)}].finale set value {state:"none",ending:"none",document:false}
+
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].finale.state run data modify storage sf:player_data entries[{uuid:$(uuid)}].finale.state set value "none"
+
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].finale.ending run data modify storage sf:player_data entries[{uuid:$(uuid)}].finale.ending set value "none"
+
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].finale.document run data modify storage sf:player_data entries[{uuid:$(uuid)}].finale.document set value false
+
+# Existing reconstructed Investigators become finale-ready without entering it.
+$execute if entity @s[tag=spectral.reconstructed] if data storage sf:player_data entries[{uuid:$(uuid),finale:{state:"none",ending:"none"}}] run data modify storage sf:player_data entries[{uuid:$(uuid)}].finale.state set value "ready"

@@ -15,9 +15,7 @@
 
 execute unless data storage sf:system {enabled:true} run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"SF REPAIR","color":"#7A5CFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Runtime is disabled. Case repair was not performed.","color":"#FFC36B"}]
 
-execute if entity @e[tag=sf.forgotten] run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"SF REPAIR","color":"#7A5CFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Case repair refused: a Forgotten finale entity is loaded.","color":"#FF8E8E"},{"text":" Use the dedicated finale repair path after that system is stabilized.","color":"gray"}]
-execute if entity @a[tag=sf.forgotten_witness] run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"SF REPAIR","color":"#7A5CFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Case repair refused: a Forgotten witness sequence is active.","color":"#FF8E8E"}]
-
+execute unless data storage sf:forgotten {state:"idle"} run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"SF REPAIR","color":"#7A5CFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Case repair refused: the Forgotten lifecycle is active or awaiting repair.","color":"#FF8E8E"},{"text":" Use /function sf:dev/repair/finale instead.","color":"gray"}]
 # Restore any online Taken players before clearing case ownership.
 execute as @a[scores={sf.claimed=1..}] run function sf:core/restore_player
 

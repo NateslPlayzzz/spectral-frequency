@@ -5,6 +5,8 @@ execute unless score @s sf.quest matches 100.. run return run tellraw @s [{"text
 
 execute if score @s sf.claimed matches 1.. run return 0
 
+execute unless data storage sf:forgotten {state:"idle"} run return run tellraw @s [{"text":"◈ ","color":"#8B0000"},{"text":"Standard investigations are locked while the Reconstruction finale is active or awaiting repair.","color":"gray"}]
+
 execute if data storage sf:case {state:"active"} run return run tellraw @s [{"text":"◈ ","color":"#7A5CFF"},{"text":"A case is already active. Resolve or clear it first.","color":"red"}]
 
 function sf:case/roll_ghost

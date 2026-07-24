@@ -7,9 +7,9 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [x] Historical Beta state preserved on `archive/beta-13`
 - [x] Authoritative development branch created
 - [x] Current stabilization baseline imported
-- [ ] All subsequent changes tracked with focused commits
-- [ ] Draft release pull request opened
-- [ ] `main` protected from force pushes and accidental deletion
+- [x] All subsequent changes tracked with focused commits
+- [x] Draft release pull request opened
+- [x] `main` protected from force pushes and accidental deletion
 - [ ] Final release tag created
 
 ## Technical target
@@ -27,7 +27,7 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 - [ ] Clean single-player installation passes
 - [ ] Clean multiplayer installation passes
-- [ ] Existing development world migrates to current schema
+- [x] Existing development world migrates to current schema
 - [ ] Repeated `/reload` is idempotent
 - [ ] Reconnect preserves permanent state
 - [ ] Soft uninstall preserves progression and equipment
@@ -111,7 +111,9 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 ## Recovered Documents
 
-- - [x] Persistent archive implemented
+## Recovered Documents
+
+- [x] Persistent archive implemented
 - [x] Duplicate protection implemented
 - [x] Lost physical books are recoverable
 - [ ] Document ordering respects spoiler tiers
@@ -121,11 +123,13 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 ## Finale
 
-- [ ] Activation cannot occur accidentally
+## Finale
+
+- [x] Activation cannot occur accidentally
 - [ ] Intended witnesses are isolated
 - [ ] Nonparticipants are unaffected
 - [ ] Both branches complete safely
-- [ ] Scheduled epilogues recover after reload/reconnect
+- [ ] Epilogues recover after reload/reconnect
 - [ ] Ending documents are delivered correctly
 - [ ] All finale entities and tags clean up
 - [ ] Completion state persists per intended player

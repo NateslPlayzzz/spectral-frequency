@@ -37,7 +37,9 @@ execute if score @s sf.guide matches 5 run function sf:guide/page/hunts
 execute if score @s sf.guide matches 6 run function sf:guide/page/reconstruct
 execute if score @s sf.guide matches 7 run function sf:guide/open
 execute if score @s sf.guide matches 8 run function sf:archive/open
+execute if score @s sf.guide matches 9 run function sf:forgotten/request
 execute if score @s sf.guide matches 11..16 run function sf:archive/request
+execute if score @s sf.guide matches 17..18 run function sf:forgotten/document/request
 scoreboard players set @s sf.guide 0
 scoreboard players enable @s sf.guide
 execute if score @s sf.signal matches 1.. run function sf:signal/request

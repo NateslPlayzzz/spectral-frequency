@@ -55,7 +55,13 @@ data remove storage sf:case ghost
 data remove storage sf:reconstruct all_shards
 data remove storage sf:signal target
 data remove storage sf:forgotten thin
-data remove storage sf:world ending
+data remove storage sf:forgotten threshold
+data remove storage sf:forgotten manifest
+data remove storage sf:forgotten state
+data remove storage sf:forgotten witness
+data remove storage sf:forgotten dimension
+data remove storage sf:forgotten origin
+data remove storage sf:forgotten ending
 
 # ------------------------------------------------------------
 # GENERATED DEFINITIONS AND RECIPES
@@ -120,6 +126,8 @@ data remove storage sf:temp spawn
 data remove storage sf:temp uchk
 data remove storage sf:temp uuid
 data remove storage sf:temp vline
+data remove storage sf:temp archive
+data remove storage sf:temp finale
 
 # ------------------------------------------------------------
 # SYSTEM TOMBSTONE

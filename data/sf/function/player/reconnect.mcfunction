@@ -57,3 +57,5 @@ tag @s add spectral.sf_init
 tag @s remove sf.new_record
 
 function sf:ui/rebuild_bars
+# Reattach the authoritative finale witness immediately after reconnect.
+function sf:forgotten/authority/refresh

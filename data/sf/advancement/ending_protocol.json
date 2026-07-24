@@ -1,10 +1,25 @@
 {
-    "display": {
-      "icon": {"id": "minecraft:sculk_shrieker"},
-      "title": {"text": "Protocol", "color": "#5AC8C8"},
-      "description": {"text": "You finished what UMBRA began.", "color": "#8A8A98"},
-      "show_toast": true, "announce_to_chat": true, "frame": "challenge", "hidden": true
+  "display": {
+    "icon": {
+      "id": "minecraft:sculk_shrieker"
     },
-    "parent": "sf:reconstruct",
-    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+    "title": {
+      "text": "Protocol",
+      "color": "#5AC8C8"
+    },
+    "description": {
+      "text": "You finished what UMBRA began.",
+      "color": "#8A8A98"
+    },
+    "show_toast": true,
+    "announce_to_chat": false,
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "sf:reconstruct",
+  "criteria": {
+    "x": {
+      "trigger": "minecraft:impossible"
+    }
   }
+}

@@ -1,2 +1,5 @@
-# forgotten/vigil_begin.mcfunction — scheduled; runs in server context, re-bind to witness
-execute as @a[tag=sf.forgotten_witness] at @s run function sf:forgotten/vigil_start
+# forgotten/vigil_begin.mcfunction
+# Compatibility entry point. The active runtime no longer depends on schedules.
+
+function sf:forgotten/authority/refresh
+execute if data storage sf:forgotten {state:"manifest"} as @a[tag=sf.forgotten_witness] run function sf:forgotten/vigil_start

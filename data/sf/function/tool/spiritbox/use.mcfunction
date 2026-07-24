@@ -1,26 +1,13 @@
-# tool/spiritbox/report.mcfunction
-# read_type 3 = Spirit Box.
+# tool/spiritbox/use.mcfunction
+# Runs as the player at their current position.
 
-scoreboard players set @s sf.read_type 3
-scoreboard players operation @s sf.read_val = #box_val sf.data
-scoreboard players set @s sf.read_timer 50
+execute unless data storage sf:case {state:"active"} run return run function sf:tool/evidence/no_case
+execute unless entity @s[tag=sf.case_participant] run return run function sf:tool/evidence/not_participant
 
-particle minecraft:sculk_soul ~ ~1 ~ 0.2 0.3 0.2 0.0 4
+scoreboard players set @s sf.tool_cd 12
 
-execute if score @s sf.read_val matches 1 run function sf:tool/spiritbox/voice
-execute if score @s sf.read_val matches 0 run playsound minecraft:block.note_block.snare player @s ~ ~ ~ 0.4 0.5
+# Spirit Box responses require an actual dark location.
+execute unless predicate sf:in_darkness run return run function sf:tool/spiritbox/too_bright
 
-tag @s remove sf.evidence_new
-
-execute if score @s sf.read_val matches 1 unless entity @a[tag=sf.case_participant,scores={sf.log_box=1..}] run tag @s add sf.evidence_new
-
-execute if entity @s[tag=sf.evidence_new] run function sf:sfx/evidence_confirm
-
-execute if score @s sf.read_val matches 1 run scoreboard players set @a[tag=sf.case_participant] sf.log_box 1
-execute if score @s sf.read_val matches 1 run scoreboard players set @s sf.ev_box 1
-execute if score @s sf.read_val matches 1 run advancement grant @s only sf:first_evidence
-execute if score @s sf.read_val matches 1 run function sf:quest/check_all_evidence
-
-execute if entity @s[tag=sf.evidence_new] run tellraw @a[tag=sf.case_participant] [{"text":"[","color":"dark_gray"},{"text":"EVIDENCE","color":"#9BFFB0","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Spirit Box Response confirmed.","color":"white"}]
-
-tag @s remove sf.evidence_new
+execute if entity @e[type=minecraft:marker,tag=sf.ghost,distance=..8] run function sf:tool/spiritbox/read
+execute unless entity @e[type=minecraft:marker,tag=sf.ghost,distance=..8] run function sf:tool/spiritbox/read_none

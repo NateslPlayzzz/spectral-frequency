@@ -27,6 +27,8 @@ All notable changes to Spectral Frequency will be documented in this file.
 - Fixed channels continuing against an unrelated nearby manifestation.
 - Fixed stale containment operators and targets surviving interrupted runtime state.
 - Fixed fresh installation not explicitly initializing the standard case state.
+- Fixed the Spirit Box activation file being overwritten by reporting logic, preventing it from scanning nearby manifestations or enforcing darkness.
+- Fixed Spirit Box silence incorrectly granting permanent evidence discovery.
 
 ## [Beta 13.0] - February 5, 2026
 ### "Foundation"

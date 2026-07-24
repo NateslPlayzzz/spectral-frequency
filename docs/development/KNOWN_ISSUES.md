@@ -5,7 +5,6 @@ This file separates confirmed defects, release-audit items, accepted limitations
 ## Confirmed release blockers
 
 - Complete Protocol and Vigil branch regression has not yet been performed in disposable finale worlds.
-- Multiplayer finale witness isolation and nonparticipant behavior require formal testing.
 - Guarded full purge is implemented, but the complete destructive purge/reinstall cycle has not passed disposable-world regression.
 
 
@@ -20,7 +19,7 @@ This file separates confirmed defects, release-audit items, accepted limitations
 - Ending books and witness ownership
 - Full Smithed entity hygiene
 - Unloaded-chunk behavior in diagnostics and cleanup
-- Clean-world, upgraded-world, reload, reconnect, and server testing
+- Upgraded-world, reconnect, and server testing
 - Performance under multiple online investigators
 - Terminology consistency across UI, Guidebook, wiki, and release materials
 - Full twelve-fragment containment regression
@@ -32,7 +31,6 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 - Exact activation ownership, one-operator authority, target binding, normal balance, aggressive balance, Hunt interruption, reload interruption, diagnostics, repair, and manual teardown are implemented and tested.
 - Formal multiplayer operator contention and evidence-ownership testing remains required.
-- The tutorial seven-Memory curve requires one post-authority regression.
 - All twelve standard fragments require a formal containment pass.
 - Disconnect, Taken-state, case-failure, administrative-repair, and soft-uninstall interruption paths require formal regression.
 - Loaded-entity cleanup cannot guarantee removal of target tags from unloaded manifestations.
@@ -72,6 +70,8 @@ This file separates confirmed defects, release-audit items, accepted limitations
 - Resource-pack presentation is deferred until mechanics and final item roster stabilize
 - Administrative health counts describe loaded runtime entities, not guaranteed world-global entity totals
 - One active containment channel at a time
+- Multiplayer systems are designed and architecturally scoped for multiplayer, but complete live multiplayer compatibility has not been formally verified
+- Multiplayer users should keep backups, exercise appropriate caution, and report reproducible multiplayer defects
 
 ## Post-1.0 candidates
 

@@ -30,6 +30,21 @@ Investigators receive field assignments, locate manifestations, collect evidence
 - **Project UMBRA narrative content**, recovered documents, and branching endgame structure
 - **Reload-safe persistence**, migration support, diagnostics, and soft uninstall controls
 
+## Multiplayer status
+
+Spectral Frequency is designed to support multiplayer investigations, including participant-scoped cases, shared case evidence, personal progression, Hunts, containment authority, and Remnant revival.
+
+Multiplayer compatibility has not yet been exhaustively verified in a complete live multi-player regression. Multiplayer-specific bugs or unusual edge cases may still occur.
+
+Players using Spectral Frequency in multiplayer should:
+
+- Keep a current backup of important worlds.
+- Use multiplayer with appropriate caution.
+- Report reproducible multiplayer problems through the GitHub issue tracker.
+- Include player count, server software, reproduction steps, and whether a disconnect or `/reload` occurred.
+
+Multiplayer is supported by design, but it is not currently advertised as completely regression-tested.
+
 ## Development target
 
 | Component | Target |

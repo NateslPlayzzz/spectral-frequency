@@ -25,25 +25,25 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 ## Installation and persistence
 
-- [ ] Clean single-player installation passes
+- [x] Clean single-player installation passes
 - [ ] Clean multiplayer installation passes
 - [x] Existing development world migrates to current schema
-- [ ] Repeated `/reload` is idempotent
+- [x] Repeated `/reload` is idempotent
 - [ ] Reconnect preserves permanent state
 - [ ] Soft uninstall preserves progression and equipment
 - [ ] Re-enable restores runtime once
 - [ ] Guarded full purge works only with explicit intent
 - [ ] Clean reinstall after purge passes
-- [ ] `/function sf:dev/health` reports healthy after sustained runtime
+- [x] `/function sf:dev/health` reports healthy after sustained runtime
 
 ## Onboarding
 
-- [ ] First join communicates the premise clearly
-- [ ] Tutorial starts reliably
+- [x] First join communicates the premise clearly
+- [x] Tutorial starts reliably
 - [ ] Tutorial queues behind an existing case
 - [ ] All tutorial objectives can be understood without external documentation
-- [ ] Tutorial containment is fair and deterministic
-- [ ] Tutorial rewards establish a usable starting kit
+- [x] Tutorial containment is fair and deterministic
+- [x] Tutorial rewards establish a usable starting kit
 - [ ] Guidebook terminology matches live mechanics
 - [ ] A new player can request their first standard assignment unaided
 
@@ -73,7 +73,7 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [x] Manual teardown removes containment authority
 - [x] Diagnostics detect stale containment state
 - [x] Nondestructive containment repair works
-- [ ] Tutorial containment still costs exactly seven Memory
+- [x] Tutorial containment still costs exactly seven Memory
 - [ ] Two-player operator contention works
 - [ ] Multiplayer evidence ownership works
 - [ ] Disconnect and Taken-state interruption work

@@ -1,0 +1,2 @@
+title @s actionbar ["",{"text":"the shards pull harder  \u00b7  ","color":"#8B0000"},{"score":{"name":"@s","objective":"sf.sig_dist"},"color":"#C77"},{"text":"m","color":"dark_gray"}]
+execute at @s run particle minecraft:soul ~ ~1 ~ 0.3 0.5 0.3 0.01 2

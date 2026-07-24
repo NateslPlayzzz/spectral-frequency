@@ -1,0 +1,1 @@
+$data modify storage sf:temp case.id set from storage sf:ghost_defs index[$(idx)]

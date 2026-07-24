@@ -1,0 +1,3 @@
+# append a quest record if none exists for this uuid (reuses player_data.entries)
+$execute unless data storage sf:player_data entries[{uuid:$(quuid)}] run data modify storage sf:player_data entries append value {uuid:$(quuid),shards:[],quest:0,unlocked:[]}
+$execute unless data storage sf:player_data entries[{uuid:$(quuid)}].quest run data modify storage sf:player_data entries[{uuid:$(quuid)}].quest set value 0

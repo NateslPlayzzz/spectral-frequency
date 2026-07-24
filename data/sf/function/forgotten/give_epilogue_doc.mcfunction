@@ -1,0 +1,1 @@
+$function sf:forgotten/epilogue_doc_$(ending)

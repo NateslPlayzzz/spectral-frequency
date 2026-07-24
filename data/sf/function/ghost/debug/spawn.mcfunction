@@ -1,0 +1,2 @@
+# ghost/debug/spawn.mcfunction — summons a test ghost at the runner
+summon marker ~ ~ ~ {Tags:["sf.ghost","spectral.anomaly","sf.state.idle","smithed.entity","smithed.strict"],data:{sf:{ghost_id:"test"}}}

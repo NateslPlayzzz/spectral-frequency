@@ -1,0 +1,1 @@
+$execute if data storage sf:player_data entries[{uuid:$(quuid)}] store result score @s sf.quest run data get storage sf:player_data entries[{uuid:$(quuid)}].quest

@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Veil Shard",
+                  "color": "#C89BFF",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "material": "veil_shard"
+                  }
+                },
+                "minecraft:item_model": "sf:veil_shard",
+                "minecraft:lore": [
+                  {
+                    "text": "A sliver of the Veil itself, crystallized.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "It hums against forgetting.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

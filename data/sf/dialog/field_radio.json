@@ -1,0 +1,101 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "UMBRA FIELD RADIO",
+    "color": "#5AC8C8",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Field Radio",
+    "color": "#5AC8C8"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "SECURE FIELD CHANNEL // VANCE",
+        "color": "#6A6A78",
+        "bold": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Request an assignment, review field status, or contact UMBRA logistics.",
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Each Investigator may track one signal. Only one live investigation can currently remain open at a time.",
+        "color": "#FFC36B",
+        "italic": true
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "text": "REQUEST ASSIGNMENT",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "tooltip": "Ask Vance to locate a nearby manifestation.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 1"
+      }
+    },
+    {
+      "label": {
+        "text": "FIELD STATUS",
+        "color": "#5AC8C8"
+      },
+      "tooltip": "Review your active case, assigned signal, or Radio state.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 2"
+      }
+    },
+    {
+      "label": {
+        "text": "EQUIPMENT REQUISITION",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "Recover missing essential investigation equipment.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 5"
+      }
+    },
+    {
+      "label": {
+        "text": "CANCEL SIGNAL",
+        "color": "#FFC36B"
+      },
+      "tooltip": "Release the signal currently assigned to you.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 3"
+      }
+    },
+    {
+      "label": {
+        "text": "CLOSE CHANNEL",
+        "color": "#6A6A78"
+      },
+      "tooltip": "Close the Field Radio.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 4"
+      }
+    }
+  ]
+}

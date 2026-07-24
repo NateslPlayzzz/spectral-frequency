@@ -1,0 +1,74 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "RESTRICTED FORMULAS",
+    "color": "#FFC36B",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Restricted Formulas",
+    "color": "#FFC36B"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Restricted equipment requires Veil residue and explicit authorization. Possessing the ingredients does not bypass its progression gate.",
+        "color": "gray"
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "text": "WARDING TOTEM",
+        "color": "#FFC36B",
+        "bold": true
+      },
+      "tooltip": "1 Redstone · 1 Amethyst · 2 Ectoplasm · 1 Veil Shard",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 7"
+      }
+    },
+    {
+      "label": {
+        "text": "SOUL INCENSE",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "tooltip": "3 Ectoplasm · 1 Veil Shard",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 8"
+      }
+    },
+    {
+      "label": {
+        "text": "ECHO LENS",
+        "color": "#C89BFF",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Redstone · 1 Glass · 2 Amethyst · 3 Ectoplasm · 3 Veil Shards",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 9"
+      }
+    },
+    {
+      "label": {
+        "text": "BACK TO BENCH",
+        "color": "#8A8A98"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 93"
+      }
+    }
+  ]
+}

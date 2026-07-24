@@ -1,0 +1,28 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {"text":"Emergency Beacon","color":"#FFC36B","italic":false},
+                "minecraft:custom_data": {"sf":{"item":"beacon"}},
+                "minecraft:item_model": "sf:emergency_beacon",
+                "minecraft:lore": [
+                  {"text":"Burns through the static. One use.","color":"gray","italic":false},
+                  {"text":"Calls a signal immediately \u2014 no waiting.","color":"dark_gray","italic":false},
+                  {"text":"Right-click to consume.","color":"dark_gray","italic":false}
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

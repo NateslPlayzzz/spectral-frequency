@@ -1,0 +1,1 @@
+execute as @a[tag=sf.forgotten_witness] run function sf:forgotten/epilogue_protocol_say

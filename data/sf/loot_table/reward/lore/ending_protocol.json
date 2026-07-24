@@ -1,0 +1,23 @@
+{
+  "pools": [
+    { "rolls": 1, "entries": [
+      { "type": "minecraft:item", "name": "minecraft:written_book",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:written_book_content": {
+              "title": "UMBRA: Asset Debrief",
+              "author": "UMBRA // Internal",
+              "pages": [
+                "RE: Anomaly 7C-\"Thorne\"\nSTATUS: Re-contained. Frame integrity nominal.\n\nField agent performance exceeds projections. The asset was reassembled and re-sealed without organizational exposure. Commendable.",
+                "Note for the agent, off the record:\n\nYou did the right thing. He was not a man anymore. He was a hole shaped like one. The Frame is where holes like that belong.",
+                "We are extending you a permanent contract. There are other Frames. Other holes. Thorne was one fracture in something far larger, and that larger thing has a name we do not write down.",
+                "It noticed you, down there. It notices everyone who gets close. We'll be in touch about what comes next.\n\n\u2014 keep this quiet \u2014\nDIRECTOR CHEN",
+                "[a second page is paperclipped behind the first, in different handwriting]\n\nHe said your name at the end. Before it sealed. I didn't tell Chen that part.\n\n- E.V."
+              ]
+            }
+          }}
+        ]
+      }
+    ]}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Resonance Key",
+                  "color": "#9BFFB0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "reskey"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Attune a barrel, or assemble within one.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Point at a barrel and right-click.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:resonance_key"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "display": {
+      "icon": {"id": "minecraft:echo_shard"},
+      "title": {"text": "The Edge of Erasure", "color": "#8B0000"},
+      "description": {"text": "Fall to the brink of being forgotten \u2014 and come back.", "color": "#8A8A98"},
+      "show_toast": true, "announce_to_chat": false, "frame": "goal"
+    },
+    "parent": "sf:survive_hunt",
+    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+  }

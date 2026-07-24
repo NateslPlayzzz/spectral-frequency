@@ -1,0 +1,2 @@
+# grant Full Spectrum once all six evidence types have been logged at least once across play
+execute if score @s sf.ev_emf matches 1.. if score @s sf.ev_thermo matches 1.. if score @s sf.ev_box matches 1.. if score @s sf.ev_writing matches 1.. if score @s sf.ev_uv matches 1.. if score @s sf.ev_echo matches 1.. run advancement grant @s only sf:all_evidence

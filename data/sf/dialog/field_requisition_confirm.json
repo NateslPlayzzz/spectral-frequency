@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "CONFIRM EMERGENCY CLAIM",
+    "color": "#FFC36B",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Confirm Requisition",
+    "color": "#FFC36B"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "This request will restore every missing field instrument and consume one emergency claim.",
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "No claim is consumed when your field instruments are already complete. Access equipment is always restored separately.",
+        "color": "#5AC8C8",
+        "italic": true
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "text": "CONSUME ONE CLAIM",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 10"
+      }
+    },
+    {
+      "label": {
+        "text": "RETURN WITHOUT CLAIMING",
+        "color": "#8A8A98"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 5"
+      }
+    }
+  ]
+}

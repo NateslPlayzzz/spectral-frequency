@@ -1,0 +1,106 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "UMBRA EQUIPMENT REQUISITION",
+    "color": "#D8C8A0",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Equipment Requisition",
+    "color": "#D8C8A0"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "FIELD LOGISTICS // LOSS AND DAMAGE",
+        "color": "#6A6A78",
+        "bold": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "UMBRA provides two emergency field-kit claims per Investigator. A claim is used only when missing investigation instruments are restored.",
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Guidebooks, Field Radios, and Resonance Keys are access equipment and may be reissued without consuming a claim.",
+        "color": "#5AC8C8",
+        "italic": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "After both emergency claims are used, missing field instruments must be constructed through an Attuned Bench.",
+        "color": "#FFC36B",
+        "italic": true
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "text": "EMERGENCY FIELD RECOVERY",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "tooltip": "Review and confirm the use of an emergency claim.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 13"
+      }
+    },
+    {
+      "label": {
+        "text": "AUDIT FIELD KIT",
+        "color": "#5AC8C8"
+      },
+      "tooltip": "Review missing equipment and remaining claims.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 11"
+      }
+    },
+    {
+      "label": {
+        "text": "ATTUNED BENCH POLICY",
+        "color": "#C89BFF"
+      },
+      "tooltip": "Review material tiers and replacement crafting.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 12"
+      }
+    },
+    {
+      "label": {
+        "text": "BACK TO FIELD RADIO",
+        "color": "#8A8A98"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 6"
+      }
+    },
+    {
+      "label": {
+        "text": "CLOSE CHANNEL",
+        "color": "#6A6A78"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.signal set 4"
+      }
+    }
+  ]
+}

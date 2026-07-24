@@ -1,0 +1,3 @@
+# ui/hud_thermo.mcfunction — show °C-style value, cold reads blue
+execute if score @s sf.read_val matches ..5 run title @s actionbar ["",{"text":"\u25c8 TEMP  ","color":"gray"},{"score":{"name":"@s","objective":"sf.read_val"},"color":"aqua","bold":true},{"text":"\u00b0","color":"aqua"}]
+execute if score @s sf.read_val matches 6.. run title @s actionbar ["",{"text":"\u25c8 TEMP  ","color":"gray"},{"score":{"name":"@s","objective":"sf.read_val"},"color":"gray"},{"text":"\u00b0","color":"gray"}]

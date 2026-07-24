@@ -1,0 +1,20 @@
+{
+  "pools": [
+    { "rolls": 1, "entries": [
+      { "type": "minecraft:item", "name": "minecraft:written_book",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:written_book_content": {
+              "title": "Recovered: Log 7-A",
+              "author": "Dr. S. Thorne",
+              "pages": [
+                "Day 41.\n\nThe readings climb when no one is in the chamber. As if the absence itself is what stirs it. Vance would say I'm projecting. Vance isn't the one who hears it.",
+                "I have stopped writing names down. When I write them, I forget the faces. As if the page takes them in trade.\n\nI will not write hers."
+              ]
+            }
+          }}
+        ]
+      }
+    ]}
+  ]
+}

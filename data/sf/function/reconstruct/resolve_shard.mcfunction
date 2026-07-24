@@ -1,0 +1,1 @@
+$data modify storage sf:temp grant.shard set from storage sf:ghost_defs $(id).shard

@@ -1,0 +1,17 @@
+{
+  "parent": "sf:root",
+  "criteria": {
+    "interact": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "minecraft:entity_type": "minecraft:interaction",
+          "nbt": "{Tags:[\"sf.remnant_interact\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "sf:player/revive/click"
+  }
+}

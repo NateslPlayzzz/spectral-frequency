@@ -1,0 +1,1 @@
+$tellraw @s [{"text":"\u2020 ","color":"dark_gray"},{"text":"???","color":"#8B0000","bold":true},{"text":" \u203a ","color":"dark_gray"},{"text":"$(vline)","color":"#C77","italic":true}]

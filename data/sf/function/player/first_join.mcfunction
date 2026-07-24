@@ -1,5 +1,10 @@
 # player/first_join.mcfunction
 # Runs only when a new UUID profile has just been created.
+#
+# Clearing stale identity first also repairs players who were offline during
+# a full purge and still carry old tags or advancements in player NBT.
+
+function sf:core/purge/clear_player_identity
 
 scoreboard players set @s sf.coherence 100
 scoreboard players set @s sf.coherence_band 4

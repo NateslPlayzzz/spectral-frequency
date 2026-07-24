@@ -6,7 +6,8 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 - Recovered Documents do not yet have a persistent archive or duplicate protection.
 - Finale/Forgotten lifecycle is not yet safely isolated for multiplayer witnesses.
-- Guarded full purge and explicit destructive cleanup tools are not implemented.
+- Guarded full purge is implemented, but the complete destructive purge/reinstall cycle has not passed disposable-world regression.
+
 
 ## Must audit before 1.0
 
@@ -43,8 +44,11 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 ### Full purge
 
-- Standard soft uninstall is safe and nondestructive
-- Explicit permanent-data purge still needs guarded confirmation and repair/reinstall tooling
+- Request, cancellation, timeout, and expired-confirmation safeguards are working.
+- The actual destructive purge and clean-reinstall cycle remains untested.
+- Optional equipment removal can clear online inventories and loaded dropped items.
+- Offline-player equipment cleanup is deferred until the player returns after reinstall.
+- Items stored in containers and entities or dropped items in unloaded chunks require manual cleanup.
 
 ## Accepted 1.0 limitations
 

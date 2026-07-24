@@ -67,7 +67,9 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Not implemented |
 | REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
 | REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
-| REG-056 | Guarded full purge removes only explicitly selected data | ☐ | ☐ | ☐ | ☐ | ☐ | Not implemented |
+| REG-056 | Guarded full purge removes only explicitly selected data | ☐ | ☐ | ☐ | ☐ | ☐ | Safety gate tested; destructive cycle pending |
+| REG-057 | Clean reinstall rebuilds schema 100 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
+| REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
 
 ## Release-candidate test worlds
 

@@ -1,21 +1,34 @@
 {
   "pools": [
-    { "rolls": 1, "entries": [
-      { "type": "minecraft:item", "name": "minecraft:written_book",
-        "functions": [
-          { "function": "minecraft:set_components", "components": {
-            "minecraft:written_book_content": {
-              "title": "Recovered: Security Log",
-              "author": "Chief Holloway",
-              "pages": [
-                "Frequency readings up again. Third week running. The techs say it's instrument drift. The techs have not stood Sub-Level 3 watch at 0300 and heard the door breathe.",
-                "I've started counting my men by name at the end of each shift. Not by roster. By memory.\n\nLast night I got to twelve and could not remember if there should have been thirteen.",
-                "I have requested transfer four times. The requests do not appear in the system. I am beginning to think they never left this site. I am beginning to think I won't either."
-              ]
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "sf": {
+                    "document": 4
+                  }
+                },
+                "minecraft:written_book_content": {
+                  "title": "Recovered: Security Log",
+                  "author": "Chief Holloway",
+                  "pages": [
+                    "Frequency readings up again. Third week running. The techs say it's instrument drift. The techs have not stood Sub-Level 3 watch at 0300 and heard the door breathe.",
+                    "I've started counting my men by name at the end of each shift. Not by roster. By memory.\n\nLast night I got to twelve and could not remember if there should have been thirteen.",
+                    "I have requested transfer four times. The requests do not appear in the system. I am beginning to think they never left this site. I am beginning to think I won't either."
+                  ]
+                }
+              }
             }
-          }}
-        ]
-      }
-    ]}
+          ]
+        }
+      ]
+    }
   ]
 }

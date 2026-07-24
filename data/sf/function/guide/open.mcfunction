@@ -18,6 +18,8 @@ tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Surviving Hunts","color
 
 tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Reconstruction","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 6"},"hover_event":{"action":"show_text","value":{"text":"Review the distinct fragments you have remembered."}}}]
 
+tellraw @s [{"text":"  ▶ ","color":"#C89BFF"},{"text":"Recovered Documents","color":"#D8C8A0","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 8"},"hover_event":{"action":"show_text","value":{"text":"Open your permanent recovered-record archive."}}}]
+
 tellraw @s [{"text":"  ▶ ","color":"#5AC8C8"},{"text":"UMBRA Equipment Requisition","color":"#D8C8A0","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.signal set 5"},"hover_event":{"action":"show_text","value":{"text":"Recover missing essential field equipment."}}}]
 
 tellraw @s [{"text":"═════════════════════════════","color":"dark_gray"}]

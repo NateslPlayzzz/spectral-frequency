@@ -54,8 +54,8 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-040 | Complete kit consumes no claim and creates no duplicates | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-041 | Access equipment reissues without claim consumption | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-042 | Requisition claims remain exhausted after reload/reconnect | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
-| REG-043 | Schema 100 initializes on a clean world | ☐ | ☐ | N/A | ☐ | ☐ | Pending clean-world pass |
-| REG-044 | Legacy-to-100 migration runs once | N/A | N/A | ☐ | ☐ | ☐ | Pending migration fixture |
+| REG-043 | Schema 101 initializes on a clean world | ☐ | ☐ | N/A | ☐ | ☐ | Pending clean-world pass |
+| REG-044 | Pre-schema-to-100-to-101 migration chain runs once | N/A | N/A | ☐ | ☐ | ☐ | Existing schema-100 migration tested; pre-schema fixture pending |
 | REG-045 | Fast loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
 | REG-046 | One-second loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
 | REG-047 | Five-second loop heartbeat remains current | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
@@ -63,13 +63,23 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-049 | Soft uninstall preserves progression and equipment | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-050 | Re-enable restores runtime exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-051 | Health report detects stale runtime state | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
-| REG-052 | Recovered Document duplicate protection | ☐ | ☐ | ☐ | ☐ | ☐ | Not implemented |
-| REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Not implemented |
+| REG-052 | Recovered Document duplicate protection | ☐ | ☐ | ☐ | ☐ | ☐ | Shallow classification tested; restricted and deep pools pending |
+| REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player reload persistence tested |
 | REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
 | REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Not stabilized |
 | REG-056 | Guarded full purge removes only explicitly selected data | ☐ | ☐ | ☐ | ☐ | ☐ | Safety gate tested; destructive cycle pending |
-| REG-057 | Clean reinstall rebuilds schema 100 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
+| REG-057 | Clean reinstall rebuilds schema 101 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
 | REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
+| REG-059 | Individual player repair preserves permanent progression | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
+| REG-060 | Online-player bulk repair preserves independent profiles | N/A | ☐ | ☐ | ☐ | ☐ | Single-player path tested; multiplayer pending |
+| REG-061 | Memory bossbar repair restores ownership, visibility, and value | ☐ | ☐ | ☐ | ☐ | ☐ | Tested after visibility fix |
+| REG-062 | Scheduler repair permanently restores all recurring loops | ☐ | ☐ | ☐ | ☐ | ☐ | Thirty-second failure and recovery tested |
+| REG-063 | Standard-case repair safely closes an active investigation | ☐ | ☐ | ☐ | ☐ | ☐ | Inactive-case path tested; active case pending |
+| REG-064 | Standard-case repair refuses during Forgotten finale state | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; finale regression pending |
+| REG-065 | Physical document copies retain stable custom-data identities | ☐ | ☐ | ☐ | ☐ | ☐ | Documents 1 and 4 tested |
+| REG-066 | Lost physical documents can be reissued without changing archive ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
+| REG-067 | Locked archive triggers cannot bypass ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
+| REG-068 | Restricted and Black Archive progression gates prevent early spoilers | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; staged progression test pending |
 
 ## Release-candidate test worlds
 

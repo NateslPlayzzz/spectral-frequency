@@ -1,21 +1,34 @@
 {
   "pools": [
-    { "rolls": 1, "entries": [
-      { "type": "minecraft:item", "name": "minecraft:written_book",
-        "functions": [
-          { "function": "minecraft:set_components", "components": {
-            "minecraft:written_book_content": {
-              "title": "Recovered: Memo 7C-09",
-              "author": "UMBRA // Internal",
-              "pages": [
-                "TO: Site Director, 7C\nRE: Containment Asset \"Thorne\"\n\nThe subject's continued lucidity is no longer an operational asset. Recommend full erasure protocol. The Frame will hold what remains.",
-                "His objections are noted and overruled. He authorized this himself, in the event he became a liability.\n\nHe became a liability.\n\nSee attached countersignature.",
-                "Authorization on file:\nDIRECTOR CHEN\n\n[the countersignature has been redacted]"
-              ]
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "sf": {
+                    "document": 2
+                  }
+                },
+                "minecraft:written_book_content": {
+                  "title": "Recovered: Memo 7C-09",
+                  "author": "UMBRA // Internal",
+                  "pages": [
+                    "TO: Site Director, 7C\nRE: Containment Asset \"Thorne\"\n\nThe subject's continued lucidity is no longer an operational asset. Recommend full erasure protocol. The Frame will hold what remains.",
+                    "His objections are noted and overruled. He authorized this himself, in the event he became a liability.\n\nHe became a liability.\n\nSee attached countersignature.",
+                    "Authorization on file:\nDIRECTOR CHEN\n\n[the countersignature has been redacted]"
+                  ]
+                }
+              }
             }
-          }}
-        ]
-      }
-    ]}
+          ]
+        }
+      ]
+    }
   ]
 }

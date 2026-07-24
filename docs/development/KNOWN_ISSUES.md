@@ -29,11 +29,12 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 ### Recovered Documents
 
-- No persistent archive
-- No duplicate protection
-- Deep-lore documents may appear too early
-- Physical books can be lost
-- Ending documents are not yet witness-isolated
+- Persistent archive, duplicate protection, and replacement copies are implemented.
+- Public Field Documentation behavior has been tested.
+- Restricted and Black Archive progression gates still need staged progression regression.
+- Multiplayer archive ownership and offline-profile migration need formal testing.
+- Replacement-copy checks cannot detect copies stored in arbitrary containers.
+- Finale ending documents remain part of the separate witness-lifecycle audit.
 
 ### Finale and The Forgotten
 

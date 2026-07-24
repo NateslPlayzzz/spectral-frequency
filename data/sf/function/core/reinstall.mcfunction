@@ -19,6 +19,6 @@ function sf:core/runtime/load
 execute as @a run function sf:player/join
 
 tellraw @a [{"text":"[","color":"dark_gray"},{"text":"SPECTRAL FREQUENCY","color":"#7A5CFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Clean installation rebuilt successfully.","color":"#9BFFB0"}]
-tellraw @a [{"text":"  Schema 100 is active. Online Investigators were attached as new profiles.","color":"gray"}]
+tellraw @a [{"text":"  Schema 101 is active. Online Investigators were attached as new profiles.","color":"gray"}]
 
 execute if data storage sf:system {purge_remove_gear:true} run tellraw @a [{"text":"  Deferred equipment cleanup remains active for offline players returning after this purge.","color":"#FFC36B"}]

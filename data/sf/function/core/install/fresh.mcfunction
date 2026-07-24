@@ -148,7 +148,7 @@ bossbar set sf:mem7 visible false
 
 data modify storage sf:system version set value "1.0"
 data modify storage sf:system build set value "stabilization"
-data modify storage sf:system schema set value 100
+data modify storage sf:system schema set value 101
 data modify storage sf:system enabled set value true
 data modify storage sf:system purged set value false
 

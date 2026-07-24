@@ -1,5 +1,9 @@
-# reward/lore_shallow.mcfunction — atmospheric fragments
-execute store result score #lore sf.data run random value 1..2
-execute if score #lore sf.data matches 1 run loot give @s loot sf:reward/lore/doc_1
-execute if score #lore sf.data matches 2 run loot give @s loot sf:reward/lore/doc_4
-function sf:reward/lore_announce
+# reward/lore_shallow.mcfunction
+# Atmospheric records available throughout standard field progression.
+
+function sf:player/data/ensure
+
+data modify storage sf:temp archive.uuid set from entity @s UUID
+execute store result score #doc_roll sf.data run random value 1..2
+
+function sf:archive/reward/shallow_macro with storage sf:temp archive

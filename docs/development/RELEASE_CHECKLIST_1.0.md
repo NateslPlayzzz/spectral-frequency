@@ -111,9 +111,9 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 ## Recovered Documents
 
-- [ ] Persistent archive implemented
-- [ ] Duplicate protection implemented
-- [ ] Lost physical books are recoverable
+- - [x] Persistent archive implemented
+- [x] Duplicate protection implemented
+- [x] Lost physical books are recoverable
 - [ ] Document ordering respects spoiler tiers
 - [ ] Deep-lore records cannot appear prematurely
 - [ ] Multiplayer witnesses receive the intended records only

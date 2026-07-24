@@ -153,21 +153,37 @@ sf:system.enabled = false
 
 Re-enabling restores runtime scheduling and player attachment without deleting permanent data.
 
-### Pending schema-101 candidates
+---
 
-Do not increment the schema until implementation is finalized. Likely candidates include:
+## Schema 101 — Persistent Recovered Documents
 
-- Persistent Recovered Documents archive
-- Duplicate-protected document identifiers
-- Explicit finale witness/ending state
-- Guarded purge metadata or purge confirmation state
-- Future resource-pack capability/version handshake, if persistent
+### Accepted source schema
 
-When schema 101 is introduced, add:
+- Schema 100
+- Pre-schema worlds migrate through schema 100 before entering schema 101
 
-- Exact source schemas accepted
-- New fields and defaults
-- Migration functions
-- Preservation guarantees
-- Downgrade limitations
-- Clean-world and existing-world test evidence
+### System storage
+
+```snbt
+sf:system {
+  version: "1.0",
+  build: "stabilization",
+  schema: 101,
+  enabled: true,
+  purged: false
+}
+{
+  uuid: [I; ...],
+  profile_schema: 101,
+  shards: [],
+  documents: [],
+  quest: 0,
+  unlocked: [],
+  requisition: {
+    claims_used: 0
+  }
+}
+documents: [
+  {id: 1},
+  {id: 4}
+]

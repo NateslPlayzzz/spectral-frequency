@@ -13,7 +13,7 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | ID | Workflow | SP | MP | Upgrade | Reload | Reconnect | Current status |
 |---|---|---:|---:|---:|---:|---:|---|
 | REG-001 | Fresh install initializes exactly once | ☑ | ☐ | N/A | ☑ | ☐ | Clean single-player installation and reload passed |
-| REG-002 | Existing profile migrates without progress loss | N/A | N/A | ☐ | ☐ | ☐ | Pending formal pass |
+| REG-002 | Existing profile migrates without progress loss | N/A | N/A | ☑ | ☑ | ☑ | Existing development profiles remained intact through schema 102, reload, and reconnect |
 | REG-003 | New player onboarding occurs once | ☑ | ☐ | N/A | ☑ | ☐ | Clean onboarding and nonrepetition passed |
 | REG-004 | Memory bossbar allocation remains unique | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-005 | Field Radio requests and stores an assignment | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
@@ -66,7 +66,7 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-052 | Recovered Document duplicate protection | ☐ | ☐ | ☐ | ☐ | ☐ | Shallow classification tested; restricted and deep pools pending |
 | REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player reload persistence tested |
 | REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | UUID authority implemented; multiplayer branch pending |
-| REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Guard paths tested; complete branches pending |
+| REG-055 | Every finale branch cleans up safely | ☑ | ☐ | ☑ | ☑ | ☑ | Protocol and Vigil completed with stable cleanup in single-player |
 | REG-056 | Guarded full purge removes only explicitly selected data | ☑ | ☐ | N/A | ☑ | N/A | Destructive single-player purge and tombstone cycle passed |
 | REG-057 | Clean reinstall rebuilds schema 102 exactly once | ☑ | ☐ | N/A | ☑ | ☐ | Explicit reinstall and reload idempotence passed |
 | REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; explicit gear-removal and offline-return paths pending |
@@ -80,16 +80,16 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-066 | Lost physical documents can be reissued without changing archive ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
 | REG-067 | Locked archive triggers cannot bypass ownership | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
 | REG-068 | Restricted and Black Archive progression gates prevent early spoilers | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; staged progression pending |
-| REG-069 | Finale activation requires deliberate Guidebook confirmation | ☐ | ☐ | ☐ | ☐ | ☐ | Automatic awakening removed and reload tested |
+| REG-069 | Finale activation requires deliberate Guidebook confirmation | ☑ | ☐ | ☑ | ☑ | ☑ | Deliberate activation and nonautomatic startup passed |
 | REG-070 | Finale authority permits only one stored UUID witness | N/A | ☐ | ☐ | ☐ | ☐ | Stale-tag cleanup tested; multiplayer pending |
 | REG-071 | Active finale locks cases, tutorials, Radio assignments, and offers | ☐ | ☐ | ☐ | ☐ | ☐ | `repair_required` lock path tested |
-| REG-072 | Pull and threshold remain bound to recorded dimension and location | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live traversal pending |
+| REG-072 | Pull and threshold remain bound to recorded dimension and location | ☑ | ☐ | ☑ | ☑ | ☑ | Full single-player traversal completed successfully |
 | REG-073 | Manifest and Vigil pause safely outside the required area | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live phase pending |
-| REG-074 | Final choice requires actual view ray and sustained intent | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; live choice pending |
-| REG-075 | Protocol outcome persists only for its witness | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; complete branch pending |
-| REG-076 | Vigil outcome persists only for its witness | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; complete branch pending |
-| REG-077 | Finale epilogue survives reload and reconnect | ☐ | ☐ | ☐ | ☐ | ☐ | Loop-driven recovery implemented; branch pending |
-| REG-078 | Ending-document ownership and replacement are enforced | ☐ | ☐ | ☐ | ☐ | ☐ | Incomplete-profile refusal tested |
+| REG-074 | Final choice requires actual view ray and sustained intent | ☑ | ☐ | ☑ | ☑ | ☑ | Actual final-choice interaction passed in both branches |
+| REG-075 | Protocol outcome persists only for its witness | ☑ | ☐ | ☑ | ☑ | ☑ | Protocol completed and persisted in the authoritative single-player profile |
+| REG-076 | Vigil outcome persists only for its witness | ☑ | ☐ | ☑ | ☑ | ☑ | Vigil completed and persisted in the authoritative single-player profile |
+| REG-077 | Finale epilogue survives reload and reconnect | ☑ | ☐ | ☑ | ☑ | ☑ | Completed branch state remained stable through ordinary reload and reconnect use |
+| REG-078 | Ending-document ownership and replacement are enforced | ☐ | ☐ | ☐ | ☐ | ☐ | Initial Protocol and Vigil delivery passed; deliberate post-loss replacement remains unverified |
 | REG-079 | Finale repair preserves completed outcomes | ☐ | ☐ | ☐ | ☐ | ☐ | Unresolved repair tested; completed outcome pending |
 | REG-080 | Finale diagnostics detect repair-required and idle artifacts | ☐ | ☐ | ☐ | ☐ | ☐ | `repair_required` detection tested |
 | REG-081 | Finale nonparticipants receive no branch effects or advancements | N/A | ☐ | ☐ | ☐ | ☐ | Architecturally isolated; multiplayer pending |
@@ -113,6 +113,10 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-099 | Schema-zero purge tombstone blocks automatic reinstall | ☑ | ☐ | N/A | ☑ | N/A | Tombstone survived reload with no runtime reconstruction |
 | REG-100 | Default full purge preserves player-owned SF equipment | ☑ | ☐ | N/A | ☑ | N/A | Controlled equipment count remained unchanged |
 | REG-101 | Reinstall refuses when the installation is not purged | ☑ | ☐ | N/A | ☑ | N/A | Second reinstall attempt rejected correctly |
+| REG-102 | Existing current-development profile survives migration, reload, and reconnect | ☑ | N/A | ☑ | ☑ | ☑ | Repeated ordinary development-world continuity passed |
+| REG-103 | Protocol completes from activation through epilogue | ☑ | ☐ | ☑ | ☑ | ☑ | Complete single-player branch passed |
+| REG-104 | Vigil completes from activation through epilogue | ☑ | ☐ | ☑ | ☑ | ☑ | Complete single-player branch passed |
+| REG-105 | Finale completion removes transient entities, tags, and phase state | ☑ | ☐ | ☑ | ☑ | ☑ | Post-branch cleanup remained healthy |
 
 ## Release-candidate test worlds
 

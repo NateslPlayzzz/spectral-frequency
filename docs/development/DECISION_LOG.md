@@ -203,3 +203,35 @@ This file records decisions that future work must not casually reverse.
 **Reason:** Nearest-player evidence verification, untargeted proximity checks, simultaneous channels, and an impossible aggressive resistance curve made containment unsafe and unreliable.
 
 **Consequence:** Containment must verify the operator’s own evidence, preserve one operator and one target, refuse or break during Hunts, cancel safely on reload and teardown, and remain viable for both normal and aggressive fragments.
+---
+
+## DEC-023 — Multiplayer is supported by design but not fully certified for 1.0
+
+**Decision:** Spectral Frequency 1.0 retains its participant-aware multiplayer architecture, but public materials must not claim exhaustive multiplayer certification.
+
+**Reason:** Core multiplayer authority, evidence, case, Hunt, containment, Remnant, and progression systems were designed for multiple Investigators, but a complete live multi-player regression has not been available.
+
+**Release disposition:** The absence of exhaustive multiplayer testing is an accepted disclosed limitation rather than an automatic release blocker. Any confirmed severe multiplayer defect may still become a blocker.
+
+**Consequence:** Public documentation instructs multiplayer users to keep backups, exercise appropriate caution, and report reproducible problems with player count, server software, reproduction steps, and reconnect or `/reload` context.
+
+---
+
+## DEC-024 — The 1.0 audit is adversarial, not ceremonial
+
+**Decision:** No mechanic, message, visual, sound, item, recipe, progression step, document, interface, or implementation is protected merely because it currently works.
+
+**Protected project identity:** The release remains Spectral Frequency 1.0; Nexus Labs remains the developer; Project UMBRA remains fictional; the twelve standard fragments, The Forgotten, six-evidence investigation model, Memory system, Reconstruction, and established canonical lore remain authoritative unless an actual contradiction requires correction.
+
+**Audit authority:** The audit may recommend rewriting, rebalancing, restructuring, replacing, simplifying, expanding, or removing anything that weakens clarity, atmosphere, pacing, usability, accessibility, technical integrity, narrative quality, or professional presentation.
+
+**Consequence:** Findings will be classified as:
+
+- Release blocker
+- Major quality deficiency
+- Moderate improvement
+- Minor polish
+- Intentional limitation
+- Approved as-is
+
+A feature may be technically correct and still fail release approval.

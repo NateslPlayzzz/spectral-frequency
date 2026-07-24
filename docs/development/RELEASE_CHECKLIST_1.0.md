@@ -29,7 +29,7 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] Clean multiplayer installation passes
 - [x] Existing development world migrates to current schema
 - [x] Repeated `/reload` is idempotent
-- [ ] Reconnect preserves permanent state
+- [x] Reconnect preserves permanent state
 - [ ] Soft uninstall preserves progression and equipment
 - [ ] Re-enable restores runtime once
 - [x] Guarded full purge works only with explicit intent
@@ -111,7 +111,7 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] Twelve-fragment completion is isolated and safe
 - [ ] Memory restoration is capped
 - [ ] UI remains spoiler-safe at each progression tier
-- [ ] Progress survives reloads, reconnects, and migration
+- [x] Progress survives reloads, reconnects, and migration
 
 ## Equipment economy
 
@@ -143,16 +143,16 @@ A checked box means evidence exists, not merely that work is believed complete.
 ## Finale
 
 - [x] Activation cannot occur accidentally
-- [ ] Intended witnesses are isolated
-- [ ] Nonparticipants are unaffected
-- [ ] Both branches complete safely
-- [ ] Epilogues recover after reload/reconnect
-- [ ] Ending documents are delivered correctly
-- [ ] All finale entities and tags clean up
-- [ ] Completion state persists per intended player
-- [ ] Replaying or refusing replay follows explicit design
-
-
+- [ ] Intended witnesses are isolated in multiplayer
+- [ ] Multiplayer nonparticipants are unaffected
+- [x] Both branches complete safely in single-player
+- [x] Epilogues remain stable after ordinary reload/reconnect
+- [x] Initial ending documents are delivered correctly
+- [x] Finale entities, temporary tags, and phase state clean up after completion
+- [x] Completion state persists in the intended single-player profile
+- [ ] Lost ending-document replacement is verified after completed outcomes
+- [ ] Replay refusal is deliberately tested after both completed outcomes
+- [ ] Mid-phase disconnect is deliberately fault-tested
 
 ## Performance and hygiene
 

@@ -4,22 +4,22 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 ## Confirmed release blockers
 
-- Complete Protocol and Vigil branch regression has not yet been performed in disposable finale worlds.
-- Guarded full purge is implemented, but the complete destructive purge/reinstall cycle has not passed disposable-world regression.
+None currently confirmed.
+
+The content, presentation, technical-hygiene, resource-pack, and packaging audits may identify new release blockers. An unchecked audit item is not automatically a confirmed defect.
 
 
 ## Must audit before 1.0
 
 - Evidence and Journal lifecycle regression coverage
 - Hunt participant isolation in multiplayer
-- Taken-player reconnect behavior
-- Every normal equipment acquisition route
+- Server-specific behavior and multiplayer behavior where practical
+- Deliberately fault-injected mid-operation disconnect behavior- Every normal equipment acquisition route
 - Emergency Beacon progression and acquisition
 - Recovered Document ordering and spoiler progression
-- Ending books and witness ownership
+- Ending-book writing, presentation, replacement-copy behavior, and spoiler handling
 - Full Smithed entity hygiene
 - Unloaded-chunk behavior in diagnostics and cleanup
-- Upgraded-world, reconnect, and server testing
 - Performance under multiple online investigators
 - Terminology consistency across UI, Guidebook, wiki, and release materials
 - Full twelve-fragment containment regression
@@ -48,11 +48,13 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 - Schema-102 authority, deliberate activation, phase persistence, repair, and per-player outcomes are implemented.
 - Safe idle-state, lock, trigger-refusal, diagnostic, and repair tests passed.
-- Complete Protocol and Vigil branch runs remain untested.
-- Multiplayer witness isolation remains untested.
-- Mid-phase reload, disconnect, reconnect, and offline-witness behavior require formal regression.
-- Ending-document initial delivery and completed-outcome repair require formal regression.
-- Twelve-fragment and branch testing must use disposable worlds.
+- Complete Protocol and Vigil branch runs passed in single-player.
+- Pull, threshold, manifestation, Vigil, choice, epilogue, branch persistence, ending delivery, and normal cleanup operated successfully.
+- Existing-world continuity and ordinary reload/reconnect behavior remained healthy.
+- Formal multiplayer witness isolation remains unverified.
+- Deliberately fault-injected mid-phase disconnect, extended offline-witness recovery, completed-outcome repair, and unloaded-chunk recovery remain unverified edge cases.
+- Initial Protocol and Vigil documents were delivered; deliberate replacement after loss remains to be tested.
+- These remaining items are not confirmed defects unless a later audit or regression exposes a failure.
 
 ### Full purge
 

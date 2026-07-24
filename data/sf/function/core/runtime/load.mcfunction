@@ -8,14 +8,21 @@ function sf:ghost/defs/register
 function sf:core/runtime/constants
 
 execute unless data storage sf:player_data entries run data modify storage sf:player_data entries set value []
+
 # A schema-102 world missing its finale authority record requires explicit repair.
 execute unless data storage sf:forgotten state run data modify storage sf:forgotten state set value "repair_required"
+
 # Existing online players receive any newly introduced scores and fields.
 execute as @a run function sf:player/backfill
 execute as @a[tag=spectral.sf_init] run function sf:player/reload
-# Containment is a short, transient interaction and does not resume through
+
+# Rebind, resume, or safely pause the persistent finale lifecycle.
+function sf:forgotten/runtime/load
+
+# Containment is a short transient interaction and does not resume through
 # /reload. Cancel it without affecting the active investigation.
 function sf:tool/contain/clear_all
+
 # Clear stale case state only when no investigation is active.
 execute unless data storage sf:case {state:"active"} as @a[scores={sf.claimed=1..}] run function sf:core/restore_player
 execute unless data storage sf:case {state:"active"} as @a run function sf:case/clear_runtime_player

@@ -32,8 +32,8 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] Reconnect preserves permanent state
 - [ ] Soft uninstall preserves progression and equipment
 - [ ] Re-enable restores runtime once
-- [ ] Guarded full purge works only with explicit intent
-- [ ] Clean reinstall after purge passes
+- [x] Guarded full purge works only with explicit intent
+- [x] Clean reinstall after purge passes
 - [x] `/function sf:dev/health` reports healthy after sustained runtime
 
 ## Onboarding

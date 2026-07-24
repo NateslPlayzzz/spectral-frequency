@@ -67,9 +67,9 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player reload persistence tested |
 | REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | UUID authority implemented; multiplayer branch pending |
 | REG-055 | Every finale branch cleans up safely | ☐ | ☐ | ☐ | ☐ | ☐ | Guard paths tested; complete branches pending |
-| REG-056 | Guarded full purge removes only explicitly selected data | ☐ | ☐ | ☐ | ☐ | ☐ | Safety gate tested; destructive cycle pending |
-| REG-057 | Clean reinstall rebuilds schema 102 exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
-| REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; destructive cycle pending |
+| REG-056 | Guarded full purge removes only explicitly selected data | ☑ | ☐ | N/A | ☑ | N/A | Destructive single-player purge and tombstone cycle passed |
+| REG-057 | Clean reinstall rebuilds schema 102 exactly once | ☑ | ☐ | N/A | ☑ | ☐ | Explicit reinstall and reload idempotence passed |
+| REG-058 | Optional purge gear removal handles online and returning offline players | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; explicit gear-removal and offline-return paths pending |
 | REG-059 | Individual player repair preserves permanent progression | ☐ | ☐ | ☐ | ☐ | ☐ | Tested in single-player |
 | REG-060 | Online-player bulk repair preserves independent profiles | N/A | ☐ | ☐ | ☐ | ☐ | Single-player path tested; multiplayer pending |
 | REG-061 | Memory bossbar repair restores ownership, visibility, and value | ☐ | ☐ | ☐ | ☐ | ☐ | Tested after visibility fix |
@@ -110,6 +110,9 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-096 | Containment sound and particle feedback avoids hot-loop spam | ☐ | ☐ | ☐ | ☐ | ☐ | Observational single-player pass completed |
 | REG-097 | Spirit Box scans only valid nearby manifestations in darkness | ☑ | ☐ | ☐ | ☑ | ☐ | Tutorial response, out-of-range silence, and negative-discovery protection passed |
 | REG-098 | Spirit Box silence grants no case or lifetime evidence | ☑ | ☐ | ☐ | ☑ | ☐ | Clean single-player negative path passed |
+| REG-099 | Schema-zero purge tombstone blocks automatic reinstall | ☑ | ☐ | N/A | ☑ | N/A | Tombstone survived reload with no runtime reconstruction |
+| REG-100 | Default full purge preserves player-owned SF equipment | ☑ | ☐ | N/A | ☑ | N/A | Controlled equipment count remained unchanged |
+| REG-101 | Reinstall refuses when the installation is not purged | ☑ | ☐ | N/A | ☑ | N/A | Second reinstall attempt rejected correctly |
 
 ## Release-candidate test worlds
 

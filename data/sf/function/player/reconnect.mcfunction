@@ -15,8 +15,8 @@ scoreboard players set @s sf.read_val 0
 scoreboard players set @s sf.writing_active 0
 scoreboard players set @s sf.writing_timer 0
 
-scoreboard players set @s sf.contain_active 0
-scoreboard players set @s sf.contain_progress 0
+execute if entity @s[tag=sf.contain_operator] run function sf:tool/contain/release_target
+function sf:tool/contain/clear_player
 
 scoreboard players set @s sf.flashlight_on 0
 scoreboard players set @s sf.bench_menu 0

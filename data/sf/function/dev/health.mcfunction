@@ -88,6 +88,8 @@ execute unless data storage sf:case {state:"active"} if score #health_claimed sf
 
 execute if score #health_reviving sf.data matches 1.. if score #health_channels sf.data matches 0 run tellraw @s [{"text":"  WARNING  ","color":"dark_red","bold":true},{"text":"A player has stale revival state.","color":"gray"}]
 
+function sf:dev/health/containment
+
 function sf:dev/health/finale
 
 execute if score #health_fail sf.data matches 0 run tellraw @s [{"text":"\n  RESULT  ","color":"#6A6A78","bold":true},{"text":"HEALTHY","color":"#9BFFB0","bold":true}]

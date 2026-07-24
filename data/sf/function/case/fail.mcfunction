@@ -1,6 +1,9 @@
 # case/fail.mcfunction
 # Runs when every participant has been Taken.
 
+# A failed case cannot retain containment authority.
+function sf:tool/contain/clear_all
+
 title @a[tag=sf.case_participant] times 10 60 20
 title @a[tag=sf.case_participant] title {"text":"CASE LOST","color":"dark_red","bold":true}
 title @a[tag=sf.case_participant] subtitle {"text":"no one remained to hold the memory","color":"#5A2A2A","italic":true}

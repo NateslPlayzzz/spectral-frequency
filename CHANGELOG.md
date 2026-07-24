@@ -1,6 +1,33 @@
 # Changelog
 
 All notable changes to Spectral Frequency will be documented in this file.
+
+## [1.0.0] - Unreleased
+
+### Changed
+
+- **Containment Focus authority**
+  - Binding now belongs to the exact Investigator who activates the Focus.
+  - Only one Investigator may channel containment at a time.
+  - The selected manifestation remains the authoritative target throughout the channel.
+  - Warning and Hunt states prevent or interrupt containment.
+- **Containment balance**
+  - Normal and aggressive fragments now use deliberate, viable Memory-resistance curves.
+  - Tutorial containment retains its controlled seven-Memory design.
+  - Binding feedback now communicates early, resisting, and final-hold phases.
+  - Sound and particle pulses have been reduced to avoid excessive feedback spam.
+- **Containment recovery**
+  - Reload, reconnect, Taken state, case teardown, repair, and uninstall safely cancel transient binding state.
+  - Reload no longer closes an otherwise valid active investigation.
+
+### Fixed
+
+- Fixed containment evidence being checked against the nearest player instead of the activating Investigator.
+- Fixed aggressive containment consuming more Memory than a full bar.
+- Fixed channels continuing against an unrelated nearby manifestation.
+- Fixed stale containment operators and targets surviving interrupted runtime state.
+- Fixed fresh installation not explicitly initializing the standard case state.
+
 ## [Beta 13.0] - February 5, 2026
 ### "Foundation"
 

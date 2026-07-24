@@ -31,7 +31,7 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-017 | Writing channel clears on case end/disconnect | ☐ | ☐ | ☐ | ☐ | ☐ | Pending |
 | REG-018 | Journal never shows stale case evidence | ☐ | ☐ | ☐ | ☐ | ☐ | Pending |
 | REG-019 | Tutorial containment costs exactly seven Memory | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
-| REG-020 | Standard containment remains possible for all fragments | ☐ | ☐ | ☐ | ☐ | ☐ | Balance audit pending |
+| REG-020 | Standard containment remains possible for all fragments | ☐ | ☐ | ☐ | ☐ | ☐ | Normal and aggressive fixtures tested; full twelve-fragment pass pending |
 | REG-021 | Unique Reconstruction fragment increments once | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-022 | Duplicate Reconstruction fragment does not increment | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-023 | Three-fragment Totem milestone grants once | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
@@ -62,7 +62,7 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-048 | Thirty-second loop self-reschedules indefinitely | ☐ | ☐ | ☐ | ☐ | ☐ | Tested after wrapper fix |
 | REG-049 | Soft uninstall preserves progression and equipment | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
 | REG-050 | Re-enable restores runtime exactly once | ☐ | ☐ | ☐ | ☐ | ☐ | Previously tested |
-| REG-051 | Health report detects stale runtime state | ☐ | ☐ | ☐ | ☐ | ☐ | Standard and finale diagnostics tested |
+| REG-051 | Health report detects stale runtime state | ☐ | ☐ | ☐ | ☐ | ☐ | Standard, containment, and finale diagnostics tested |
 | REG-052 | Recovered Document duplicate protection | ☐ | ☐ | ☐ | ☐ | ☐ | Shallow classification tested; restricted and deep pools pending |
 | REG-053 | Recovered Document archive persists | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player reload persistence tested |
 | REG-054 | Finale affects intended witnesses only | ☐ | ☐ | ☐ | ☐ | ☐ | UUID authority implemented; multiplayer branch pending |
@@ -93,6 +93,22 @@ Use this matrix for release-candidate testing. A parser success is not a gamepla
 | REG-079 | Finale repair preserves completed outcomes | ☐ | ☐ | ☐ | ☐ | ☐ | Unresolved repair tested; completed outcome pending |
 | REG-080 | Finale diagnostics detect repair-required and idle artifacts | ☐ | ☐ | ☐ | ☐ | ☐ | `repair_required` detection tested |
 | REG-081 | Finale nonparticipants receive no branch effects or advancements | N/A | ☐ | ☐ | ☐ | ☐ | Architecturally isolated; multiplayer pending |
+| REG-082 | Containment verification returns to the activating Investigator | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player path tested; multiplayer ownership pending |
+| REG-083 | Only one containment operator and target may exist | ☐ | ☐ | ☐ | ☐ | ☐ | Single-player authority tested; two-player contention pending |
+| REG-084 | Incorrect evidence creates no containment authority | ☐ | ☐ | ☐ | ☐ | ☐ | Tested |
+| REG-085 | Tutorial containment costs exactly seven Memory after authority rewrite | ☐ | ☐ | ☐ | ☐ | ☐ | Previous curve tested; post-rewrite regression pending |
+| REG-086 | Normal containment has a viable Memory cost | ☐ | ☐ | ☐ | ☐ | ☐ | Tested with Shadow fixture |
+| REG-087 | Aggressive containment has a viable Memory cost | ☐ | ☐ | ☐ | ☐ | ☐ | Tested with Banshee fixture |
+| REG-088 | Warning or Hunt state blocks and interrupts containment | ☐ | ☐ | ☐ | ☐ | ☐ | Active Hunt interruption tested |
+| REG-089 | Item, range, participant, Taken, and zero-Memory conditions interrupt containment | ☐ | ☐ | ☐ | ☐ | ☐ | Implemented; complete condition pass pending |
+| REG-090 | Reload cancels containment without closing the active case | ☐ | ☐ | ☐ | ☐ | N/A | Tested |
+| REG-091 | Reconnect cancels stale containment authority safely | ☐ | ☐ | ☐ | N/A | ☐ | Implemented; reconnect test pending |
+| REG-092 | Every case exit removes containment authority | ☐ | ☐ | ☐ | ☐ | ☐ | Success and manual closure tested; failure and repair pending |
+| REG-093 | Containment diagnostics detect stale operators and targets | ☐ | ☐ | ☐ | ☐ | ☐ | Synthetic corruption tested |
+| REG-094 | Containment repair preserves the active investigation and progression | ☐ | ☐ | ☐ | ☐ | ☐ | Synthetic repair tested |
+| REG-095 | Successful containment resolves only the selected target | ☐ | ☐ | ☐ | ☐ | ☐ | Standard single-target case tested |
+| REG-096 | Containment sound and particle feedback avoids hot-loop spam | ☐ | ☐ | ☐ | ☐ | ☐ | Observational single-player pass completed |
+
 ## Release-candidate test worlds
 
 Keep disposable fixtures for:

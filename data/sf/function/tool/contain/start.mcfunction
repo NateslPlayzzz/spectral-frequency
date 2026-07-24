@@ -1,9 +1,25 @@
-# tool/contain/start.mcfunction — as @s (player)
-# The Forgotten cannot be contained — containment is forgetting, and you cannot out-forget him
-execute if entity @e[tag=sf.ghost,tag=sf.uncontainable,distance=..12] run return run function sf:forgotten/focus_fails
-# Normal stuff.
+# tool/contain/start.mcfunction
+# Establishes one authoritative operator and one manifestation target.
+
+execute unless data storage sf:case {state:"active"} run return 0
+execute unless entity @s[tag=sf.case_participant] run return 0
+execute if score @s sf.claimed matches 1.. run return 0
 execute if score @s sf.contain_active matches 1.. run return 0
+
+execute if entity @a[tag=sf.contain_operator] run return run title @s actionbar {"text":"another Investigator is already holding the binding","color":"#FFC36B","italic":true}
+
+execute unless entity @e[type=minecraft:marker,tag=sf.contain_candidate,distance=..6,limit=1] run return run title @s actionbar {"text":"the selected manifestation is no longer within reach","color":"dark_red","italic":true}
+
+execute if entity @e[type=minecraft:marker,tag=sf.contain_candidate,tag=sf.state.warning,distance=..6,limit=1] run return run title @s actionbar {"text":"the binding cannot take hold during a Hunt","color":"dark_red","italic":true}
+execute if entity @e[type=minecraft:marker,tag=sf.contain_candidate,tag=sf.state.hunt,distance=..6,limit=1] run return run title @s actionbar {"text":"the binding cannot take hold during a Hunt","color":"dark_red","italic":true}
+
+tag @e[type=minecraft:marker,tag=sf.contain_candidate,distance=..6,limit=1,sort=nearest] add sf.contain_target
+tag @e[type=minecraft:marker,tag=sf.contain_candidate] remove sf.contain_candidate
+
+tag @s add sf.contain_operator
+
 scoreboard players set @s sf.contain_active 1
 scoreboard players set @s sf.contain_progress 0
-title @s actionbar {"text":"binding\u2026 hold your ground","color":"#C89BFF","italic":true}
+
+title @s actionbar {"text":"binding… hold the Focus and stay near the anomaly","color":"#C89BFF","italic":true}
 playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.8 0.6

@@ -61,6 +61,25 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] Successful containment releases Taken players
 - [ ] Case teardown removes all runtime entities and state
 
+## Containment
+
+- [x] Evidence verification uses the activating Investigator
+- [x] One authoritative operator and target are enforced
+- [x] Incorrect evidence cannot begin containment
+- [x] Normal containment is viable
+- [x] Aggressive containment is viable
+- [x] Warning and Hunt states interrupt containment
+- [x] Reload cancels containment without closing the case
+- [x] Manual teardown removes containment authority
+- [x] Diagnostics detect stale containment state
+- [x] Nondestructive containment repair works
+- [ ] Tutorial containment still costs exactly seven Memory
+- [ ] Two-player operator contention works
+- [ ] Multiplayer evidence ownership works
+- [ ] Disconnect and Taken-state interruption work
+- [ ] Failure, case repair, and soft uninstall remove containment authority
+- [ ] All twelve standard fragments pass containment regression
+
 ## Memory and Hunts
 
 - [ ] No passive Memory drain outside cases
@@ -109,7 +128,7 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] Exhausted players can still recover through normal crafting
 - [ ] Final item roster is locked before resource-pack production
 
-## Recovered Documents
+
 
 ## Recovered Documents
 
@@ -123,8 +142,6 @@ A checked box means evidence exists, not merely that work is believed complete.
 
 ## Finale
 
-## Finale
-
 - [x] Activation cannot occur accidentally
 - [ ] Intended witnesses are isolated
 - [ ] Nonparticipants are unaffected
@@ -134,6 +151,8 @@ A checked box means evidence exists, not merely that work is believed complete.
 - [ ] All finale entities and tags clean up
 - [ ] Completion state persists per intended player
 - [ ] Replaying or refusing replay follows explicit design
+
+
 
 ## Performance and hygiene
 

@@ -1,7 +1,11 @@
-# resist_hard.mcfunction — as @s at @s. It fights hardest at the threshold.
-scoreboard players remove @s sf.coherence 2
-execute at @s run particle minecraft:sculk_soul ~ ~1 ~ 0.5 0.6 0.5 0.05 8
-playsound minecraft:entity.warden.heartbeat player @s ~ ~ ~ 0.6 0.9
-title @s actionbar {"text":"it does not want to be remembered \u2014 HOLD","color":"#8B0000","bold":true}
-# Small chance the thrash knocks you — adds tension at the climax
+# tool/contain/resist_hard.mcfunction
+# Two configured Memory units during a late resistance pulse.
+
+scoreboard players operation #contain_cost sf.data = #contain_drain sf.data
+scoreboard players operation #contain_cost sf.data *= #two sf.data
+scoreboard players operation @s sf.coherence -= #contain_cost sf.data
+
+execute at @s run particle minecraft:sculk_soul ~ ~1 ~ 0.4 0.5 0.4 0.03 6
+
+# Lash chance is evaluated only on the seven late resistance pulses.
 execute if predicate sf:chance/15 at @s run function sf:tool/contain/lash

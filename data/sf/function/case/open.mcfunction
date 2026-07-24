@@ -7,6 +7,8 @@
 #
 # Runs as the case owner at the case origin.
 
+# A new case must never inherit a previous containment operator or target.
+function sf:tool/contain/clear_all
 # Remove stale world artifacts from an interrupted inactive case.
 kill @e[type=marker,tag=sf.ghost]
 kill @e[tag=sf.uv_trace]

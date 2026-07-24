@@ -171,3 +171,35 @@ This file records decisions that future work must not casually reverse.
 **Required dimensions:** onboarding, pacing, clarity, UI hierarchy, writing quality, audio identity, consistency, accessibility, multiplayer behavior, packaging, screenshots, documentation, and overall polish.
 
 **Consequence:** A mechanic can work correctly and still fail release approval if it feels placeholder, confusing, inconsistent, or unprofessional.
+---
+
+## DEC-021 — The finale is deliberate, witness-owned, and non-replayable in 1.0
+
+**Decision:** Reconstruction unlocks the Forgotten finale but does not start it automatically. One global finale may be active at a time, and one stored UUID identifies its authoritative witness.
+
+**Outcome rule:** Each Investigator may permanently record either Protocol or Vigil. A completed outcome cannot be replaced, reset by ordinary repair, or replayed in 1.0.
+
+**Reason:** Automatic activation, tag-based ownership, global branch records, and server-context epilogues were unsafe for persistent and multiplayer worlds.
+
+**Consequence:** All finale phases, effects, advancements, documents, cleanup, and recovery must resolve through the authoritative witness and persistent schema-102 profile.
+---
+
+## DEC-021 — The finale is deliberate, witness-owned, and non-replayable in 1.0
+
+**Decision:** Reconstruction unlocks the Forgotten finale but does not start it automatically. One global finale may be active at a time, and one stored UUID identifies its authoritative witness.
+
+**Outcome rule:** Each Investigator may permanently record either Protocol or Vigil. A completed outcome cannot be replaced, reset by ordinary repair, or replayed in 1.0.
+
+**Reason:** Automatic activation, tag-based ownership, global branch records, and server-context epilogues were unsafe for persistent and multiplayer worlds.
+
+**Consequence:** All finale phases, effects, advancements, documents, cleanup, and recovery must resolve through the authoritative witness and persistent schema-102 profile.
+
+---
+
+## DEC-022 — Containment is single-operator, target-bound, and interruptible
+
+**Decision:** Spectral Frequency 1.0 supports one active containment channel at a time. The channel belongs to the exact activating Investigator and the exact selected standard manifestation.
+
+**Reason:** Nearest-player evidence verification, untargeted proximity checks, simultaneous channels, and an impossible aggressive resistance curve made containment unsafe and unreliable.
+
+**Consequence:** Containment must verify the operator’s own evidence, preserve one operator and one target, refuse or break during Hunts, cancel safely on reload and teardown, and remain viable for both normal and aggressive fragments.

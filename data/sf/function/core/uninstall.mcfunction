@@ -28,6 +28,9 @@ schedule clear sf:player/claim/solo_release
 schedule clear sf:player/welcome_title
 schedule clear sf:quest/intro_1
 
+# Cancel transient containment authority before player and case cleanup.
+function sf:tool/contain/clear_all
+
 # Return Taken players before removing runtime ownership.
 execute as @a[scores={sf.claimed=1..}] run function sf:core/restore_player
 execute as @a run function sf:core/cleanup_player

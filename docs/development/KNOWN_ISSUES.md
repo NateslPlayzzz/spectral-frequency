@@ -11,7 +11,6 @@ This file separates confirmed defects, release-audit items, accepted limitations
 
 ## Must audit before 1.0
 
-- Standard containment balance for aggressive fragments
 - Evidence and Journal lifecycle regression coverage
 - Hunt participant isolation in multiplayer
 - Taken-player reconnect behavior
@@ -24,8 +23,19 @@ This file separates confirmed defects, release-audit items, accepted limitations
 - Clean-world, upgraded-world, reload, reconnect, and server testing
 - Performance under multiple online investigators
 - Terminology consistency across UI, Guidebook, wiki, and release materials
+- Full twelve-fragment containment regression
+- Multiplayer containment operator and evidence ownership
 
 ## Known unfinished systems
+
+### Containment
+
+- Exact activation ownership, one-operator authority, target binding, normal balance, aggressive balance, Hunt interruption, reload interruption, diagnostics, repair, and manual teardown are implemented and tested.
+- Formal multiplayer operator contention and evidence-ownership testing remains required.
+- The tutorial seven-Memory curve requires one post-authority regression.
+- All twelve standard fragments require a formal containment pass.
+- Disconnect, Taken-state, case-failure, administrative-repair, and soft-uninstall interruption paths require formal regression.
+- Loaded-entity cleanup cannot guarantee removal of target tags from unloaded manifestations.
 
 ### Recovered Documents
 
@@ -61,6 +71,7 @@ This file separates confirmed defects, release-audit items, accepted limitations
 - Remnant uses a temporary Echo Shard visual before the resource-pack rebuild
 - Resource-pack presentation is deferred until mechanics and final item roster stabilize
 - Administrative health counts describe loaded runtime entities, not guaranteed world-global entity totals
+- One active containment channel at a time
 
 ## Post-1.0 candidates
 

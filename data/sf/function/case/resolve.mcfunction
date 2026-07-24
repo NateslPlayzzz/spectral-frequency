@@ -4,7 +4,8 @@
 # Performance scores are deliberately retained until reward/score finishes
 # for the resolving player.
 
-tag @s add sf.case_resolver
+# Remove any residual containment authority before case ownership is erased.
+function sf:tool/contain/clear_all
 
 title @a[tag=sf.case_participant,tag=!sf.case_resolver] times 10 45 15
 title @a[tag=sf.case_participant,tag=!sf.case_resolver] title {"text":"CASE RESOLVED","color":"#C89BFF","bold":true}

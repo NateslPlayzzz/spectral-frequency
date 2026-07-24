@@ -2,6 +2,8 @@
 # Manual or administrative teardown.
 
 execute unless data storage sf:case {state:"active"} run return run tellraw @s [{"text":"◈ ","color":"#7A5CFF"},{"text":"No case is currently active.","color":"gray"}]
+# Manual teardown must remove the shared containment operator and target.
+function sf:tool/contain/clear_all
 
 tellraw @a[tag=sf.case_participant] [{"text":"◈ ","color":"#7A5CFF"},{"text":"Case cleared. All active field records have been closed.","color":"#8A8A98"}]
 

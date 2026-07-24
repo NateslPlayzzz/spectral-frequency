@@ -1,0 +1,46 @@
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# Logs and crash reports
+*.log
+logs/
+crash-reports/
+
+# Build and validation output
+dist/
+build/
+out/
+.spyglass/
+spyglass-cache/
+
+# Minecraft development worlds and servers
+world/
+world_nether/
+world_the_end/
+test-worlds/
+server/
+run/
+
+# Packaged artifacts
+*.zip
+*.jar
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
+
+# Obsolete embedded archives
+SpectralFIN.zip

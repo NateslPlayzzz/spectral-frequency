@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Spectral Frequency Wiki
+    url: https://spectral-frequency.fandom.com/
+    about: Read player-facing guides, mechanics, lore, installation help, and troubleshooting.
+  - name: Nexus Labs Discord
+    url: https://discord.gg/nexuslabs
+    about: Ask general questions and discuss the project with the community.

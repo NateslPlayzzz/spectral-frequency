@@ -1,0 +1,86 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "ATTUNED BENCH",
+    "color": "#C89BFF",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Attuned Bench",
+    "color": "#C89BFF"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "UMBRA RESONANCE ASSEMBLY",
+        "color": "#6A6A78",
+        "bold": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Place materials inside the attuned barrel, continue aiming the Resonance Key at it, and select an assembly division.",
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Only barrel contents are inspected or consumed.",
+        "color": "#9BFFB0",
+        "italic": true
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 1,
+  "actions": [
+    {
+      "label": {
+        "text": "CALIBRATION INSTRUMENTS",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "Core evidence and containment equipment.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 90"
+      }
+    },
+    {
+      "label": {
+        "text": "ATTUNED FIELD DEVICES",
+        "color": "#5AC8C8",
+        "bold": true
+      },
+      "tooltip": "Utility, communications, and monitoring devices.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 91"
+      }
+    },
+    {
+      "label": {
+        "text": "RESTRICTED FORMULAS",
+        "color": "#FFC36B",
+        "bold": true
+      },
+      "tooltip": "Progression-gated equipment using Veil Shards.",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 92"
+      }
+    },
+    {
+      "label": {
+        "text": "CLOSE ASSEMBLY",
+        "color": "#6A6A78"
+      }
+    }
+  ]
+}

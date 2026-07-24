@@ -1,0 +1,2 @@
+# check_unlocked_macro — if the out id isn't in unlocked[], lock it (#ok = 0)
+$execute unless data storage sf:player_data entries[{uuid:$(uuid)}].unlocked[{id:"$(out)"}] run scoreboard players set #ok sf.data 0

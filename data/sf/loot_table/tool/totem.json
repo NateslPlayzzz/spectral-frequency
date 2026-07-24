@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Warding Totem",
+                  "color": "#FFC36B",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "totem"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Set it down. Hunts cannot begin near it.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "It burns out. Then it is gone.",
+                    "color": "dark_gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click to place.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:warding_totem"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

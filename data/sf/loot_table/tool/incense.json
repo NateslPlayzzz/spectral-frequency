@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Soul Incense",
+                  "color": "#9BFFB0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "incense"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Burn it to break a hunt. Once.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click during a hunt.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:soul_incense"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

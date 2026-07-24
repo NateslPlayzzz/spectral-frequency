@@ -1,0 +1,2 @@
+execute if score @s sf.read_val matches 1 run title @s actionbar ["",{"text":"\u25c8 VEIL ECHO  ","color":"gray"},{"text":"PRESENT","color":"#C89BFF","bold":true}]
+execute if score @s sf.read_val matches 0 run title @s actionbar ["",{"text":"\u25c8 VEIL ECHO  ","color":"gray"},{"text":"silent","color":"dark_gray"}]

@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Thermometer",
+                  "color": "#5AC8C8",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "thermo"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Reads ambient temperature.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click to scan.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:thermometer"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

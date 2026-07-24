@@ -1,0 +1,1 @@
+title @s actionbar ["",{"text":"the shards pull  \u00b7  ","color":"#8B0000"},{"score":{"name":"@s","objective":"sf.sig_dist"},"color":"#C77"},{"text":"m","color":"dark_gray"}]

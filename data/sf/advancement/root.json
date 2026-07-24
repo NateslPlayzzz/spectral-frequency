@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_shard"
+    },
+    "title": {
+      "text": "Spectral Frequency",
+      "color": "#7A5CFF"
+    },
+    "description": {
+      "text": "Something here remembers what you have forgotten.",
+      "color": "#8A8A98"
+    },
+    "background": "minecraft:block/black_concrete",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "installed": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

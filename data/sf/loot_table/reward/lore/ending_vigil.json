@@ -1,0 +1,23 @@
+{
+  "pools": [
+    { "rolls": 1, "entries": [
+      { "type": "minecraft:item", "name": "minecraft:written_book",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:written_book_content": {
+              "title": "A Letter, Unsent",
+              "author": "E. Vance",
+              "pages": [
+                "I don't know how to file what just happened, so I'm not going to. I'm writing it to you instead.\n\nYou didn't seal him. You remembered him. And the readings didn't spike \u2014 they opened. Like a door that had been painted shut for forty years.",
+                "He's whole. He's somewhere. He is, for the first time since I was a child, HIM. I should be terrified. UMBRA is terrified. They're already drafting the memos.",
+                "Because here's what they won't say out loud: the thing that erased him was never just here, in this site. The Hollow doesn't live in the Frame. The Frame was a bandage.",
+                "And you just took the bandage off.\n\nThorne is free, and he remembers everything \u2014 including what's on the other side of forgetting. He knows where it lives now. And I think he's going to go looking for it.",
+                "UMBRA wants to hire you to clean this up. I want to hire you to help me follow him.\n\nThey are not the same job. Choose carefully. I'll be in touch.\n\n\u2014 Eleanor"
+              ]
+            }
+          }}
+        ]
+      }
+    ]}
+  ]
+}

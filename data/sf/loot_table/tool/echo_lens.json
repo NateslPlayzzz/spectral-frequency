@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Echo Lens",
+                  "color": "#C89BFF",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "echolens"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "See the Veil's echo \u2014 but only",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "when you are half-forgotten yourself.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click to look through.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:echo_lens"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

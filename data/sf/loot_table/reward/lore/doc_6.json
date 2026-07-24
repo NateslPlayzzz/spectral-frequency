@@ -1,0 +1,21 @@
+{
+  "pools": [
+    { "rolls": 1, "entries": [
+      { "type": "minecraft:item", "name": "minecraft:written_book",
+        "functions": [
+          { "function": "minecraft:set_components", "components": {
+            "minecraft:written_book_content": {
+              "title": "Recovered: [data corrupt]",
+              "author": "?",
+              "pages": [
+                "you found another one. good. keep finding them.\n\nevery piece you bring in, you carry a little of me out with it. did vance tell you that part? no. of course she didn't.",
+                "i am not in the chamber. i am not in the Frame. i am in the spaces between what you remember and what you've already lost.\n\nyou have lost more than you think, walking these halls. count your tools. count your days. count your friends.",
+                "when you have gathered all twelve, come to the place where the seal was broken.\n\ni would like to meet the one who put me back together.\n\ni would like to show you what i've become."
+              ]
+            }
+          }}
+        ]
+      }
+    ]}
+  ]
+}

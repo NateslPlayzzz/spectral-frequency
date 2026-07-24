@@ -1,0 +1,10 @@
+{
+    "display": {
+      "icon": {"id": "minecraft:spyglass"},
+      "title": {"text": "Full Spectrum", "color": "#C89BFF"},
+      "description": {"text": "Confirm all six kinds of evidence across your cases.", "color": "#8A8A98"},
+      "show_toast": true, "announce_to_chat": false, "frame": "goal"
+    },
+    "parent": "sf:first_contain",
+    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+  }

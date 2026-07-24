@@ -1,74 +1,99 @@
-# 👻 Spectral Frequency
+# Spectral Frequency
 
-**Paranormal investigation datapack for Minecraft 1.21.11**
+**A paranormal-investigation datapack for Minecraft Java 26.2.**
 
-*Detect. Identify. Contain.*
+*Detect. Identify. Contain. Remember.*
 
-Turn your Minecraft world into a paranormal investigation experience inspired by Phasmophobia. Craft investigation tools, gather evidence, identify ghost types, and contain them before your sanity runs out.
+> **Development status:** Spectral Frequency 1.0 is currently undergoing stabilization and release-quality auditing. The `develop/1.0-stabilization` branch is not yet a public release build.
 
-![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-green)
-![Version](https://img.shields.io/badge/Version-Beta%2010.0-purple)
-![License](https://img.shields.io/badge/License-MIT-blue)
+[![Minecraft](https://img.shields.io/badge/Minecraft%20Java-26.2-5A9B45)](https://www.minecraft.net/)
+[![Release](https://img.shields.io/badge/Release-1.0%20Unreleased-7A5CFF)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-## 🎮 Features
+## Overview
 
-- **11 Unique Ghosts** — Each with distinct evidence combinations and hunt behaviors
-- **12 Investigation Tools** — EMF Detector, Spirit Box, Thermometer, and more
-- **5 Evidence Types** — EMF, Spirit Box, Ghost Writing, UV, Freezing
-- **Manifestation System** — Survive terrifying ghost hunts by hiding
-- **Veil Tears** — Natural ghost spawning in Deep Dark biomes
-- **Multiplayer Support** — Up to 12 investigators with individual sanity tracking
-- **Deep Lore** — Uncover the mystery of The Veil through Strange Signals and research notes
+Spectral Frequency turns a Minecraft world into a structured paranormal-investigation experience inspired by the tension and deduction of ghost-hunting games while building its own mechanics, mythology, progression, and finale.
 
-## 👻 Ghost Roster
+Investigators receive field assignments, locate manifestations, collect evidence, survive Hunts, manage their Memory, contain hostile fragments, and reconstruct what Project UMBRA attempted to erase.
 
-| Ghost | Evidence | Threat |
-|-------|----------|--------|
-| Whisper | Spirit Box, Writing | Low |
-| Shadow | EMF, Freezing | Medium |
-| Wraith | EMF, Spirit Box, Freezing | High |
-| Phantom | EMF, Writing | Medium |
-| Shade | Writing | Low |
-| Specter | EMF, UV | Medium |
-| Poltergeist | Spirit Box, Writing, Freezing | Medium |
-| Hollow | Spirit Box, UV | Medium |
-| Revenant | EMF, Spirit Box, Freezing | High |
-| Banshee | EMF, Freezing, UV | High |
-| The Dread | EMF, Spirit Box, Freezing | **EXTREME** |
+## Current 1.0 feature set
 
-## 🔧 Installation
+- **12 standard ghost fragments**, each with distinct evidence and behavioral traits
+- **The Forgotten**, a classified thirteenth manifestation tied to the finale
+- **Six evidence types** used to identify active manifestations
+- **Field Radio assignments** with persistent per-player signals
+- **Memory and coherence**, replacing the older sanity/exposure design
+- **Participant-aware multiplayer investigations**
+- **Hunts, containment, Taken states, and deliberate Remnant revival**
+- **Fragment Reconstruction** with persistent individual progression
+- **Attuned Bench fabrication** and controlled equipment recovery
+- **Project UMBRA narrative content**, recovered documents, and branching endgame structure
+- **Reload-safe persistence**, migration support, diagnostics, and soft uninstall controls
 
-1. Download the latest release
-2. Place the datapack in your world's `datapacks` folder
-3. Run `/reload` or restart your world
-4. Use `/function spectral:help` to get started
+## Development target
 
-## 📖 Quick Start
+| Component | Target |
+|---|---|
+| Minecraft | Java Edition 26.2 |
+| Data-pack format | 107.1 |
+| Namespace | `sf` |
+| Public release | Spectral Frequency 1.0 |
 
-1. Craft investigation tools using Echo Shards from Ancient Cities
-2. Summon a ghost with `/function spectral:summon/random`
-3. Gather evidence to identify the ghost type
-4. Contain the ghost before your exposure reaches critical levels
-5. Survive manifestations by hiding (crouch under solid blocks)
+## Installation
 
-## 🔗 Links
+There is no approved public 1.0 release package yet. Development builds should be used only for testing.
 
-- [Planet Minecraft](https://www.planetminecraft.com/data-pack/spectral-frequency/)
+When a release candidate is approved, its ZIP will contain the datapack directly at archive root:
+
+```text
+pack.mcmeta
+data/
+```
+
+The release ZIP will be placed in a world's `datapacks` directory and loaded by restarting the world or running `/reload`.
+
+## Repository branches
+
+- `main` — historical public Beta baseline until 1.0 is release-approved
+- `archive/beta-13` — preserved final Beta-era source
+- `develop/1.0-stabilization` — authoritative 1.0 development integration branch
+
+Feature and repair work should use focused branches and merge into the development branch only after testing.
+
+## Development documentation
+
+Internal release tracking lives under [`docs/development`](docs/development/):
+
+- [1.0 Stabilization Ledger](docs/development/1.0_STABILIZATION_LEDGER.md)
+- [Regression Matrix](docs/development/REGRESSION_MATRIX.md)
+- [Decision Log](docs/development/DECISION_LOG.md)
+- [Schema Migrations](docs/development/SCHEMA_MIGRATIONS.md)
+- [Known Issues](docs/development/KNOWN_ISSUES.md)
+- [1.0 Release Checklist](docs/development/RELEASE_CHECKLIST_1.0.md)
+
+## Administrative diagnostics
+
+Development builds include:
+
+```mcfunction
+/function sf:dev/health
+```
+
+This reports runtime versioning, schema state, scheduled-loop heartbeats, active-case consistency, loaded manifestations, Remnants, Bench markers, pending signals, and suspicious stale state.
+
+## Documentation and community
+
+- [Spectral Frequency Wiki](https://spectral-frequency.fandom.com/)
 - [Modrinth](https://modrinth.com/datapack/spectral-frequency)
 - [CurseForge](https://www.curseforge.com/minecraft/data-packs/spectral-frequency)
-- [Wiki](https://spectral-frequency.fandom.com/)
+- [Planet Minecraft](https://www.planetminecraft.com/data-pack/spectral-frequency/)
 - [Discord](https://discord.gg/nexuslabs)
 
-## 🐛 Bug Reports & Suggestions
+Bug reports and proposals should be filed through this repository's Issues page. Do not include unreleased Black Archive spoilers in public issue titles.
 
-Found a bug or have an idea?
-- Open an issue on [GitHub](https://github.com/YOUR_USERNAME/spectral-frequency/issues) (preferred)
-- Comment on Planet Minecraft
-- Post in our Discord server
+## License
 
-## 📜 License
-
-MIT License — Feel free to use, modify, and share!
+Spectral Frequency is distributed under the [MIT License](LICENSE).
 
 ---
 

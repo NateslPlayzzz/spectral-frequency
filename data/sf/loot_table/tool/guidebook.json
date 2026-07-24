@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Investigator's Guidebook",
+                  "color": "#D8C8A0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "guide"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Everything UMBRA knew. Everything you'll need.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click to open.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:guidebook"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Containment Focus",
+                  "color": "#C89BFF",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "contain"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Bind a fragment you have named.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Hold near the anomaly to channel.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:containment_focus"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

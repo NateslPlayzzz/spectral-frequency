@@ -1,0 +1,1 @@
+$data remove storage sf:player_data entries[{uuid:$(ruuid)}]

@@ -1,0 +1,1 @@
+$data modify storage sf:player_data entries[{uuid:$(quuid)}].quest set value $(qstep)

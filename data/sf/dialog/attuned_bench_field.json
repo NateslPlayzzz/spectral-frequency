@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "ATTUNED FIELD DEVICES",
+    "color": "#5AC8C8",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Field Devices",
+    "color": "#5AC8C8"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "These devices require Ectoplasm to retain their resonance outside the Bench.",
+        "color": "gray"
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 2,
+  "actions": [
+    {
+      "label": {
+        "text": "FLASHLIGHT",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Redstone · 1 Glass · 1 Ectoplasm",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 1"
+      }
+    },
+    {
+      "label": {
+        "text": "PHOTO CAMERA",
+        "color": "#E0E0E0",
+        "bold": true
+      },
+      "tooltip": "2 Iron · 1 Redstone · 1 Glass · 2 Ectoplasm",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 2"
+      }
+    },
+    {
+      "label": {
+        "text": "MOTION SENSOR",
+        "color": "#5AC8C8",
+        "bold": true
+      },
+      "tooltip": "2 Iron · 2 Redstone · 2 Ectoplasm",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 3"
+      }
+    },
+    {
+      "label": {
+        "text": "RESONANCE KEY",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Amethyst · 1 Ectoplasm",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 4"
+      }
+    },
+    {
+      "label": {
+        "text": "FIELD RADIO",
+        "color": "#5AC8C8",
+        "bold": true
+      },
+      "tooltip": "2 Iron · 2 Redstone · 1 Glass · 2 Ectoplasm",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 5"
+      }
+    },
+    {
+      "label": {
+        "text": "EMERGENCY BEACON",
+        "color": "#FFC36B",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 2 Redstone · 1 Amethyst · 2 Ectoplasm · 1 Veil Shard",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 6"
+      }
+    },
+    {
+      "label": {
+        "text": "BACK TO BENCH",
+        "color": "#8A8A98"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 93"
+      }
+    }
+  ]
+}

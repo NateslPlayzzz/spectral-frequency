@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "CALIBRATION INSTRUMENTS",
+    "color": "#D8C8A0",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Calibration Instruments",
+    "color": "#D8C8A0"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Core replacement formulas use ordinary conductive materials. No Ectoplasm or Veil Shards are required.",
+        "color": "gray"
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 2,
+  "actions": [
+    {
+      "label": {
+        "text": "EMF DETECTOR",
+        "color": "#9BFFB0",
+        "bold": true
+      },
+      "tooltip": "2 Iron · 2 Redstone · 1 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 10"
+      }
+    },
+    {
+      "label": {
+        "text": "THERMOMETER",
+        "color": "#5AC8C8",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Redstone · 1 Glass · 1 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 11"
+      }
+    },
+    {
+      "label": {
+        "text": "SPIRIT BOX",
+        "color": "#C89BFF",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 2 Redstone · 1 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 12"
+      }
+    },
+    {
+      "label": {
+        "text": "UV LIGHT",
+        "color": "#C89BFF",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Redstone · 1 Glass · 2 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 13"
+      }
+    },
+    {
+      "label": {
+        "text": "WRITING DETECTOR",
+        "color": "#FFC36B",
+        "bold": true
+      },
+      "tooltip": "1 Iron · 1 Redstone · 1 Glass · 2 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 14"
+      }
+    },
+    {
+      "label": {
+        "text": "CONTAINMENT FOCUS",
+        "color": "#7A5CFF",
+        "bold": true
+      },
+      "tooltip": "2 Iron · 2 Redstone · 1 Glass · 2 Amethyst",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 15"
+      }
+    },
+    {
+      "label": {
+        "text": "BACK TO BENCH",
+        "color": "#8A8A98"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.bench_menu set 93"
+      }
+    }
+  ]
+}

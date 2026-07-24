@@ -1,0 +1,2 @@
+execute if score @s sf.read_val matches 1 run title @s actionbar ["",{"text":"\u25c8 UV  ","color":"gray"},{"text":"TRACE FOUND","color":"#C89BFF","bold":true}]
+execute if score @s sf.read_val matches 0 run title @s actionbar ["",{"text":"\u25c8 UV  ","color":"gray"},{"text":"clean","color":"dark_gray"}]

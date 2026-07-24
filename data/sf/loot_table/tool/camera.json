@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:carrot_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Photo Camera",
+                  "color": "#E0E0E0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "camera"
+                  }
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "A photograph is a memory the Hollow cannot take.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Right-click to capture what you see.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:item_model": "sf:camera"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

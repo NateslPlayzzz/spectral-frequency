@@ -1,0 +1,92 @@
+name: Feature request
+description: Propose a new mechanic, improvement, or presentation change
+title: "[Feature] "
+labels:
+  - enhancement
+assignees:
+  - NateslPlayzzz
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests should explain the player problem first. Large ideas may be deferred until after Spectral Frequency 1.0.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Player problem or opportunity
+      description: What experience, limitation, or gap would this address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the mechanic or change in practical terms.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Player-facing impact
+      description: How would this affect investigations, progression, multiplayer, lore, performance, or presentation?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Investigation and evidence
+        - Ghost behavior and Hunts
+        - Containment
+        - Memory and revival
+        - Progression and reconstruction
+        - Equipment and Attuned Bench
+        - Multiplayer
+        - Lore and Recovered Documents
+        - Finale
+        - User interface and presentation
+        - Resource pack
+        - Performance and administration
+        - Documentation or wiki
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target
+    attributes:
+      label: Suggested release target
+      options:
+        - Must be considered for 1.0
+        - Suitable for a 1.0 patch
+        - Post-1.0 expansion
+        - No preference
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Note simpler approaches, related mechanics, or reasons existing systems are insufficient.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add mockups, screenshots, examples, or balancing considerations.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I searched existing issues for similar proposals.
+          required: true
+        - label: This request preserves Spectral Frequency's paranormal-investigation identity.
+          required: true

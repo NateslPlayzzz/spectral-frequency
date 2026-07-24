@@ -1,0 +1,116 @@
+name: Bug report
+description: Report a reproducible Spectral Frequency problem
+title: "[Bug] "
+labels:
+  - bug
+assignees:
+  - NateslPlayzzz
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a Spectral Frequency issue. Please include enough detail for the problem to be reproduced in a clean test world.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem summary
+      description: What happened, and what system was involved?
+      placeholder: Describe the issue clearly and concisely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: List the exact sequence that causes the problem.
+      placeholder: |
+        1. Install the datapack...
+        2. Request an investigation...
+        3. Use the EMF Detector...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Single-player
+        - Multiplayer server
+        - Both
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation state
+      options:
+        - Clean world / fresh install
+        - Existing world upgraded from an older build
+        - Soft-uninstalled and re-enabled
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: minecraft
+    attributes:
+      label: Minecraft Java version
+      placeholder: "26.2"
+    validations:
+      required: true
+
+  - type: input
+    id: build
+    attributes:
+      label: Spectral Frequency build or commit
+      description: Give the release name, branch, commit SHA, or download date.
+      placeholder: "1.0 development / commit abc1234"
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Logs, health output, or screenshots
+      description: Include relevant game log lines, `/function sf:dev/health` output, screenshots, or video.
+      render: shell
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Mention datapacks, mods, server software, reloads, reconnects, or anything else that may matter.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I reproduced this on the stated build.
+          required: true
+        - label: I did not test the twelve-fragment finale in an important primary world.
+          required: true

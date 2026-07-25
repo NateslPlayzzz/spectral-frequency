@@ -21,6 +21,7 @@ scoreboard objectives remove sf.read_type
 scoreboard objectives remove sf.read_val
 
 scoreboard objectives remove sf.journal
+scoreboard objectives remove sf.case_id
 scoreboard objectives remove sf.guide
 
 scoreboard objectives remove sf.log_emf

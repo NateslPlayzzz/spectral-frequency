@@ -12,7 +12,11 @@ execute if score @s sf.claimed matches 1.. run return 0
 execute if entity @s[gamemode=spectator] run return 0
 
 execute if score @s sf.contain_active matches 1.. run return 0
+
 execute if score @s sf.coherence matches ..0 run return run title @s actionbar {"text":"you have no Memory left to hold the binding","color":"dark_red","italic":true}
+
+# Containment may not infer the manifestation for the player.
+execute unless score @s sf.case_id matches 1..12 run return run title @s actionbar {"text":"file a classification in the Case Journal first","color":"#FFC36B","italic":true}
 
 # Repair an invalid online operator tag before checking the global lock.
 execute as @a[tag=sf.contain_operator] unless score @s sf.contain_active matches 1.. run tag @s remove sf.contain_operator
@@ -28,6 +32,7 @@ execute unless entity @e[type=minecraft:marker,tag=sf.ghost,tag=!sf.forgotten,ta
 
 # A Hunt or warning phase must be survived before binding can begin.
 execute if entity @e[type=minecraft:marker,tag=sf.ghost,tag=!sf.forgotten,tag=sf.state.warning,distance=..6] run return run title @s actionbar {"text":"the manifestation is too violent to bind","color":"dark_red","italic":true}
+
 execute if entity @e[type=minecraft:marker,tag=sf.ghost,tag=!sf.forgotten,tag=sf.state.hunt,distance=..6] run return run title @s actionbar {"text":"survive the Hunt before attempting containment","color":"dark_red","italic":true}
 
 # Temporary activation authority. Command execution is sequential, so this

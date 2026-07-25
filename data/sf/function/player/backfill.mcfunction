@@ -20,6 +20,7 @@ scoreboard players add @s sf.read_type 0
 scoreboard players add @s sf.read_val 0
 
 scoreboard players add @s sf.journal 0
+scoreboard players add @s sf.case_id 0
 scoreboard players add @s sf.guide 0
 
 scoreboard players add @s sf.log_emf 0

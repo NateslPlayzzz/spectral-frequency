@@ -1,0 +1,122 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "CASE CLASSIFICATION",
+    "color": "#7A5CFF",
+    "bold": true
+  },
+  "external_title": {
+    "text": "Classify Manifestation",
+    "color": "#7A5CFF"
+  },
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "UMBRA STANDARD REGISTRY",
+        "color": "#6A6A78",
+        "bold": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Select the registered fragment whose fingerprint matches the three signs recorded in your Case Journal.",
+        "color": "gray"
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "The Containment Focus will test your filed classification. An incorrect filing may provoke resistance.",
+        "color": "#FFC36B",
+        "italic": true
+      }
+    }
+  ],
+  "inputs": [],
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "columns": 2,
+  "actions": [
+    {
+      "label": {
+        "text": "BANSHEE",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "EMF Level 5 · Spirit Box · Freezing Temperatures",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 11"
+      }
+    },
+    {
+      "label": {
+        "text": "SHADOW",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "EMF Level 5 · Freezing Temperatures · UV Traces",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 12"
+      }
+    },
+    {
+      "label": {
+        "text": "SPECTER",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "EMF Level 5 · Spirit Box · UV Traces",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 13"
+      }
+    },
+    {
+      "label": {
+        "text": "POLTERGEIST",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "EMF Level 5 · Ghost Writing · UV Traces",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 14"
+      }
+    },
+    {
+      "label": {
+        "text": "REVENANT",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "EMF Level 5 · Freezing Temperatures · Ghost Writing",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 15"
+      }
+    },
+    {
+      "label": {
+        "text": "MARE",
+        "color": "#D8C8A0",
+        "bold": true
+      },
+      "tooltip": "Spirit Box · Ghost Writing · Freezing Temperatures",
+      "action": {
+        "type": "run_command",
+        "command": "/trigger sf.journal set 16"
+      }
+    },
+    {
+      "label": {
+        "text": "CLOSE REGISTRY",
+        "color": "#6A6A78"
+      }
+    }
+  ]
+}

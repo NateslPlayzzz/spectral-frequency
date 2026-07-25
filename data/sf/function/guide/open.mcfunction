@@ -6,7 +6,9 @@ scoreboard players set @s sf.tool_cd 6
 tellraw @s ""
 tellraw @s [{"text":"═══ ","color":"dark_gray"},{"text":"INVESTIGATOR'S GUIDEBOOK","color":"#D8C8A0","bold":true},{"text":" ═══","color":"dark_gray"}]
 
-tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"How to Investigate","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 1"},"hover_event":{"action":"show_text","value":{"text":"The basics: evidence, identify, contain."}}}]
+tellraw @s [{"text":"  ▶ ","color":"#7A5CFF"},{"text":"Current Case Journal","color":"white","bold":true,"underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.journal set 1"},"hover_event":{"action":"show_text","value":{"text":"Review evidence and file your manifestation classification."}}}]
+
+tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"How to Investigate","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 1"},"hover_event":{"action":"show_text","value":{"text":"The basics: evidence, classify, contain."}}}]
 
 tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Memory & The Hollow","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 2"},"hover_event":{"action":"show_text","value":{"text":"What Memory is and how to preserve it."}}}]
 

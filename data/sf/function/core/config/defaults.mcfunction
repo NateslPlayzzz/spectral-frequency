@@ -41,8 +41,8 @@ execute unless data storage sf:config dispatch_radio_v1 run data modify storage 
 execute unless data storage sf:config revive_interaction_v1 run data modify storage sf:config revive_need set value 10
 execute unless data storage sf:config revive_interaction_v1 run data modify storage sf:config revive_cost set value 2
 execute unless data storage sf:config revive_interaction_v1 run data modify storage sf:config revive_interaction_v1 set value true
+
 # Attuned Bench catalog trigger.
-# The storage marker prevents repeated objective-creation errors on /reload.
 execute unless data storage sf:config bench_catalog_v1 run scoreboard objectives add sf.bench_menu trigger
 execute unless data storage sf:config bench_catalog_v1 run data modify storage sf:config bench_catalog_v1 set value true
 
@@ -51,10 +51,16 @@ scoreboard players enable @a sf.bench_menu
 # Emergency equipment-requisition allowance.
 execute unless data storage sf:config requisition_limit run data modify storage sf:config requisition_limit set value 2
 
-# Existing worlds receive the new runtime mirror objective once.
+# Existing worlds receive the requisition runtime mirror objective once.
 execute unless data storage sf:config requisition_claims_v1 run scoreboard objectives add sf.req_used dummy
 execute unless data storage sf:config requisition_claims_v1 run data modify storage sf:config requisition_claims_v1 set value true
 
 scoreboard players add @a sf.req_used 0
+
+# Existing schema-102 worlds receive the case-local classification objective once.
+execute unless data storage sf:config identification_v1 run scoreboard objectives add sf.case_id dummy
+execute unless data storage sf:config identification_v1 run data modify storage sf:config identification_v1 set value true
+
+scoreboard players add @a sf.case_id 0
 
 data modify storage sf:config initialized set value true

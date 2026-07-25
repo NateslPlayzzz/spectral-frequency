@@ -25,6 +25,7 @@ scoreboard objectives add sf.read_type dummy
 scoreboard objectives add sf.read_val dummy
 
 scoreboard objectives add sf.journal trigger
+scoreboard objectives add sf.case_id dummy
 scoreboard objectives add sf.guide trigger
 
 scoreboard objectives add sf.log_emf dummy
@@ -107,7 +108,6 @@ scoreboard objectives add sf.ev_echo dummy
 scoreboard objectives add sf.req_used dummy
 
 # Session-generation tracking.
-# leave_now increments while the player is departing the server.
 scoreboard objectives add sf.leave_now minecraft.custom:minecraft.leave_game
 scoreboard objectives add sf.leave_seen dummy
 
@@ -156,7 +156,7 @@ data modify storage sf:player_data entries set value []
 data modify storage sf:case state set value "inactive"
 data modify storage sf:forgotten state set value "idle"
 
-# These objectives were created above, so prevent defaults from attempting
-# their earlier one-time objective migrations.
+# Prevent defaults from attempting objective migrations already handled here.
 data modify storage sf:config bench_catalog_v1 set value true
 data modify storage sf:config requisition_claims_v1 set value true
+data modify storage sf:config identification_v1 set value true

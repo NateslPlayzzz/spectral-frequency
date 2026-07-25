@@ -1,5 +1,5 @@
 # case/reset.mcfunction
-# Clears all case-local evidence, reading, and channel state.
+# Clears all case-local evidence, classification, reading, and channel state.
 
 # Only an actual operator may release the shared target during a player-local
 # reset. This prevents cleanup of an unrelated nonparticipant from breaking a
@@ -15,6 +15,8 @@ scoreboard players set @s sf.log_writing 0
 scoreboard players set @s sf.log_uv 0
 scoreboard players set @s sf.log_echo 0
 scoreboard players set @s sf.log_decay 0
+
+scoreboard players set @s sf.case_id 0
 
 scoreboard players set @s sf.read_type 0
 scoreboard players set @s sf.read_val 0

@@ -14,7 +14,7 @@ kill @e[type=minecraft:marker,tag=sf.ghost]
 kill @e[tag=sf.uv_trace]
 kill @e[tag=sf.remnant]
 kill @e[type=minecraft:marker,tag=sf.ward]
-
+kill @e[type=minecraft:marker,tag=sf.sensor]
 # Remove stale runtime ownership from online players.
 tag @a remove sf.case_participant
 tag @a remove sf.case_owner

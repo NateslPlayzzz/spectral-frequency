@@ -17,7 +17,7 @@ kill @e[tag=sf.remnant]
 kill @e[type=minecraft:marker,tag=sf.ward]
 kill @e[tag=sf.case_source]
 kill @e[tag=sf.dispatch_origin]
-
+kill @e[type=minecraft:marker,tag=sf.sensor]
 schedule clear sf:player/claim/solo_release
 
 tag @a remove sf.case_participant

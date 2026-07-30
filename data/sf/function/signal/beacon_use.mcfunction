@@ -1,12 +1,14 @@
 # signal/beacon_use.mcfunction
-# Consumable emergency assignment request.
-#
-# Bypasses the Radio cooldown but cannot overwrite the user's own signal
-# or open a second global investigation.
+# Consumes one Emergency Beacon to bypass the ordinary Radio cooldown.
+
+scoreboard players set @s sf.tool_cd 10
 
 function sf:signal/recover
 
 execute if score @s sf.quest matches ..99 run return run function sf:signal/msg_notready
+execute if score @s sf.claimed matches 1.. run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"EMERGENCY BEACON","color":"#FFC36B","bold":true},{"text":"] ","color":"dark_gray"},{"text":"The channel cannot locate what has already been Taken.","color":"gray","italic":true}]
+execute if entity @s[gamemode=spectator] run return 0
+execute unless data storage sf:forgotten {state:"idle"} run return run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"EMERGENCY BEACON","color":"#FFC36B","bold":true},{"text":"] ","color":"dark_gray"},{"text":"The emergency channel is occupied by another presence.","color":"#C89BFF","italic":true}]
 execute if data storage sf:case {state:"active"} run return run function sf:signal/msg_active
 execute if entity @s[tag=sf.seeking] run return run function sf:signal/msg_seeking
 

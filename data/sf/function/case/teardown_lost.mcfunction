@@ -20,7 +20,7 @@ kill @e[tag=sf.remnant]
 kill @e[type=minecraft:marker,tag=sf.ward]
 kill @e[tag=sf.case_source]
 kill @e[tag=sf.dispatch_origin]
-
+kill @e[type=minecraft:marker,tag=sf.sensor]
 tag @a remove spectral.seen
 tag @a remove sf.case_participant
 tag @a remove sf.case_owner

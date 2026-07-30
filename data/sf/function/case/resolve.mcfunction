@@ -17,7 +17,7 @@ kill @e[type=minecraft:marker,tag=sf.ghost]
 kill @e[tag=sf.uv_trace]
 kill @e[tag=sf.remnant]
 kill @e[type=minecraft:marker,tag=sf.ward]
-
+kill @e[type=minecraft:marker,tag=sf.sensor]
 tag @a remove spectral.seen
 scoreboard players set @a[tag=sf.case_participant] sf.case_gen 0
 tag @a remove sf.case_participant

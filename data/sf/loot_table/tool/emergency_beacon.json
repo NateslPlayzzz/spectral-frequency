@@ -14,9 +14,9 @@
                 "minecraft:custom_data": {"sf":{"item":"beacon"}},
                 "minecraft:item_model": "sf:emergency_beacon",
                 "minecraft:lore": [
-                  {"text":"Burns through the static. One use.","color":"gray","italic":false},
-                  {"text":"Calls a signal immediately \u2014 no waiting.","color":"dark_gray","italic":false},
-                  {"text":"Right-click to consume.","color":"dark_gray","italic":false}
+                  {"text":"Bypasses the Field Radio cooldown.","color":"gray","italic":false},
+                  {"text":"Creates one personal tracking signal.","color":"dark_gray","italic":false},
+                  {"text":"Consumed only when the uplink succeeds.","color":"dark_gray","italic":false}
                 ]
               }
             }

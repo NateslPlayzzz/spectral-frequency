@@ -3,7 +3,10 @@ name: Validate datapack
 on:
   push:
     branches:
+      - main
       - develop/1.0-stabilization
+    tags:
+      - "v*"
   pull_request:
     branches:
       - main
@@ -12,9 +15,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: validate-datapack-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   datapack-validation:
-    name: Datapack validation
+    name: Release validation
     runs-on: ubuntu-latest
 
     steps:
@@ -26,5 +33,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate repository structure
-        run: python .github/scripts/validate_datapack.py
+      - name: Compile validator
+        run: |
+          python -X utf8 -m py_compile .github/scripts/validate_datapack.py .github/scripts/test_validate_datapack.py
+          rm -rf .github/scripts/__pycache__
+
+      - name: Run validator self-tests
+        run: python -B -X utf8 .github/scripts/test_validate_datapack.py
+
+      - name: Validate release source
+        run: python -B -X utf8 .github/scripts/validate_datapack.py --warnings-as-errors

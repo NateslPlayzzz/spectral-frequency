@@ -1,25 +1,15 @@
 {
   "parent": "sf:root",
   "display": {
-    "icon": {
-      "id": "minecraft:recovery_compass"
-    },
-    "title": {
-      "text": "Held in Memory",
-      "color": "#C89BFF"
-    },
-    "description": {
-      "text": "Return another Investigator from the Hollow.",
-      "color": "#8A8A98"
-    },
+    "icon": {"id":"minecraft:recovery_compass"},
+    "title": {"text":"Held in Memory","color":"#C89BFF"},
+    "description": {"text":"Return a Taken Investigator through their Remnant.","color":"#8A8A98"},
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": true
   },
   "criteria": {
-    "remembered": {
-      "trigger": "minecraft:impossible"
-    }
+    "remembered": {"trigger":"minecraft:impossible"}
   }
 }

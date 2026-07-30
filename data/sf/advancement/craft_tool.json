@@ -1,10 +1,14 @@
 {
-    "display": {
-      "icon": {"id": "minecraft:amethyst_shard"},
-      "title": {"text": "Resonance", "color": "#9BFFB0"},
-      "description": {"text": "Attune a workbench and craft your first instrument.", "color": "#8A8A98"},
-      "show_toast": true, "announce_to_chat": false, "frame": "task"
-    },
-    "parent": "sf:first_contain",
-    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+  "display": {
+    "icon": {"id":"minecraft:amethyst_shard"},
+    "title": {"text":"Resonance","color":"#9BFFB0"},
+    "description": {"text":"Use an Attuned Bench to craft your first instrument.","color":"#8A8A98"},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "frame": "task"
+  },
+  "parent": "sf:first_contain",
+  "criteria": {
+    "x": {"trigger":"minecraft:impossible"}
   }
+}

@@ -65,7 +65,7 @@ scoreboard players set @s sf.sig_dist 0
 
 title @s times 8 45 15
 title @s title {"text":"SIGNAL ACQUIRED","color":"#5AC8C8","bold":true}
-title @s subtitle {"text":"personal tracking channel synchronized","color":"gray","italic":true}
+title @s subtitle {"text":"personal assignment channel synchronized","color":"gray","italic":true}
 
 playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.85 1.15
 playsound minecraft:block.sculk_sensor.clicking player @s ~ ~ ~ 0.55 1.35
@@ -73,7 +73,7 @@ playsound minecraft:block.sculk_sensor.clicking player @s ~ ~ ~ 0.55 1.35
 particle minecraft:electric_spark ~ ~1 ~ 0.35 0.5 0.35 0.03 14
 particle minecraft:reverse_portal ~ ~1 ~ 0.25 0.45 0.25 0.02 10
 
-data modify storage sf:temp vline set value "Signal locked to your receiver. Follow the pulse. Other field units will retain their own channels."
+data modify storage sf:temp vline set value "Signal locked to your Field Radio. Follow the pulse to the investigation source. Other Investigators retain their own assignment channels."
 function sf:quest/vance
 
-tellraw @s [{"text": "[","color": "dark_gray"},{"text": "FIELD RADIO","color": "#5AC8C8","bold": true},{"text": "] ","color": "dark_gray"},{"text": "Use the Radio again to review or cancel this assignment.","color": "#8A8A98"}]
+tellraw @s [{"text":"[","color":"dark_gray"},{"text":"FIELD RADIO","color":"#5AC8C8","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Use the Radio again to review or cancel this assignment.","color":"#8A8A98"}]

@@ -1,27 +1,29 @@
+# quest/intro_1_say.mcfunction
+
 title @s times 10 60 20
-title @s subtitle {"text":"incoming transmission","color":"#5AC8C8"}
+title @s subtitle {"text":"incoming transmission","color":"#5AC8C8","italic":true}
 title @s title {"text":" "}
 
-data modify storage sf:temp vline set value "You're awake. Good. I don't have long on this channel."
+data modify storage sf:temp vline set value "You're awake. Good. I do not have long on this channel."
 function sf:quest/vance
 
-data modify storage sf:temp vline set value "My name is Dr. Vance. You're inside an UMBRA site — and you are not alone in there."
+data modify storage sf:temp vline set value "My name is Dr. Vance. You are inside an UMBRA site—and a manifestation is active nearby."
 function sf:quest/vance
 
-data modify storage sf:temp vline set value "Open your MEMORY. That bar is how much of yourself the place hasn't taken yet. Guard it."
+data modify storage sf:temp vline set value "Watch your Memory meter. It measures how firmly the world still holds your identity. Do not let it reach zero."
 function sf:quest/vance
 
-data modify storage sf:temp vline set value "Take this. Learn to feel the dead air with it. [Use the EMF Detector near a disturbance.]"
+data modify storage sf:temp vline set value "Take the EMF Detector. Use it near the manifestation and confirm EMF Level 5."
 function sf:quest/vance
 
-data modify storage sf:temp vline set value "Wait — I'm reading something in there with you. It's close. This is your chance to learn."
+data modify storage sf:temp vline set value "The reading is close. This guided investigation will teach you how to confirm evidence, classify a fragment, and contain its manifestation."
 function sf:quest/vance
 
-# Begin immediately when no other case is active.
+# Begin immediately when no other investigation is active.
 execute if function sf:case/start_tutorial run return run function sf:quest/tutorial_started
 
-# Never terminate another player's live investigation to begin onboarding.
+# Never terminate another player's active investigation to begin onboarding.
 tag @s add sf.tutorial_waiting
 
-data modify storage sf:temp vline set value "Another field operation is occupying the channel. Hold position. I'll route your guided case when it clears."
+data modify storage sf:temp vline set value "Another investigation is occupying the field channel. Hold position. I will route your guided assignment when it closes."
 function sf:quest/vance

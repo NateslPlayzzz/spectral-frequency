@@ -1,10 +1,14 @@
 {
-    "display": {
-      "icon": {"id": "minecraft:soul_lantern"},
-      "title": {"text": "It Remembers You", "color": "#FFC36B"},
-      "description": {"text": "Survive a hunt.", "color": "#8A8A98"},
-      "show_toast": true, "announce_to_chat": false, "frame": "task"
-    },
-    "parent": "sf:root",
-    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+  "display": {
+    "icon": {"id":"minecraft:soul_lantern"},
+    "title": {"text":"It Remembers You","color":"#FFC36B"},
+    "description": {"text":"Survive a Hunt.","color":"#8A8A98"},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "frame": "task"
+  },
+  "parent": "sf:root",
+  "criteria": {
+    "x": {"trigger":"minecraft:impossible"}
   }
+}

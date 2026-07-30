@@ -1,10 +1,14 @@
 {
-    "display": {
-      "icon": {"id": "minecraft:carrot_on_a_stick"},
-      "title": {"text": "Dead Air", "color": "#9BFFB0"},
-      "description": {"text": "Confirm your first piece of evidence.", "color": "#8A8A98"},
-      "show_toast": true, "announce_to_chat": false, "frame": "task"
-    },
-    "parent": "sf:root",
-    "criteria": {"x": {"trigger": "minecraft:impossible"}}
+  "display": {
+    "icon": {"id":"minecraft:carrot_on_a_stick"},
+    "title": {"text":"First Confirmation","color":"#9BFFB0"},
+    "description": {"text":"Confirm your first evidence type in a Case Journal.","color":"#8A8A98"},
+    "show_toast": true,
+    "announce_to_chat": false,
+    "frame": "task"
+  },
+  "parent": "sf:root",
+  "criteria": {
+    "x": {"trigger":"minecraft:impossible"}
   }
+}

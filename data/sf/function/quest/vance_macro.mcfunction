@@ -1,1 +1,1 @@
-$tellraw @s [{"text":"\u2022 ","color":"dark_gray"},{"text":"VANCE","color":"#5AC8C8","bold":true},{"text":" \u203a ","color":"dark_gray"},{"text":"$(vline)","color":"#5AC8C8","italic":true}]
+$tellraw @s [{"text":"• ","color":"dark_gray"},{"text":"VANCE","color":"#5AC8C8","bold":true},{"text":" › ","color":"dark_gray"},{"text":"$(vline)","color":"gray"}]

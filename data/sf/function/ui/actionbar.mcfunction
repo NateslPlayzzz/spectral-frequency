@@ -8,8 +8,11 @@
 # 3. Transient tool reading
 # 4. Held Field Radio navigation
 # 5. Nothing
+#
+# Hunt warnings and Hunt-start alerts intentionally use the independent
+# title/subtitle layer so critical danger feedback cannot be overwritten here.
 
-# Highest priority: revive.
+# Highest managed priority: revive.
 execute if score @s sf.revive_progress matches 1.. run return run function sf:ui/ab/revive
 
 # Containment progress.

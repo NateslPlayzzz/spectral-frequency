@@ -8,9 +8,6 @@ tag @s remove sf.roaming
 
 scoreboard players set @s sf.hunt_timer 30
 
-execute as @a[tag=sf.case_participant] at @s run playsound minecraft:entity.warden.roar hostile @s ~ ~ ~ 0.7 0.8
-execute as @a[tag=sf.case_participant] at @s run playsound minecraft:ambient.cave ambient @s ~ ~ ~ 1 0.4
-
-title @a[tag=sf.case_participant] times 5 40 15
-title @a[tag=sf.case_participant] title {"text":" "}
-title @a[tag=sf.case_participant] subtitle {"text":"it remembers you","color":"dark_red","italic":true}
+# Every living participant must know that the global Hunt has begun,
+# including Investigators who moved outside the immediate warning radius.
+execute as @a[tag=sf.case_participant,gamemode=!spectator,scores={sf.claimed=0}] at @s run function sf:sfx/hunt_start

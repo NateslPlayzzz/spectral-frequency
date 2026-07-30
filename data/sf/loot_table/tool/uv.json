@@ -22,12 +22,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Reveals what the eye misses.",
+                    "text": "Sweep the manifestation's recent path.",
                     "color": "gray",
                     "italic": false
                   },
                   {
-                    "text": "Right-click to sweep for traces.",
+                    "text": "Revealed residue fades quickly.",
                     "color": "dark_gray",
                     "italic": false
                   }

@@ -16,6 +16,7 @@ scoreboard objectives add sf.cooldown_timer dummy
 scoreboard objectives add sf.hunt_roll_cd dummy
 scoreboard objectives add sf.case_age dummy
 scoreboard objectives add sf.roam_timer dummy
+scoreboard objectives add sf.trace_timer dummy
 
 scoreboard objectives add sf.use_rod used:carrot_on_a_stick
 scoreboard objectives add sf.tool_cd dummy
@@ -157,3 +158,4 @@ data modify storage sf:config bench_catalog_v1 set value true
 data modify storage sf:config requisition_claims_v1 set value true
 data modify storage sf:config identification_v1 set value true
 data modify storage sf:config authority_lockdown_v1 set value true
+data modify storage sf:config uv_trace_lifecycle_v1 set value true

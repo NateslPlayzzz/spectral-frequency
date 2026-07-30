@@ -22,12 +22,12 @@
                 },
                 "minecraft:lore": [
                   {
-                    "text": "Leave it. The lost may write.",
+                    "text": "Expose the page near a manifestation.",
                     "color": "gray",
                     "italic": false
                   },
                   {
-                    "text": "Right-click to set, then wait.",
+                    "text": "Hold in hand for five seconds.",
                     "color": "dark_gray",
                     "italic": false
                   }

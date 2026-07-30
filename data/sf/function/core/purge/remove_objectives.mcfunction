@@ -12,6 +12,7 @@ scoreboard objectives remove sf.cooldown_timer
 scoreboard objectives remove sf.hunt_roll_cd
 scoreboard objectives remove sf.case_age
 scoreboard objectives remove sf.roam_timer
+scoreboard objectives remove sf.trace_timer
 
 scoreboard objectives remove sf.use_rod
 scoreboard objectives remove sf.tool_cd

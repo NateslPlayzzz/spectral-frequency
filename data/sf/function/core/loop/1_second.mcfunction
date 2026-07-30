@@ -19,6 +19,9 @@ tag @a remove spectral.seen
 # --- Idle ghost behavior: exactly once per second ---
 execute as @e[type=marker,tag=sf.ghost,tag=!sf.forgotten,tag=sf.state.idle] at @s run function sf:ghost/idle/tick
 
+# --- Bounded UV residue lifecycle ---
+execute as @e[type=minecraft:marker,tag=sf.uv_trace] at @s run function sf:ghost/trace/tick
+
 # --- Hunt decision ---
 execute if data storage sf:case {state:"active"} run function sf:ghost/hunt/decide
 

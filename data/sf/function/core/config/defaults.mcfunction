@@ -71,9 +71,11 @@ scoreboard players add @a sf.case_id 0
 # Fresh installations set this marker before defaults, so these commands run
 # only while migrating an existing schema-102 installation.
 execute unless data storage sf:config authority_lockdown_v1 run kill @e[type=minecraft:marker,tag=sf.anchor]
-execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.anchor
-execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.case_start
-execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.case_end
 execute unless data storage sf:config authority_lockdown_v1 run data modify storage sf:config authority_lockdown_v1 set value true
+
+# Existing schema-102 worlds receive bounded, case-owned UV trace lifetimes.
+execute unless data storage sf:config uv_trace_lifecycle_v1 run scoreboard objectives add sf.trace_timer dummy
+execute unless data storage sf:config uv_trace_lifecycle_v1 run kill @e[type=minecraft:marker,tag=sf.uv_trace]
+execute unless data storage sf:config uv_trace_lifecycle_v1 run data modify storage sf:config uv_trace_lifecycle_v1 set value true
 
 data modify storage sf:config initialized set value true

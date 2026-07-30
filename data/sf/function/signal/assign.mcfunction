@@ -3,6 +3,13 @@
 
 function sf:player/data/ensure
 
+# Preview the currently accessible Reconstruction pool. This does not choose
+# the manifestation yet; the final pool is rebuilt when the source opens so
+# carrying or removing an Echo Lens before arrival remains authoritative.
+function sf:case/build_pool
+function sf:case/pool_notice
+data remove storage sf:temp case.pool
+
 # ------------------------------------------------------------
 # TARGET GENERATION
 # ------------------------------------------------------------
@@ -69,4 +76,4 @@ particle minecraft:reverse_portal ~ ~1 ~ 0.25 0.45 0.25 0.02 10
 data modify storage sf:temp vline set value "Signal locked to your receiver. Follow the pulse. Other field units will retain their own channels."
 function sf:quest/vance
 
-tellraw @s [{"text":"[","color":"dark_gray"},{"text":"FIELD RADIO","color":"#5AC8C8","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Use the Radio again to review or cancel this assignment.","color":"#8A8A98"}]
+tellraw @s [{"text": "[","color": "dark_gray"},{"text": "FIELD RADIO","color": "#5AC8C8","bold": true},{"text": "] ","color": "dark_gray"},{"text": "Use the Radio again to review or cancel this assignment.","color": "#8A8A98"}]

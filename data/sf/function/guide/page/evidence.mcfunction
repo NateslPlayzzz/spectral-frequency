@@ -11,10 +11,12 @@ tellraw @s [{"text":"Spirit Box","color":"#9BFFB0"},{"text":" — communicate in
 
 tellraw @s [{"text":"Ghost Writing","color":"#FFC36B"},{"text":" — hold the Writing Detector nearby and expose its page for five seconds.","color":"gray"}]
 
-tellraw @s [{"text":"UV Traces","color":"#C89BFF"},{"text":" — sweep the manifestation's recent path for physical residue.","color":"gray"}]
+tellraw @s [{"text":"UV Traces","color":"#C89BFF"},{"text":" — sweep the manifestation's recent path. Revealed residue fades quickly.","color":"gray"}]
 
-tellraw @s [{"text":"Veil Echo","color":"#C89BFF"},{"text":" — look through the Echo Lens while your Memory is Thinning or worse.","color":"gray"}]
+tellraw @s [{"text":"Veil Echo","color":"#C89BFF"},{"text":" — use the Echo Lens at Thinning Memory or worse. Each exposure costs Memory; deeper loss produces clearer readings.","color":"gray"}]
 
 tellraw @s [{"text":"At reduced Memory, unstable instrument results must be repeated before the Journal accepts them.","color":"#FFC36B","italic":true}]
+
+tellraw @s [{"text":"Physical UV residue confirms immediately. At Erased Memory, the Echo Lens also becomes stable—but you do not.","color":"#8A8A98","italic":true}]
 
 tellraw @s [{"text":"  ◀ back","color":"dark_gray","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 7"}}]

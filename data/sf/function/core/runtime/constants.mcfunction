@@ -78,6 +78,7 @@ execute unless score #pending_emf sf.data = #pending_emf sf.data run scoreboard 
 execute unless score #pending_thermo sf.data = #pending_thermo sf.data run scoreboard players set #pending_thermo sf.data 0
 execute unless score #pending_box sf.data = #pending_box sf.data run scoreboard players set #pending_box sf.data 0
 execute unless score #pending_writing sf.data = #pending_writing sf.data run scoreboard players set #pending_writing sf.data 0
+execute unless score #pending_echo sf.data = #pending_echo sf.data run scoreboard players set #pending_echo sf.data 0
 execute unless score #scan_near sf.data = #scan_near sf.data run scoreboard players set #scan_near sf.data 0
 
 # Identifies the current global investigation generation.

@@ -22,17 +22,17 @@
                 },
                 "minecraft:lore": [
                   {
-                    "text": "See the Veil's echo \u2014 but only",
+                    "text": "Opens at Thinning Memory or worse.",
                     "color": "gray",
                     "italic": false
                   },
                   {
-                    "text": "when you are half-forgotten yourself.",
+                    "text": "Deeper loss produces clearer readings.",
                     "color": "gray",
                     "italic": false
                   },
                   {
-                    "text": "Right-click to look through.",
+                    "text": "Each exposure strains Memory.",
                     "color": "dark_gray",
                     "italic": false
                   }

@@ -78,4 +78,8 @@ execute unless data storage sf:config uv_trace_lifecycle_v1 run scoreboard objec
 execute unless data storage sf:config uv_trace_lifecycle_v1 run kill @e[type=minecraft:marker,tag=sf.uv_trace]
 execute unless data storage sf:config uv_trace_lifecycle_v1 run data modify storage sf:config uv_trace_lifecycle_v1 set value true
 
+# Existing schema-102 worlds receive a per-case Hunt-photograph reward cap.
+execute unless data storage sf:config camera_economy_v1 run scoreboard objectives add sf.case_hunt_photo dummy
+execute unless data storage sf:config camera_economy_v1 run data modify storage sf:config camera_economy_v1 set value true
+
 data modify storage sf:config initialized set value true

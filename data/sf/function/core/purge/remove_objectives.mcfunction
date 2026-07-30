@@ -76,6 +76,7 @@ scoreboard objectives remove sf.sig_miss
 
 scoreboard objectives remove sf.case_score
 scoreboard objectives remove sf.case_photo
+scoreboard objectives remove sf.case_hunt_photo
 scoreboard objectives remove sf.case_lowmem
 scoreboard objectives remove sf.case_survived_hunt
 

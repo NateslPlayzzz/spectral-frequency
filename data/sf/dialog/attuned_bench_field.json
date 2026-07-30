@@ -13,7 +13,7 @@
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "These devices require Ectoplasm to retain their resonance outside the Bench.",
+        "text": "These devices require Ectoplasm to retain their resonance outside the Bench. Case compensation supplies additional assembly materials.",
         "color": "gray"
       }
     }
@@ -90,7 +90,7 @@
         "color": "#FFC36B",
         "bold": true
       },
-      "tooltip": "1 Iron · 2 Redstone · 1 Amethyst · 2 Ectoplasm · 1 Veil Shard",
+      "tooltip": "1 Iron · 2 Redstone · 1 Amethyst · 1 Ectoplasm",
       "action": {
         "type": "run_command",
         "command": "/trigger sf.bench_menu set 6"

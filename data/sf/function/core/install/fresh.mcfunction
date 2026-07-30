@@ -80,6 +80,7 @@ scoreboard objectives add sf.sig_miss dummy
 
 scoreboard objectives add sf.case_score dummy
 scoreboard objectives add sf.case_photo dummy
+scoreboard objectives add sf.case_hunt_photo dummy
 scoreboard objectives add sf.case_lowmem dummy
 scoreboard objectives add sf.case_survived_hunt dummy
 
@@ -159,3 +160,4 @@ data modify storage sf:config requisition_claims_v1 set value true
 data modify storage sf:config identification_v1 set value true
 data modify storage sf:config authority_lockdown_v1 set value true
 data modify storage sf:config uv_trace_lifecycle_v1 set value true
+data modify storage sf:config camera_economy_v1 set value true

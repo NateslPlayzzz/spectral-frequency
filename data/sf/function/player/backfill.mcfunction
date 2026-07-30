@@ -74,6 +74,7 @@ scoreboard players add @s sf.sig_miss 0
 
 scoreboard players add @s sf.case_score 0
 scoreboard players add @s sf.case_photo 0
+scoreboard players add @s sf.case_hunt_photo 0
 scoreboard players add @s sf.case_lowmem 0
 scoreboard players add @s sf.case_survived_hunt 0
 

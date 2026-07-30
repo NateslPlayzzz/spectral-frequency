@@ -1,15 +1,23 @@
-# reward/score.mcfunction — tally performance into sf.case_score
+# reward/score.mcfunction
+# Calculates one enrolled participant's personal case performance.
+
+# Every participant receives base credit for completing the investigation.
 scoreboard players set @s sf.case_score 1
-# Clean contain (you're alive and bound it) — base +1 already set
-# Photographed the ghost: +2 (you took the risk)
+
+# Photographing the manifestation: +2.
 execute if score @s sf.case_photo matches 1 run scoreboard players add @s sf.case_score 2
-# Survived a hunt during the case: +2 (composure)
+
+# Surviving a Hunt inside the active field: +2.
 execute if score @s sf.case_survived_hunt matches 1 run scoreboard players add @s sf.case_score 2
-# Bound it while half-forgotten: +3 (nerve — the SF-signature bonus)
+
+# Operating at Thinning Memory or worse during the case: +3.
 execute if score @s sf.case_lowmem matches 1 run scoreboard players add @s sf.case_score 3
-# Aggressive ghost: +1 (harder quarry) — reuse the was_aggressive capture
+
+# Aggressive manifestation: +1 for every participant exposed to the harder
+# case tier.
 execute if score @s sf.was_aggressive matches 1 run scoreboard players add @s sf.case_score 1
-# Map score -> tier and dispatch rewards
+
+# Dispatch one personal reward tier.
 execute if score @s sf.case_score matches ..2 run function sf:reward/tier_standard
 execute if score @s sf.case_score matches 3..5 run function sf:reward/tier_good
 execute if score @s sf.case_score matches 6.. run function sf:reward/tier_exceptional

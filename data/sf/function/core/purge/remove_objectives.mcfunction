@@ -6,7 +6,6 @@ scoreboard objectives remove sf.coherence
 scoreboard objectives remove sf.coherence_band
 scoreboard objectives remove sf.coherence_band_prev
 scoreboard objectives remove sf.data
-scoreboard objectives remove sf.anchor
 
 scoreboard objectives remove sf.hunt_timer
 scoreboard objectives remove sf.cooldown_timer
@@ -37,9 +36,6 @@ scoreboard objectives remove sf.writing_timer
 
 scoreboard objectives remove sf.contain_progress
 scoreboard objectives remove sf.contain_active
-
-scoreboard objectives remove sf.case_start
-scoreboard objectives remove sf.case_end
 
 scoreboard objectives remove sf.shard_count
 scoreboard objectives remove sf.reconstruct

@@ -10,7 +10,6 @@ scoreboard objectives add sf.coherence dummy
 scoreboard objectives add sf.coherence_band dummy
 scoreboard objectives add sf.coherence_band_prev dummy
 scoreboard objectives add sf.data dummy
-scoreboard objectives add sf.anchor trigger
 
 scoreboard objectives add sf.hunt_timer dummy
 scoreboard objectives add sf.cooldown_timer dummy
@@ -41,9 +40,6 @@ scoreboard objectives add sf.writing_timer dummy
 
 scoreboard objectives add sf.contain_progress dummy
 scoreboard objectives add sf.contain_active dummy
-
-scoreboard objectives add sf.case_start trigger
-scoreboard objectives add sf.case_end trigger
 
 scoreboard objectives add sf.shard_count dummy
 scoreboard objectives add sf.reconstruct trigger
@@ -156,7 +152,8 @@ data modify storage sf:player_data entries set value []
 data modify storage sf:case state set value "inactive"
 data modify storage sf:forgotten state set value "idle"
 
-# Prevent defaults from attempting objective migrations already handled here.
+# Prevent defaults from attempting migrations already handled here.
 data modify storage sf:config bench_catalog_v1 set value true
 data modify storage sf:config requisition_claims_v1 set value true
 data modify storage sf:config identification_v1 set value true
+data modify storage sf:config authority_lockdown_v1 set value true

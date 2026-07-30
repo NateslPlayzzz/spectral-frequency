@@ -11,14 +11,6 @@ function sf:ui/rebuild_bars
 # --- Queued tutorial startup ---
 execute if data storage sf:forgotten {state:"idle"} unless data storage sf:case {state:"active"} as @a[tag=sf.tutorial_waiting,scores={sf.quest=1}] at @s run function sf:quest/tutorial_retry
 
-# --- Anchor placement ---
-execute as @a[scores={sf.anchor=1..}] at @s run function sf:memory/place_anchor
-scoreboard players reset @a sf.anchor
-scoreboard players enable @a sf.anchor
-
-execute as @e[tag=sf.anchor] at @s run particle minecraft:soul ~ ~0.5 ~ 0.1 0.4 0.1 0.01 6
-execute as @a[tag=spectral.sf_init] at @s if entity @e[tag=sf.anchor,distance=..5] run function sf:memory/recover
-
 # --- Ghost sight drain ---
 scoreboard players operation @a[tag=spectral.seen] sf.coherence -= #sight_drain sf.data
 execute as @a[tag=spectral.seen] at @s run playsound minecraft:entity.warden.heartbeat hostile @s ~ ~ ~ 1 0.7

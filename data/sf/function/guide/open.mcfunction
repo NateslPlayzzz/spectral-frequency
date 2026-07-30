@@ -10,7 +10,7 @@ tellraw @s [{"text":"  ▶ ","color":"#7A5CFF"},{"text":"Current Case Journal","
 
 tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"How to Investigate","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 1"},"hover_event":{"action":"show_text","value":{"text":"The basics: evidence, classify, contain."}}}]
 
-tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Memory & The Hollow","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 2"},"hover_event":{"action":"show_text","value":{"text":"What Memory is and how to preserve it."}}}]
+tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Memory & Coherence","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 2"},"hover_event":{"action":"show_text","value":{"text":"What Memory is and how to preserve it."}}}]
 
 tellraw @s [{"text":"  ▶ ","color":"#D8C8A0"},{"text":"Evidence Types","color":"white","underlined":true,"click_event":{"action":"run_command","command":"/trigger sf.guide set 3"},"hover_event":{"action":"show_text","value":{"text":"The six signs and the tools that detect them."}}}]
 

@@ -1,13 +1,19 @@
-# tool/totem/tick.mcfunction — once/sec per ward
+# tool/totem/tick.mcfunction
+# Runs once per second as each active ward.
+
 scoreboard players remove @s sf.hunt_timer 1
-# Protective aura particles (radius-ish visual)
+
+# Protective aura.
 particle minecraft:wax_on ~ ~0.2 ~ 3 0.3 3 0.0 10
 particle minecraft:end_rod ~ ~0.5 ~ 2 0.4 2 0.0 4
-# Recover memory for players within the ward radius
-execute as @a[tag=spectral.sf_init,distance=..6] run scoreboard players operation @s sf.coherence += #totem_recover sf.data
-execute as @a[tag=spectral.sf_init,distance=..6] run function sf:memory/clamp_high
-# Low-life warning flicker in the last 10 seconds
-execute if score @s sf.hunt_timer matches ..10 run particle minecraft:smoke ~ ~0.5 ~ 0.3 0.4 0.3 0.01 8
-execute if score @s sf.hunt_timer matches ..10 if score @s sf.hunt_timer matches 1.. run playsound minecraft:block.candle.ambient ambient @a[distance=..8] ~ ~ ~ 0.4 0.7
-# Expire
+
+# Restore only living enrolled Investigators.
+execute as @a[tag=spectral.sf_init,tag=sf.case_participant,gamemode=!spectator,scores={sf.claimed=0,sf.coherence=..99},distance=..6] run scoreboard players operation @s sf.coherence += #totem_recover sf.data
+execute as @a[tag=spectral.sf_init,tag=sf.case_participant,gamemode=!spectator,scores={sf.claimed=0},distance=..6] run function sf:memory/clamp_high
+
+# Low-life warning during the final ten seconds.
+execute if score @s sf.hunt_timer matches 1..10 run particle minecraft:smoke ~ ~0.5 ~ 0.3 0.4 0.3 0.01 8
+execute if score @s sf.hunt_timer matches 1..10 run playsound minecraft:block.candle.ambient ambient @a[tag=sf.case_participant,distance=..8] ~ ~ ~ 0.4 0.7
+
+# Expire at zero.
 execute if score @s sf.hunt_timer matches ..0 run function sf:tool/totem/expire

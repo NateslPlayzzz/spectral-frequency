@@ -5,7 +5,6 @@ scoreboard players add @s sf.timer 0
 scoreboard players add @s sf.coherence 0
 scoreboard players add @s sf.coherence_band 0
 scoreboard players add @s sf.coherence_band_prev 0
-scoreboard players add @s sf.anchor 0
 
 scoreboard players add @s sf.hunt_timer 0
 scoreboard players add @s sf.cooldown_timer 0
@@ -36,9 +35,6 @@ scoreboard players add @s sf.writing_timer 0
 
 scoreboard players add @s sf.contain_progress 0
 scoreboard players add @s sf.contain_active 0
-
-scoreboard players add @s sf.case_start 0
-scoreboard players add @s sf.case_end 0
 
 scoreboard players add @s sf.shard_count 0
 scoreboard players add @s sf.reconstruct 0
@@ -104,12 +100,9 @@ scoreboard players add @s sf.req_used 0
 scoreboard players add @s sf.leave_now 0
 scoreboard players add @s sf.leave_seen 0
 
-# Trigger authorization is safe to repeat.
-scoreboard players enable @s sf.anchor
+# Player-facing trigger authorization is safe to repeat.
 scoreboard players enable @s sf.journal
 scoreboard players enable @s sf.guide
-scoreboard players enable @s sf.case_start
-scoreboard players enable @s sf.case_end
 scoreboard players enable @s sf.reconstruct
 scoreboard players enable @s sf.use_totem
 scoreboard players enable @s sf.q_trigger

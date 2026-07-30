@@ -25,6 +25,10 @@ execute unless data storage sf:config photo_cooldown run data modify storage sf:
 
 execute unless data storage sf:config sensor_radius run data modify storage sf:config sensor_radius set value 5
 
+# A Warding Totem lasts sixty seconds and restores one Memory per second.
+execute unless data storage sf:config totem_duration run data modify storage sf:config totem_duration set value 60
+execute unless data storage sf:config totem_recover run data modify storage sf:config totem_recover set value 1
+
 # Radio cooldown is stored in game ticks.
 # 2400 ticks = approximately two minutes at 20 TPS.
 execute unless data storage sf:config radio_cooldown run data modify storage sf:config radio_cooldown set value 2400
@@ -57,10 +61,19 @@ execute unless data storage sf:config requisition_claims_v1 run data modify stor
 
 scoreboard players add @a sf.req_used 0
 
-# Existing schema-102 worlds receive the case-local classification objective once.
+# Existing schema-102 worlds receive case-local classification once.
 execute unless data storage sf:config identification_v1 run scoreboard objectives add sf.case_id dummy
 execute unless data storage sf:config identification_v1 run data modify storage sf:config identification_v1 set value true
 
 scoreboard players add @a sf.case_id 0
+
+# Remove former player-authorized administration and free Memory-anchor access.
+# Fresh installations set this marker before defaults, so these commands run
+# only while migrating an existing schema-102 installation.
+execute unless data storage sf:config authority_lockdown_v1 run kill @e[type=minecraft:marker,tag=sf.anchor]
+execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.anchor
+execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.case_start
+execute unless data storage sf:config authority_lockdown_v1 run scoreboard objectives remove sf.case_end
+execute unless data storage sf:config authority_lockdown_v1 run data modify storage sf:config authority_lockdown_v1 set value true
 
 data modify storage sf:config initialized set value true

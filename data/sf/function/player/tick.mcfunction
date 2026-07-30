@@ -27,14 +27,6 @@ execute if score @s sf.journal matches 11..22 run function sf:journal/select
 scoreboard players set @s sf.journal 0
 scoreboard players enable @s sf.journal
 
-execute if score @s sf.case_start matches 1.. at @s run function sf:case/start
-scoreboard players set @s sf.case_start 0
-scoreboard players enable @s sf.case_start
-
-execute if score @s sf.case_end matches 1.. run function sf:case/end
-scoreboard players set @s sf.case_end 0
-scoreboard players enable @s sf.case_end
-
 execute if score @s sf.reconstruct matches 1.. run function sf:reconstruct/show
 scoreboard players set @s sf.reconstruct 0
 scoreboard players enable @s sf.reconstruct

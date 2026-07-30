@@ -85,3 +85,8 @@ execute unless score #scan_near sf.data = #scan_near sf.data run scoreboard play
 # Traces retain this value so residue from old unloaded chunks cannot
 # contaminate a later investigation.
 execute unless score #case_serial sf.data = #case_serial sf.data run scoreboard players set #case_serial sf.data 0
+
+# One-time active-case adoption authority used only while introducing
+# generation ownership to an already-running investigation.
+scoreboard players set #adopt_serial sf.data -1
+execute if data storage sf:config case_generation_adopt_serial store result score #adopt_serial sf.data run data get storage sf:config case_generation_adopt_serial 1

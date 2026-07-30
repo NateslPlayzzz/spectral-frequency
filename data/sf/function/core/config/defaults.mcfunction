@@ -82,4 +82,13 @@ execute unless data storage sf:config uv_trace_lifecycle_v1 run data modify stor
 execute unless data storage sf:config camera_economy_v1 run scoreboard objectives add sf.case_hunt_photo dummy
 execute unless data storage sf:config camera_economy_v1 run data modify storage sf:config camera_economy_v1 set value true
 
+# Existing schema-102 worlds receive generation-owned participant state.
+execute unless data storage sf:config case_generation_v1 run scoreboard objectives add sf.case_gen dummy
+execute unless data storage sf:config case_generation_v1 run data modify storage sf:config case_generation_rebuild_pending set value true
+execute unless data storage sf:config case_generation_v1 run data modify storage sf:config case_generation_v1 set value true
+
+# Legacy Remnants have owner UUIDs but no investigation generation.
+execute unless data storage sf:config remnant_lifecycle_v1 run kill @e[tag=sf.remnant]
+execute unless data storage sf:config remnant_lifecycle_v1 run data modify storage sf:config remnant_lifecycle_v1 set value true
+
 data modify storage sf:config initialized set value true

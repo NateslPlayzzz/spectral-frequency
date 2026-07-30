@@ -17,6 +17,8 @@ kill @e[tag=sf.remnant]
 kill @e[type=marker,tag=sf.ward]
 
 tag @a remove spectral.seen
+scoreboard players set @a[tag=sf.case_participant] sf.case_gen 0
+
 tag @a remove sf.case_participant
 tag @a remove sf.case_owner
 tag @a remove sf.case_resolver
@@ -26,6 +28,9 @@ function sf:evidence/reset_pending
 
 scoreboard players set #case_age sf.data 0
 scoreboard players set #hunt_roll_cd sf.data 0
+
+data remove storage sf:config case_generation_adopt_serial
+scoreboard players set #adopt_serial sf.data -1
 
 data modify storage sf:case state set value "inactive"
 data remove storage sf:case id

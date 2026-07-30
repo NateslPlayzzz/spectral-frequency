@@ -5,22 +5,25 @@
 #   rescuer:[I;...]
 # }
 
-# The Taken owner must still be online and awaiting revival.
-$execute unless entity @a[nbt={UUID:$(owner)},scores={sf.claimed=1..}] run tellraw @a[nbt={UUID:$(rescuer)}] [{"text":"[","color":"dark_gray"},{"text":"REMNANT","color":"#C89BFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"No living connection answers from this remnant. Its owner must be online.","color":"gray"}]
-$execute unless entity @a[nbt={UUID:$(owner)},scores={sf.claimed=1..}] run return 0
+$execute unless entity @a[nbt={UUID:$(owner)},tag=sf.case_participant,scores={sf.claimed=1..}] run tellraw @a[nbt={UUID:$(rescuer)}] [{"text":"[","color":"dark_gray"},{"text":"REMNANT","color":"#C89BFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"No living connection answers from this remnant. Its owner must be online.","color":"gray"}]
+$execute unless entity @a[nbt={UUID:$(owner)},tag=sf.case_participant,scores={sf.claimed=1..}] run return 0
 
-# Do not allow two rescuers to overwrite one remnant's channel.
+$execute unless score @a[nbt={UUID:$(owner)},limit=1] sf.case_gen = #case_serial sf.data run tellraw @a[nbt={UUID:$(rescuer)}] [{"text":"[","color":"dark_gray"},{"text":"REMNANT","color":"#C89BFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"The owner is no longer bound to this investigation.","color":"#FFC36B"}]
+$execute unless score @a[nbt={UUID:$(owner)},limit=1] sf.case_gen = #case_serial sf.data run return 0
+
+$execute unless score @a[nbt={UUID:$(rescuer)},limit=1] sf.case_gen = #case_serial sf.data run return 0
+
+execute unless score @s sf.data = #case_serial sf.data run return 0
+
 $execute if entity @s[tag=sf.remnant_channeling] run tellraw @a[nbt={UUID:$(rescuer)}] [{"text":"[","color":"dark_gray"},{"text":"REMNANT","color":"#C89BFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Someone is already holding this memory together.","color":"gray"}]
 execute if entity @s[tag=sf.remnant_channeling] run return 0
 
-# Require enough Memory to survive at least the first stage.
 scoreboard players operation #revive_floor sf.data = #revive_cost sf.data
 scoreboard players add #revive_floor sf.data 1
 
 $execute unless score @a[nbt={UUID:$(rescuer)},limit=1] sf.coherence >= #revive_floor sf.data run tellraw @a[nbt={UUID:$(rescuer)}] [{"text":"[","color":"dark_gray"},{"text":"REMNANT","color":"#C89BFF","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Your Memory is too unstable to hold another person here.","color":"#FFC36B"}]
 $execute unless score @a[nbt={UUID:$(rescuer)},limit=1] sf.coherence >= #revive_floor sf.data run return 0
 
-# Store the exact rescuer on the exact remnant.
 $data modify entity @s data.sf.rescuer set value $(rescuer)
 
 tag @s add sf.remnant_channeling

@@ -4,6 +4,8 @@
 function sf:case/reset
 function sf:case/reset_performance
 
+scoreboard players set @s sf.case_gen 0
+
 tag @s remove sf.case_participant
 tag @s remove sf.case_owner
 tag @s remove sf.case_resolver

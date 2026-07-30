@@ -67,8 +67,8 @@ function sf:requisition/save
 function sf:requisition/load
 
 title @s times 5 45 15
-title @s title {"text":"EMERGENCY KIT RESTORED","color":"#D8C8A0","bold":true}
-title @s subtitle {"text":"one field-recovery claim has been consumed","color":"gray","italic":true}
+title @s title {"text":"FIELD KIT RESTORED","color":"#D8C8A0","bold":true}
+title @s subtitle {"text":"one emergency recovery claim consumed","color":"gray","italic":true}
 
 playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.75 1.1
 playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 0.45 0.8
@@ -76,8 +76,7 @@ playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 0.45 0.8
 particle minecraft:electric_spark ~ ~1 ~ 0.35 0.45 0.35 0.03 14
 particle minecraft:wax_on ~ ~1 ~ 0.3 0.4 0.3 0.01 10
 
-tellraw @s [{"text":"[","color":"dark_gray"},{"text":"LOGISTICS","color":"#D8C8A0","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Emergency claims remaining: ","color":"gray"},{"score":{"name":"#req_remaining","objective":"sf.data"},"color":"#9BFFB0","bold":true},{"text":" / ","color":"dark_gray"},{"score":{"name":"#req_limit","objective":"sf.data"},"color":"white"}]
-
-execute if entity @s[tag=sf.requisition_access] run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"ACCESS","color":"#5AC8C8","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Missing access equipment was also reissued without additional cost.","color":"gray"}]
+tellraw @s [{"text":"[","color":"dark_gray"},{"text":"EQUIPMENT REQUISITION","color":"#D8C8A0","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Emergency recovery claims remaining: ","color":"gray"},{"score":{"name":"#req_remaining","objective":"sf.data"},"color":"#9BFFB0","bold":true},{"text":" / ","color":"dark_gray"},{"score":{"name":"#req_limit","objective":"sf.data"},"color":"white"}]
+execute if entity @s[tag=sf.requisition_access] run tellraw @s [{"text":"[","color":"dark_gray"},{"text":"ACCESS EQUIPMENT","color":"#5AC8C8","bold":true},{"text":"] ","color":"dark_gray"},{"text":"Missing access equipment was reissued without consuming an additional claim.","color":"gray"}]
 
 tag @s remove sf.requisition_access

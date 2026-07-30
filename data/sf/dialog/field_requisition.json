@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "UMBRA EQUIPMENT REQUISITION",
+    "text": "EQUIPMENT REQUISITION",
     "color": "#D8C8A0",
     "bold": true
   },
@@ -13,7 +13,7 @@
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "FIELD LOGISTICS // LOSS AND DAMAGE",
+        "text": "UMBRA FIELD LOGISTICS // LOSS AND DAMAGE",
         "color": "#6A6A78",
         "bold": true
       }
@@ -21,14 +21,14 @@
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "UMBRA provides two emergency field-kit claims per Investigator. A claim is used only when missing investigation instruments are restored.",
+        "text": "Every Investigator receives two emergency recovery claims for missing calibration instruments.",
         "color": "gray"
       }
     },
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "Guidebooks, Field Radios, and Resonance Keys are access equipment and may be reissued without consuming a claim.",
+        "text": "The Investigator's Guidebook, Field Radio, and Resonance Key are access equipment. Missing copies are reissued without consuming a claim.",
         "color": "#5AC8C8",
         "italic": true
       }
@@ -36,7 +36,7 @@
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "After both emergency claims are used, missing field instruments must be constructed through an Attuned Bench.",
+        "text": "A claim is consumed only when one or more missing calibration instruments are restored. After both claims are used, replacements must be assembled through an Attuned Bench.",
         "color": "#FFC36B",
         "italic": true
       }
@@ -50,11 +50,11 @@
   "actions": [
     {
       "label": {
-        "text": "EMERGENCY FIELD RECOVERY",
+        "text": "EMERGENCY RECOVERY",
         "color": "#9BFFB0",
         "bold": true
       },
-      "tooltip": "Review and confirm the use of an emergency claim.",
+      "tooltip": "Review and confirm the use of one emergency recovery claim.",
       "action": {
         "type": "run_command",
         "command": "/trigger sf.signal set 13"
@@ -62,10 +62,10 @@
     },
     {
       "label": {
-        "text": "AUDIT FIELD KIT",
+        "text": "AUDIT CURRENT FIELD KIT",
         "color": "#5AC8C8"
       },
-      "tooltip": "Review missing equipment and remaining claims.",
+      "tooltip": "Review access equipment, calibration instruments, and remaining claims.",
       "action": {
         "type": "run_command",
         "command": "/trigger sf.signal set 11"
@@ -76,7 +76,7 @@
         "text": "ATTUNED BENCH POLICY",
         "color": "#C89BFF"
       },
-      "tooltip": "Review material tiers and replacement crafting.",
+      "tooltip": "Review assembly divisions, materials, and restricted formulas.",
       "action": {
         "type": "run_command",
         "command": "/trigger sf.signal set 12"

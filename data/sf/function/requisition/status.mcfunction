@@ -1,4 +1,5 @@
 # requisition/status.mcfunction
+# Displays the requesting Investigator's access equipment, calibration instruments, and emergency recovery allowance.
 
 execute unless score @s sf.quest matches 100.. run return run function sf:signal/msg_notready
 
@@ -7,11 +8,11 @@ function sf:requisition/load
 scoreboard players set #req_missing sf.data 0
 
 tellraw @s ""
-tellraw @s [{"text":"── ","color":"dark_gray"},{"text":"UMBRA FIELD-KIT AUDIT","color":"#D8C8A0","bold":true},{"text":" ──","color":"dark_gray"}]
+tellraw @s [{"text":"── ","color":"dark_gray"},{"text":"CURRENT FIELD-KIT AUDIT","color":"#D8C8A0","bold":true},{"text":" ──","color":"dark_gray"}]
+tellraw @s [{"text":"  EMERGENCY RECOVERY CLAIMS  ","color":"#6A6A78","bold":true},{"score":{"name":"#req_remaining","objective":"sf.data"},"color":"#9BFFB0","bold":true},{"text":" / ","color":"dark_gray"},{"score":{"name":"#req_limit","objective":"sf.data"},"color":"white"}]
 
-tellraw @s [{"text":"  EMERGENCY CLAIMS  ","color":"#6A6A78","bold":true},{"score":{"name":"#req_remaining","objective":"sf.data"},"color":"#9BFFB0","bold":true},{"text":" / ","color":"dark_gray"},{"score":{"name":"#req_limit","objective":"sf.data"},"color":"white"}]
-
-tellraw @s [{"text":"\n  ACCESS EQUIPMENT","color":"#5AC8C8","bold":true}]
+tellraw @s ""
+tellraw @s [{"text":"  ACCESS EQUIPMENT","color":"#5AC8C8","bold":true}]
 
 execute store result score #req_has sf.data run clear @s *[custom_data~{sf:{item:"guide"}}] 0
 execute if score #req_has sf.data matches 0 run tellraw @s [{"text":"  MISSING  ","color":"#FFC36B","bold":true},{"text":"Investigator's Guidebook","color":"gray"},{"text":" · free reissue","color":"#5AC8C8","italic":true}]
@@ -25,7 +26,8 @@ execute store result score #req_has sf.data run clear @s *[custom_data~{sf:{item
 execute if score #req_has sf.data matches 0 run tellraw @s [{"text":"  MISSING  ","color":"#FFC36B","bold":true},{"text":"Resonance Key","color":"gray"},{"text":" · free reissue","color":"#5AC8C8","italic":true}]
 execute unless score #req_has sf.data matches 0 run tellraw @s [{"text":"  ✔ ","color":"#9BFFB0"},{"text":"Resonance Key","color":"gray"}]
 
-tellraw @s [{"text":"\n  FIELD INSTRUMENTS","color":"#C89BFF","bold":true}]
+tellraw @s ""
+tellraw @s [{"text":"  CALIBRATION INSTRUMENTS","color":"#C89BFF","bold":true}]
 
 execute store result score #req_has sf.data run clear @s *[custom_data~{sf:{item:"emf"}}] 0
 execute if score #req_has sf.data matches 0 run scoreboard players add #req_missing sf.data 1
@@ -57,10 +59,8 @@ execute if score #req_has sf.data matches 0 run scoreboard players add #req_miss
 execute if score #req_has sf.data matches 0 run tellraw @s [{"text":"  MISSING  ","color":"dark_red","bold":true},{"text":"Containment Focus","color":"gray"}]
 execute unless score #req_has sf.data matches 0 run tellraw @s [{"text":"  ✔ ","color":"#9BFFB0"},{"text":"Containment Focus","color":"gray"}]
 
-execute if score #req_missing sf.data matches 0 run tellraw @s [{"text":"\n  ✓ ","color":"#9BFFB0","bold":true},{"text":"All field instruments are accounted for.","color":"gray"}]
-
-execute if score #req_missing sf.data matches 1.. if score #req_remaining sf.data matches 1.. run tellraw @s [{"text":"\n  Emergency recovery is available, but will consume one permanent claim.","color":"#FFC36B","italic":true}]
-
-execute if score #req_missing sf.data matches 1.. if score #req_remaining sf.data matches 0 run tellraw @s [{"text":"\n  Emergency allowance exhausted. Construct the missing instruments at an Attuned Bench.","color":"#C89BFF","italic":true}]
+execute if score #req_missing sf.data matches 0 run tellraw @s [{"text":"  ✔ ","color":"#9BFFB0","bold":true},{"text":"All calibration instruments are accounted for.","color":"gray"}]
+execute if score #req_missing sf.data matches 1.. if score #req_remaining sf.data matches 1.. run tellraw @s [{"text":"  RECOVERY AVAILABLE  ","color":"#FFC36B","bold":true},{"text":"One claim restores every missing calibration instrument.","color":"gray"}]
+execute if score #req_missing sf.data matches 1.. if score #req_remaining sf.data matches 0 run tellraw @s [{"text":"  CLAIMS EXHAUSTED  ","color":"dark_red","bold":true},{"text":"Assemble missing calibration instruments through an Attuned Bench.","color":"gray"}]
 
 playsound minecraft:block.note_block.bit player @s ~ ~ ~ 0.4 1.1

@@ -78,6 +78,25 @@ Use fragment when referring to:
 - Reconstruction
 - duplicate or unique progression records
 - emotional shards
+### Hollow distinction
+
+**Hollow** is one of the twelve registered fragments.
+
+Use:
+
+- Hollow
+- the Hollow fragment
+- a Hollow manifestation
+
+Do not use `the Hollow` as:
+
+- a universal afterlife or Taken state
+- a location entered when Memory reaches zero
+- the force that caused Thorne's erasure
+- a synonym for the Frame
+- a generic name for the spaces beyond Memory
+
+Use `erasure`, `the Frame`, or a deliberately unresolved description of the force behind erasure instead.
 
 ### Evidence
 

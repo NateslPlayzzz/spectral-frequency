@@ -1,5 +1,5 @@
 # forgotten/choose_remember.mcfunction
-# VIGIL: remember Thorne whole and break the Hollow's hold.
+# VIGIL: remember Thorne whole and break the Frame's imposed erasure.
 
 execute unless data storage sf:forgotten {state:"choice"} run return 0
 execute unless entity @s[tag=sf.forgotten_witness] run return 0

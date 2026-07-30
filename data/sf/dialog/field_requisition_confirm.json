@@ -1,26 +1,34 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "CONFIRM EMERGENCY CLAIM",
+    "text": "CONFIRM EMERGENCY RECOVERY",
     "color": "#FFC36B",
     "bold": true
   },
   "external_title": {
-    "text": "Confirm Requisition",
+    "text": "Confirm Recovery",
     "color": "#FFC36B"
   },
   "body": [
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "This request will restore every missing field instrument and consume one emergency claim.",
+        "text": "This request restores every missing calibration instrument and consumes one emergency recovery claim.",
         "color": "gray"
       }
     },
     {
       "type": "minecraft:plain_message",
       "contents": {
-        "text": "No claim is consumed when your field instruments are already complete. Access equipment is always restored separately.",
+        "text": "No claim is consumed when all calibration instruments are already present.",
+        "color": "#9BFFB0",
+        "italic": true
+      }
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": {
+        "text": "Missing access equipment is reissued separately and never consumes an emergency claim.",
         "color": "#5AC8C8",
         "italic": true
       }
@@ -45,7 +53,7 @@
     },
     {
       "label": {
-        "text": "RETURN WITHOUT CLAIMING",
+        "text": "RETURN WITHOUT RECOVERY",
         "color": "#8A8A98"
       },
       "action": {

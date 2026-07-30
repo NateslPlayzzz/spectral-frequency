@@ -3,12 +3,14 @@
 
 $summon minecraft:marker ~ ~ ~ {Tags:["sf.ghost","spectral.anomaly","sf.state.idle","sf.compiling","smithed.entity","smithed.strict"],data:{sf:{ghost_id:"$(id)"}}}
 
+scoreboard players operation @e[type=minecraft:marker,tag=sf.compiling,distance=..1,sort=nearest,limit=1] sf.data = #case_serial sf.data
+
 $data modify storage sf:temp compile.modules set from storage sf:ghost_defs $(id).modules
 $data modify storage sf:temp compile.evidence set from storage sf:ghost_defs $(id).evidence
 $data modify storage sf:temp compile.timing_tier set from storage sf:ghost_defs $(id).timing_tier
 $data modify storage sf:temp compile.signature set from storage sf:ghost_defs $(id).signature
 
-execute as @e[type=minecraft:marker,tag=sf.compiling] run function sf:ghost/compile/run
+execute as @e[type=minecraft:marker,tag=sf.compiling,distance=..1,sort=nearest,limit=1] run function sf:ghost/compile/run
 
 data remove storage sf:temp compile
 data remove storage sf:temp spawn

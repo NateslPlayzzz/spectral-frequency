@@ -1,8 +1,8 @@
 # player/claim/solo_fail.mcfunction
 # Uses player state rather than a detached scheduled function.
-#
-# This prevents an old schedule from terminating a later unrelated case.
 
+execute unless data storage sf:case {state:"active"} run return 0
+execute unless score @s sf.case_gen = #case_serial sf.data run return 0
 execute if entity @s[tag=sf.solo_release_pending] run return 0
 
 tag @s add sf.solo_release_pending

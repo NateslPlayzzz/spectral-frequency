@@ -31,6 +31,8 @@ function sf:evidence/reset_pending
 
 scoreboard players set #case_age sf.data 0
 scoreboard players set #hunt_roll_cd sf.data 0
+scoreboard players set #case_empty sf.data 0
+scoreboard players set #ghost_missing sf.data 0
 
 data remove storage sf:config case_generation_adopt_serial
 scoreboard players set #adopt_serial sf.data -1

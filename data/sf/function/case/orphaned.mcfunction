@@ -1,4 +1,12 @@
-# case/orphaned.mcfunction — the case's ghost vanished without a proper end
-data modify storage sf:case state set value "inactive"
-data remove storage sf:case id
-tellraw @a [{"text":"\u25c8 ","color":"#7A5CFF"},{"text":"","color":"#6A6A78"},{"text":"The presence is gone. The trail goes cold.","color":"#8A8A98"}]
+# case/orphaned.mcfunction
+# Closes a case whose authoritative manifestation vanished or duplicated.
+
+execute unless data storage sf:case {state:"active"} run return 0
+
+title @a[tag=sf.case_participant] times 10 55 15
+title @a[tag=sf.case_participant] title {"text":"CASE ABORTED","color":"#FFC36B","bold":true}
+title @a[tag=sf.case_participant] subtitle {"text":"the manifestation record became unstable","color":"gray","italic":true}
+
+tellraw @a [{"text":"[","color":"dark_gray"},{"text":"FIELD CONTROL","color":"#FFC36B","bold":true},{"text":"] ","color":"dark_gray"},{"text":"The presence is gone or duplicated. The investigation has been closed without reward.","color":"gray"}]
+
+function sf:case/teardown_lost

@@ -56,5 +56,7 @@ data modify storage sf:case state set value "active"
 
 scoreboard players set #case_age sf.data 0
 scoreboard players set #hunt_roll_cd sf.data 0
+scoreboard players set #case_empty sf.data 0
+scoreboard players set #ghost_missing sf.data 0
 
 function sf:case/do_spawn with storage sf:case

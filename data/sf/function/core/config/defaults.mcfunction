@@ -91,4 +91,11 @@ execute unless data storage sf:config case_generation_v1 run data modify storage
 execute unless data storage sf:config remnant_lifecycle_v1 run kill @e[tag=sf.remnant]
 execute unless data storage sf:config remnant_lifecycle_v1 run data modify storage sf:config remnant_lifecycle_v1 set value true
 
+# Existing schema-102 worlds receive generation-owned manifestations and wards.
+execute unless score #case_serial sf.data = #case_serial sf.data run scoreboard players set #case_serial sf.data 0
+execute unless data storage sf:config ghost_generation_v1 if data storage sf:case {state:"active"} as @e[type=minecraft:marker,tag=sf.ghost,tag=!sf.forgotten] run scoreboard players operation @s sf.data = #case_serial sf.data
+execute unless data storage sf:config ghost_generation_v1 unless data storage sf:case {state:"active"} run kill @e[type=minecraft:marker,tag=sf.ghost,tag=!sf.forgotten]
+execute unless data storage sf:config ghost_generation_v1 run kill @e[type=minecraft:marker,tag=sf.ward]
+execute unless data storage sf:config ghost_generation_v1 run data modify storage sf:config ghost_generation_v1 set value true
+
 data modify storage sf:config initialized set value true

@@ -10,27 +10,12 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
-                  "text": "Containment Focus",
-                  "color": "#C89BFF",
-                  "italic": false
-                },
-                "minecraft:custom_data": {
-                  "sf": {
-                    "item": "contain"
-                  }
-                },
+                "minecraft:custom_name": {"text":"Containment Focus","color":"#C89BFF","italic":false},
+                "minecraft:custom_data": {"sf":{"item":"contain"}},
                 "minecraft:lore": [
-                  {
-                    "text": "Bind a fragment you have named.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Hold near the anomaly to channel.",
-                    "color": "dark_gray",
-                    "italic": false
-                  }
+                  {"text":"Binds the manifestation named in your Case Journal.","color":"gray","italic":false},
+                  {"text":"All three required evidence signs must be confirmed.","color":"gray","italic":false},
+                  {"text":"Hold nearby while the manifestation is calm.","color":"dark_gray","italic":false}
                 ],
                 "minecraft:item_model": "sf:containment_focus"
               }

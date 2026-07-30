@@ -12,6 +12,8 @@ tag @s remove sf.case_resolver
 tag @s remove sf.solo_release_pending
 tag @s remove sf.reviving
 tag @s remove sf.evidence_new
+tag @s remove sf.photo_first
+
 
 tag @s remove spectral.seen
 tag @s remove spectral.lit

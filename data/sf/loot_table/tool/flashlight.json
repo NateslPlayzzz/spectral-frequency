@@ -10,27 +10,12 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
-                  "text": "Flashlight",
-                  "color": "#FFC36B",
-                  "italic": false
-                },
-                "minecraft:custom_data": {
-                  "sf": {
-                    "item": "flashlight"
-                  }
-                },
+                "minecraft:custom_name": {"text":"Spectral Flashlight","color":"#FFC36B","italic":false},
+                "minecraft:custom_data": {"sf":{"item":"flashlight"}},
                 "minecraft:lore": [
-                  {
-                    "text": "Holds back the dark \u2014 and marks you in it.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Right-click to toggle.",
-                    "color": "dark_gray",
-                    "italic": false
-                  }
+                  {"text":"Stabilizes Memory while held near a manifestation.","color":"gray","italic":false},
+                  {"text":"Active spectral light makes you easier to detect.","color":"gray","italic":false},
+                  {"text":"Keep in your main hand while switched on.","color":"dark_gray","italic":false}
                 ],
                 "minecraft:item_model": "sf:flashlight"
               }

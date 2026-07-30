@@ -11,32 +11,12 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {
-                  "text": "Field Radio",
-                  "color": "#5AC8C8",
-                  "italic": false
-                },
-                "minecraft:custom_data": {
-                  "sf": {
-                    "item": "radio"
-                  }
-                },
+                "minecraft:custom_name": {"text":"Field Radio","color":"#5AC8C8","italic":false},
+                "minecraft:custom_data": {"sf":{"item":"radio"}},
                 "minecraft:lore": [
-                  {
-                    "text": "UMBRA secure field channel.",
-                    "color": "gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Request, review, or cancel assignments.",
-                    "color": "dark_gray",
-                    "italic": false
-                  },
-                  {
-                    "text": "Right-click to contact Vance.",
-                    "color": "#5AC8C8",
-                    "italic": false
-                  }
+                  {"text":"UMBRA secure field channel.","color":"gray","italic":false},
+                  {"text":"Request, review, cancel, and recover equipment.","color":"dark_gray","italic":false},
+                  {"text":"Keep the Radio in hand while using its interface.","color":"#5AC8C8","italic":false}
                 ],
                 "minecraft:item_model": "sf:field_radio"
               }

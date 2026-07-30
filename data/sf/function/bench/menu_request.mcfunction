@@ -1,4 +1,11 @@
 # bench/menu_request.mcfunction
+# Every Bench catalog action requires the Resonance Key to remain in hand.
+
+data remove storage sf:bench candidate
+
+execute unless items entity @s weapon.mainhand *[custom_data~{sf:{item:"reskey"}}] run return run title @s actionbar {"text":"the Bench falls silent without the Resonance Key","color":"#FFC36B","italic":true}
+execute if score @s sf.claimed matches 1.. run return 0
+execute if entity @s[gamemode=spectator] run return 0
 
 # Dialog navigation.
 execute if score @s sf.bench_menu matches 90 run return run function sf:bench/open_core
@@ -7,8 +14,6 @@ execute if score @s sf.bench_menu matches 92 run return run function sf:bench/op
 execute if score @s sf.bench_menu matches 93 run return run function sf:bench/open_main
 
 # Recipe selection.
-data remove storage sf:bench candidate
-
 execute if score @s sf.bench_menu matches 1 run data modify storage sf:bench candidate set from storage sf:recipes list[0]
 execute if score @s sf.bench_menu matches 2 run data modify storage sf:bench candidate set from storage sf:recipes list[1]
 execute if score @s sf.bench_menu matches 3 run data modify storage sf:bench candidate set from storage sf:recipes list[2]

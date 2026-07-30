@@ -8,6 +8,7 @@
 execute unless data storage sf:case {state:"active"} run return run function sf:tool/contain/break
 
 execute unless entity @s[tag=sf.case_participant,tag=sf.contain_operator] run return run function sf:tool/contain/break
+execute unless score @s sf.case_gen = #case_serial sf.data run return run function sf:tool/contain/break
 
 execute if score @s sf.claimed matches 1.. run return run function sf:tool/contain/break
 execute if entity @s[gamemode=spectator] run return run function sf:tool/contain/break
@@ -15,6 +16,7 @@ execute if entity @s[gamemode=spectator] run return run function sf:tool/contain
 execute unless items entity @s weapon.mainhand *[custom_data~{sf:{item:"contain"}}] run return run function sf:tool/contain/break
 
 execute unless entity @e[type=minecraft:marker,tag=sf.contain_target,distance=..6,limit=1] run return run function sf:tool/contain/break
+execute unless score @e[type=minecraft:marker,tag=sf.contain_target,distance=..6,limit=1] sf.data = #case_serial sf.data run return run function sf:tool/contain/break
 
 execute if entity @e[type=minecraft:marker,tag=sf.contain_target,tag=sf.state.warning,distance=..6,limit=1] run return run function sf:tool/contain/break
 execute if entity @e[type=minecraft:marker,tag=sf.contain_target,tag=sf.state.hunt,distance=..6,limit=1] run return run function sf:tool/contain/break

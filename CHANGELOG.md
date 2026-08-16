@@ -6,6 +6,25 @@ All notable changes to Spectral Frequency will be documented in this file.
 
 ### Changed
 
+### Added
+
+- **Vanilla-native equipment presentation**
+  - All sixteen interactive Spectral Frequency tools now use selected vanilla Minecraft item models.
+  - Existing custom-data identities and tool mechanics remain unchanged.
+  - Spectral Frequency 1.0 no longer requires a separate resource pack.
+
+### Changed
+
+- **1.0 installation and presentation**
+  - The previously planned mandatory resource-pack rebuild has been superseded.
+  - Spectral Frequency 1.0 will ship as a datapack-only release.
+- **Multiplayer release policy**
+  - Single-player is the primary release-certified mode for 1.0.
+  - Multiplayer remains available as an experimental / best-effort mode.
+  - Multiplayer-specific bug reports are encouraged.
+- **Distribution**
+  - Current release distribution targets are GitHub Releases, CurseForge, and Planet Minecraft.
+  - Modrinth is no longer an active distribution target.
 - **Containment Focus authority**
   - Binding now belongs to the exact Investigator who activates the Focus.
   - Only one Investigator may channel containment at a time.

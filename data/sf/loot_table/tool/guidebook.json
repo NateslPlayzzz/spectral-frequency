@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:guidebook"
+                "minecraft:item_model": "minecraft:written_book"
               }
             }
           ]

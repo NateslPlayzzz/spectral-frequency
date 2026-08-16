@@ -10,14 +10,34 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {"text":"Motion Sensor","color":"#5AC8C8","italic":false},
-                "minecraft:custom_data": {"sf":{"item":"sensor"}},
+                "minecraft:custom_name": {
+                  "text": "Motion Sensor",
+                  "color": "#5AC8C8",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "sensor"
+                  }
+                },
                 "minecraft:lore": [
-                  {"text":"Monitors a five-block field.","color":"gray","italic":false},
-                  {"text":"One unit may be deployed at a time.","color":"dark_gray","italic":false},
-                  {"text":"Use nearby to retrieve; use elsewhere to relocate.","color":"dark_gray","italic":false}
+                  {
+                    "text": "Monitors a five-block field.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "One unit may be deployed at a time.",
+                    "color": "dark_gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Use nearby to retrieve; use elsewhere to relocate.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
                 ],
-                "minecraft:item_model": "sf:motion_sensor"
+                "minecraft:item_model": "minecraft:calibrated_sculk_sensor"
               }
             }
           ]

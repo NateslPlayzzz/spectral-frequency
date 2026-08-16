@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:writing_detector"
+                "minecraft:item_model": "minecraft:writable_book"
               }
             }
           ]

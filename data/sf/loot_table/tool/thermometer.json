@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:thermometer"
+                "minecraft:item_model": "minecraft:breeze_rod"
               }
             }
           ]

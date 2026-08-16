@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:emf"
+                "minecraft:item_model": "minecraft:recovery_compass"
               }
             }
           ]

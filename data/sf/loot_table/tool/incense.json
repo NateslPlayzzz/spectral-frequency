@@ -10,14 +10,34 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {"text":"Soul Incense","color":"#9BFFB0","italic":false},
-                "minecraft:custom_data": {"sf":{"item":"incense"}},
+                "minecraft:custom_name": {
+                  "text": "Soul Incense",
+                  "color": "#9BFFB0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "incense"
+                  }
+                },
                 "minecraft:lore": [
-                  {"text":"Breaks a Hunt within eight blocks.","color":"gray","italic":false},
-                  {"text":"Consumed when the smoke takes hold.","color":"dark_gray","italic":false},
-                  {"text":"Use during a nearby Hunt.","color":"dark_gray","italic":false}
+                  {
+                    "text": "Breaks a Hunt within eight blocks.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Consumed when the smoke takes hold.",
+                    "color": "dark_gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Use during a nearby Hunt.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
                 ],
-                "minecraft:item_model": "sf:soul_incense"
+                "minecraft:item_model": "minecraft:candle"
               }
             }
           ]

@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:uv_light"
+                "minecraft:item_model": "minecraft:end_rod"
               }
             }
           ]

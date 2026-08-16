@@ -10,14 +10,34 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {"text":"Photo Camera","color":"#E0E0E0","italic":false},
-                "minecraft:custom_data": {"sf":{"item":"camera"}},
+                "minecraft:custom_name": {
+                  "text": "Photo Camera",
+                  "color": "#E0E0E0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "camera"
+                  }
+                },
                 "minecraft:lore": [
-                  {"text":"Photograph what is actually inside the frame.","color":"gray","italic":false},
-                  {"text":"The first manifestation image steadies Memory.","color":"gray","italic":false},
-                  {"text":"One Hunt image per case may crystallize residue.","color":"dark_gray","italic":false}
+                  {
+                    "text": "Photograph what is actually inside the frame.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "The first manifestation image steadies Memory.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "One Hunt image per case may crystallize residue.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
                 ],
-                "minecraft:item_model": "sf:camera"
+                "minecraft:item_model": "minecraft:spyglass"
               }
             }
           ]

@@ -2,6 +2,14 @@
 
 Use this matrix for release-candidate testing. A parser success is not a gameplay pass.
 
+## 1.0 release-certification policy
+
+Spectral Frequency 1.0 is release-certified primarily for single-player.
+
+The multiplayer columns remain useful engineering and post-release regression targets, but incomplete multiplayer cells are not automatic 1.0 release blockers. Multiplayer is experimental / best-effort for 1.0.
+
+A confirmed severe multiplayer defect may still block release if it threatens world integrity, permanent progression, installation safety, or ordinary server operation.
+
 ## Environment columns
 
 - **SP** — clean single-player world

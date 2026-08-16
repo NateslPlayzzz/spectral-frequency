@@ -32,7 +32,7 @@
                     "italic": false
                   }
                 ],
-                "minecraft:item_model": "sf:spirit_box"
+                "minecraft:item_model": "minecraft:echo_shard"
               }
             }
           ]

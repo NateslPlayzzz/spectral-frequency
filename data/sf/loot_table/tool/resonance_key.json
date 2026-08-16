@@ -10,14 +10,34 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_name": {"text":"Resonance Key","color":"#9BFFB0","italic":false},
-                "minecraft:custom_data": {"sf":{"item":"reskey"}},
+                "minecraft:custom_name": {
+                  "text": "Resonance Key",
+                  "color": "#9BFFB0",
+                  "italic": false
+                },
+                "minecraft:custom_data": {
+                  "sf": {
+                    "item": "reskey"
+                  }
+                },
                 "minecraft:lore": [
-                  {"text":"Attunes an ordinary barrel into a shared Bench.","color":"gray","italic":false},
-                  {"text":"Keep the Key in hand while using the catalog.","color":"gray","italic":false},
-                  {"text":"Breaking the barrel removes its attunement.","color":"dark_gray","italic":false}
+                  {
+                    "text": "Attunes an ordinary barrel into a shared Bench.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Keep the Key in hand while using the catalog.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "Breaking the barrel removes its attunement.",
+                    "color": "dark_gray",
+                    "italic": false
+                  }
                 ],
-                "minecraft:item_model": "sf:resonance_key"
+                "minecraft:item_model": "minecraft:trial_key"
               }
             }
           ]

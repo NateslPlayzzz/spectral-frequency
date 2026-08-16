@@ -235,3 +235,27 @@ This file records decisions that future work must not casually reverse.
 - Approved as-is
 
 A feature may be technically correct and still fail release approval.
+
+---
+
+## DEC-025 — Spectral Frequency 1.0 is resource-pack-free
+
+**Decision:** Spectral Frequency 1.0 requires only the datapack. A custom resource pack is not part of the required release package.
+
+**Implementation:** Interactive Spectral Frequency equipment retains its existing underlying interaction architecture and `sf` custom-data identity while using vanilla `minecraft:item_model` references for presentation.
+
+**Reason:** The vanilla-native presentation preserves reliable right-click behavior, removes installation friction, fits Minecraft's visual language, and avoids making custom art a dependency for core gameplay.
+
+**Consequence:** The resource-pack rebuild is superseded for 1.0. Public installation instructions, packaging, screenshots, release checklists, and support material must not require a separate resource pack.
+
+Future optional resource-pack work would require a new explicit design decision and must not silently become mandatory.
+
+---
+
+## DEC-026 — Modrinth is not a Spectral Frequency distribution target
+
+**Decision:** Spectral Frequency is not currently distributed through Modrinth.
+
+**Active release destinations:** GitHub Releases, CurseForge, and Planet Minecraft.
+
+**Consequence:** Current README files, release checklists, wiki instructions, badges, links, and publication workflows must not list Modrinth as an active 1.0 release destination.

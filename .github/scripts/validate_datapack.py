@@ -325,6 +325,12 @@ def validate_metadata(root: Path, parsed: dict[Path, object], report: Report) ->
             report.fail(f"{relative} must include {expected}")
 
 
+# Advancement trigger fields that hold an entity-context predicate in 26.3.
+ENTITY_CONDITION_FIELDS = {
+    "player", "entity", "child", "parent", "partner", "projectile", "shooter",
+    "villager", "zombie", "lightning", "bystander", "source", "victims",
+}
+
 LOOT_ENTRY_TYPES = {
     "minecraft:item", "minecraft:tag", "minecraft:loot_table", "minecraft:dynamic",
     "minecraft:empty", "minecraft:alternatives", "minecraft:sequence", "minecraft:group",
@@ -386,6 +392,18 @@ def validate_json_shapes(root: Path, parsed: dict[Path, object], report: Report)
                 report.fail(f"Visible root advancement must declare display.background (26.3): {relative}")
             if "parent" in data and has_background:
                 report.fail(f"Only a root advancement may declare display.background (26.3): {relative}")
+            criteria = data.get("criteria")
+            if isinstance(criteria, dict):
+                for name, criterion in criteria.items():
+                    conditions = criterion.get("conditions") if isinstance(criterion, dict) else None
+                    if not isinstance(conditions, dict):
+                        continue
+                    for field in ENTITY_CONDITION_FIELDS & conditions.keys():
+                        value = conditions[field]
+                        if isinstance(value, list):
+                            report.fail(f"Criterion '{name}' field '{field}' uses a condition list; 26.3 requires one predicate (wrap with minecraft:all_of): {relative}")
+                        elif isinstance(value, dict) and "type" not in value:
+                            report.fail(f"Criterion '{name}' field '{field}' uses the entity-predicate shorthand; 26.3 requires a predicate with 'type' (minecraft:entity_properties): {relative}")
         if "advancement" in parts and not isinstance(data, dict):
             report.fail(f"Advancement root must be an object: {path.relative_to(root)}")
         elif "loot_table" in parts and not isinstance(data, dict):

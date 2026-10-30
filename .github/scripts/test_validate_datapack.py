@@ -213,5 +213,19 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue(any("min_format must be [121, 0]" in error for error in report.errors))
 
 
+    def test_trigger_entity_shorthand_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/advancement/x.json", {"criteria": {"i": {"trigger": "minecraft:player_interacted_with_entity", "conditions": {"entity": {"minecraft:entity_type": "minecraft:interaction"}}}}})
+        report = validator.validate(root)
+        self.assertTrue(any("entity-predicate shorthand" in error for error in report.errors))
+
+    def test_trigger_entity_predicate_passes(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/advancement/x.json", {"criteria": {"i": {"trigger": "minecraft:player_interacted_with_entity", "conditions": {"entity": {"type": "minecraft:entity_properties", "entity": "this", "predicate": {"minecraft:entity_type": "minecraft:interaction"}}}}}})
+        report = validator.validate(root)
+        self.assertEqual([], report.errors)
+
 if __name__ == "__main__":
     unittest.main()

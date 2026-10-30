@@ -53,9 +53,9 @@ python -B -X utf8 .github/scripts/validate_datapack.py --warnings-as-errors
 - [x] Access and utility-tool presentation tested in game
 - [x] Complete tool roster visually reviewed
 - [ ] No obsolete `sf:` custom item-model references remain in release-required items
-- [ ] Ectoplasm and Veil Shard presentation audited
-- [ ] Remnant presentation audited for the vanilla-native release
-- [ ] Advancement icons audited for obsolete placeholder items
+- [x] Ectoplasm and Veil Shard presentation audited
+- [x] Remnant presentation audited for the vanilla-native release
+- [x] Advancement icons audited for obsolete placeholder items
 - [ ] No public documentation claims that a resource pack is required
 - [ ] No separate resource-pack release artifact is produced
 
@@ -135,7 +135,7 @@ python -B -X utf8 .github/scripts/validate_datapack.py --warnings-as-errors
 - [ ] Revival movement interruption works
 - [ ] Revival Memory floor remains safe
 - [ ] Stale Taken state repairs correctly after a case closes
-- [ ] Remnant visual is approved for resource-pack-free 1.0
+- [x] Remnant visual is approved for resource-pack-free 1.0
 
 ---
 

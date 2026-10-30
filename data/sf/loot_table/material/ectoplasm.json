@@ -20,7 +20,7 @@
                     "material": "ectoplasm"
                   }
                 },
-                "minecraft:item_model": "sf:ectoplasm",
+                "minecraft:item_model": "minecraft:slime_ball",
                 "minecraft:lore": [
                   {
                     "text": "Residue of a bound fragment.",

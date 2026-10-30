@@ -20,7 +20,7 @@
                     "material": "veil_shard"
                   }
                 },
-                "minecraft:item_model": "sf:veil_shard",
+                "minecraft:item_model": "minecraft:amethyst_shard",
                 "minecraft:lore": [
                   {
                     "text": "A sliver of the Veil itself, crystallized.",

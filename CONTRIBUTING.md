@@ -18,7 +18,7 @@ fix/evidence-negative-discovery
 feature/document-archive
 balance/containment-aggressive-fragments
 docs/1.0-release-audit
-resource-pack/tool-models
+presentation/vanilla-items
 ```
 
 ## Commit messages

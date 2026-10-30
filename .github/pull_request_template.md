@@ -24,7 +24,7 @@ Details:
 
 - [ ] Parses on Minecraft Java 26.2
 - [ ] Clean single-player world
-- [ ] Clean multiplayer server
+- [ ] Clean multiplayer server when relevant / practical
 - [ ] Existing-world migration
 - [ ] Repeated `/reload`
 - [ ] Disconnect and reconnect

@@ -35,7 +35,8 @@ class ValidatorTests(unittest.TestCase):
             path.write_text(json.dumps(data), encoding="utf-8")
 
         function_files = {
-            "data/sf/function/core/load.mcfunction": "function sf:core/install/fresh\n",
+            "data/sf/function/core/load.mcfunction": "execute unless data storage sf:system schema run function sf:core/install/fresh\nfunction sf:core/runtime/load\n",
+            "data/sf/function/core/runtime/load.mcfunction": "scoreboard players add #x sf.data 1\n",
             "data/sf/function/core/tick.mcfunction": "scoreboard players add #x sf.data 1\n",
             "data/sf/function/core/install/fresh.mcfunction": "scoreboard objectives add sf.data dummy\nbossbar add sf:mem0 {\"text\":\"MEMORY\"}\ndata modify storage sf:system version set value \"1.0\"\ndata modify storage sf:system schema set value 102\ndata modify storage sf:system enabled set value true\ndata modify storage sf:player_data entries set value []\ndata modify storage sf:case state set value \"inactive\"\ndata modify storage sf:forgotten state set value \"idle\"\n",
             "data/sf/function/core/purge/remove_objectives.mcfunction": "scoreboard objectives remove sf.data\nfunction sf:core/purge/remove_bossbars\n",
@@ -240,6 +241,13 @@ class ValidatorTests(unittest.TestCase):
         self.write_json(root, "data/sf/loot_table/reward/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "modifier": [{"type": "minecraft:set_count", "count": {"type": "minecraft:uniform", "min": 1, "max": 3}}]}]}]})
         report = validator.validate(root)
         self.assertEqual([], report.errors)
+
+    def test_overwritten_load_dispatcher_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        (root / "data/sf/function/core/load.mcfunction").write_text("# core/runtime/load.mcfunction\nexecute unless data storage sf:system {enabled:true} run return 0\n", encoding="utf-8")
+        report = validator.validate(root)
+        self.assertTrue(any("lifecycle dispatcher" in error for error in report.errors))
 
 if __name__ == "__main__":
     unittest.main()

@@ -419,6 +419,23 @@ def validate_json_shapes(root: Path, parsed: dict[Path, object], report: Report)
                 report.fail(f"Function tag must contain a values list: {path.relative_to(root)}")
 
 
+def validate_load_dispatcher(root: Path, report: Report) -> None:
+    """core/load must stay the lifecycle dispatcher, or fresh worlds never install."""
+    path = root / "data/sf/function/core/load.mcfunction"
+    text = read_text(path, report) if path.is_file() else None
+    if text is None:
+        return
+    lines = {line.strip() for line in text.splitlines()}
+    for command in (
+        "execute unless data storage sf:system schema run function sf:core/install/fresh",
+        "function sf:core/runtime/load",
+    ):
+        if command not in lines:
+            report.fail(f"core/load is not the lifecycle dispatcher; missing: {command}")
+    if lines and next((line for line in text.splitlines() if line.strip()), "").strip() == "# core/runtime/load.mcfunction":
+        report.fail("core/load contains the runtime loader instead of the lifecycle dispatcher")
+
+
 def validate_storage_contract(root: Path, report: Report) -> None:
     path = root / "data/sf/function/core/install/fresh.mcfunction"
     text = read_text(path, report) if path.is_file() else None
@@ -574,6 +591,7 @@ def validate(root: Path) -> Report:
     validate_metadata(root, parsed, report)
     validate_json_shapes(root, parsed, report)
     validate_storage_contract(root, report)
+    validate_load_dispatcher(root, report)
     validate_functions(root, parsed, report)
     return report
 

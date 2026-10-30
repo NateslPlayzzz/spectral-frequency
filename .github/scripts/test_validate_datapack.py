@@ -24,8 +24,8 @@ class ValidatorTests(unittest.TestCase):
         root = Path(temporary.name)
 
         json_files = {
-            "pack.mcmeta": {"pack": {"description": "Spectral Frequency 1.0\nMinecraft Java 26.2", "min_format": [107, 1], "max_format": [107, 1]}},
-            "spyglass.json": {"env": {"gameVersion": "26.2"}},
+            "pack.mcmeta": {"pack": {"description": "Spectral Frequency 1.0\nMinecraft Java 26.3", "min_format": [121, 0], "max_format": [121, 0]}},
+            "spyglass.json": {"env": {"gameVersion": "26.3"}},
             "data/minecraft/tags/function/load.json": {"values": ["sf:core/load"]},
             "data/minecraft/tags/function/tick.json": {"values": ["sf:core/tick"]},
         }
@@ -131,6 +131,86 @@ class ValidatorTests(unittest.TestCase):
         )
         report = validator.validate(root)
         self.assertFalse(any("CRLF" in warning for warning in report.warnings))
+
+
+    def write_json(self, root: Path, relative: str, data: object) -> None:
+        path = root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data), encoding="utf-8")
+
+    def test_26_3_loot_table_shape_passes(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/loot_table/tool/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "modifier": [{"type": "minecraft:set_count", "count": 1}]}]}]})
+        report = validator.validate(root)
+        self.assertEqual([], report.errors)
+
+    def test_legacy_loot_function_key_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/loot_table/tool/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "functions": [{"function": "minecraft:set_count", "count": 1}]}]}]})
+        report = validator.validate(root)
+        self.assertTrue(any("'function' was renamed to 'type'" in error for error in report.errors))
+        self.assertTrue(any("'functions' was renamed to 'modifier'" in error for error in report.errors))
+
+    def test_component_payload_is_not_inspected_for_legacy_keys(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        payload = {"minecraft:custom_data": {"function": "x", "functions": [1], "conditions": []}}
+        self.write_json(root, "data/sf/loot_table/tool/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "modifier": [{"type": "minecraft:set_components", "components": payload}]}]}]})
+        report = validator.validate(root)
+        self.assertEqual([], report.errors)
+        self.assertEqual([], report.warnings)
+
+    def test_legacy_predicate_condition_key_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/predicate/x.json", {"condition": "minecraft:random_chance", "chance": 0.5})
+        report = validator.validate(root)
+        self.assertTrue(any("'condition' was renamed to 'type'" in error for error in report.errors))
+
+    def test_predicate_bare_list_root_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/predicate/x.json", [{"type": "minecraft:random_chance", "chance": 0.5}])
+        report = validator.validate(root)
+        self.assertTrue(any("bare-list" in error for error in report.errors))
+
+    def test_26_3_predicate_shape_passes(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/predicate/x.json", {"type": "minecraft:all_of", "terms": [{"type": "minecraft:random_chance", "chance": 0.5}]})
+        report = validator.validate(root)
+        self.assertEqual([], report.errors)
+
+    def test_visible_root_advancement_requires_background(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/advancement/root.json", {"display": {"icon": {"id": "minecraft:stick"}, "title": "T", "description": "D"}, "criteria": {"a": {"trigger": "minecraft:tick"}}})
+        report = validator.validate(root)
+        self.assertTrue(any("must declare display.background" in error for error in report.errors))
+
+    def test_child_advancement_must_not_declare_background(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/advancement/root.json", {"display": {"icon": {"id": "minecraft:stick"}, "title": "T", "description": "D", "background": "minecraft:block/stone"}, "criteria": {"a": {"trigger": "minecraft:tick"}}})
+        self.write_json(root, "data/sf/advancement/child.json", {"parent": "sf:root", "display": {"icon": {"id": "minecraft:stick"}, "title": "T", "description": "D", "background": "minecraft:block/stone"}, "criteria": {"a": {"trigger": "minecraft:impossible"}}})
+        report = validator.validate(root)
+        self.assertTrue(any("Only a root advancement may declare" in error for error in report.errors))
+
+    def test_removed_26_3_tokens_fail(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        (root / "data/sf/function/core/tick.mcfunction").write_text('give @s stick[minecraft:swing_animation={type:"stab"}]\n', encoding="utf-8")
+        report = validator.validate(root)
+        self.assertTrue(any("swing_animation" in error for error in report.errors))
+
+    def test_old_26_2_format_is_rejected(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "pack.mcmeta", {"pack": {"description": "Spectral Frequency 1.0\nMinecraft Java 26.3", "min_format": [107, 1], "max_format": [107, 1]}})
+        report = validator.validate(root)
+        self.assertTrue(any("min_format must be [121, 0]" in error for error in report.errors))
 
 
 if __name__ == "__main__":

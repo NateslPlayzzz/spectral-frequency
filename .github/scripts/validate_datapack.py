@@ -12,8 +12,8 @@ import subprocess
 from pathlib import Path
 from typing import Any, Iterable
 
-EXPECTED_FORMAT = [107, 1]
-EXPECTED_GAME_VERSION = "26.2"
+EXPECTED_FORMAT = [121, 0]
+EXPECTED_GAME_VERSION = "26.3"
 _SCRIPT = Path(__file__).resolve()
 ROOT_DEFAULT = _SCRIPT.parents[2] if len(_SCRIPT.parents) > 2 else Path.cwd()
 
@@ -42,6 +42,11 @@ STALE = (
     (re.compile(r"\bSF\s+2\.0\b", re.I), "stale SF 2.0 label"),
     (re.compile(r"\bBeta\s+13(?:\.0)?\b", re.I), "stale Beta 13 label"),
     (re.compile(r"\bspectral:", re.I), "obsolete spectral: namespace"),
+    (re.compile(r"minecraft:swing_animation"), "removed 26.3 component swing_animation (use attack_animation / interact_animation)"),
+    (re.compile(r"minecraft:map_color"), "removed 26.3 component map_color"),
+    (re.compile(r"block_state_property"), "removed 26.3 predicate block_state_property (use match_block)"),
+    (re.compile(r"(?<![a-z_])minecraft:value_check"), "removed 26.3 predicate value_check (use int_value_check / float_value_check)"),
+    (re.compile(r"minecraft:number_provider"), "26.3 split number_provider into context_int_provider / context_float_provider"),
     (re.compile(r"\b(?:trigger\s+sf\.(?:case_start|case_end|anchor)|scoreboard\s+players\s+enable\s+\S+\s+sf\.(?:case_start|case_end|anchor)|scoreboard\s+objectives\s+add\s+sf\.(?:case_start|case_end|anchor)\b)"), "removed player-authority trigger"),
 )
 BLOCK_MUTATION = re.compile(r"(?:^|\brun\s+)(setblock|fill|clone|fillbiome|place)\b")
@@ -253,7 +258,7 @@ def validate_layout(root: Path, report: Report) -> None:
     if (root / "data/spectral").exists():
         report.fail("Obsolete data/spectral namespace is present")
     if (root / "data/sf/functions").exists():
-        report.fail("Obsolete data/sf/functions directory is present; Java 26.2 uses data/sf/function")
+        report.fail(f"Obsolete data/sf/functions directory is present; Java {EXPECTED_GAME_VERSION} uses data/sf/function")
 
     tracked = committed_files(root)
     tracked_dirs = {parent for path in tracked for parent in path.parents if parent != root and root in parent.parents}
@@ -292,8 +297,8 @@ def validate_metadata(root: Path, parsed: dict[Path, object], report: Report) ->
         description = metadata.get("description")
         if not isinstance(description, str):
             report.fail("pack.mcmeta description must be a string")
-        elif "Spectral Frequency 1.0" not in description or "26.2" not in description:
-            report.fail("pack.mcmeta description must identify Spectral Frequency 1.0 and Minecraft Java 26.2")
+        elif "Spectral Frequency 1.0" not in description or EXPECTED_GAME_VERSION not in description:
+            report.fail(f"pack.mcmeta description must identify Spectral Frequency 1.0 and Minecraft Java {EXPECTED_GAME_VERSION}")
     elif (root / "pack.mcmeta").is_file():
         report.fail("pack.mcmeta is missing its pack object")
 
@@ -301,7 +306,7 @@ def validate_metadata(root: Path, parsed: dict[Path, object], report: Report) ->
     if isinstance(spyglass, dict):
         env = spyglass.get("env")
         if not isinstance(env, dict) or env.get("gameVersion") != EXPECTED_GAME_VERSION:
-            report.fail("spyglass.json env.gameVersion must be '26.2'")
+            report.fail(f"spyglass.json env.gameVersion must be '{EXPECTED_GAME_VERSION}'")
 
     entry_points = {
         "data/minecraft/tags/function/load.json": "sf:core/load",
@@ -320,17 +325,75 @@ def validate_metadata(root: Path, parsed: dict[Path, object], report: Report) ->
             report.fail(f"{relative} must include {expected}")
 
 
+LOOT_ENTRY_TYPES = {
+    "minecraft:item", "minecraft:tag", "minecraft:loot_table", "minecraft:dynamic",
+    "minecraft:empty", "minecraft:alternatives", "minecraft:sequence", "minecraft:group",
+}
+
+
+def legacy_loot_shapes(node: object) -> Iterable[tuple[str, str]]:
+    """Yield (severity, message) for loot-table keys that Java 26.3 renamed.
+
+    Item-component payloads are arbitrary data, so they are never inspected.
+    """
+    if isinstance(node, dict):
+        is_entry = node.get("type") in LOOT_ENTRY_TYPES
+        for key, value in node.items():
+            if key == "components":
+                continue
+            if key == "function" and isinstance(value, str):
+                yield "error", "loot function discriminator 'function' was renamed to 'type' in 26.3"
+            elif key in ("functions", "conditions"):
+                target = "modifier" if key == "functions" else "condition"
+                severity = "error" if is_entry else "warn"
+                yield severity, f"'{key}' was renamed to '{target}' in 26.3 (verify against the 26.3 loot format if this is a table- or pool-level field)"
+            yield from legacy_loot_shapes(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from legacy_loot_shapes(item)
+
+
+def legacy_predicate_shapes(node: object) -> Iterable[str]:
+    """Yield messages for predicate shapes that Java 26.3 removed."""
+    if isinstance(node, dict):
+        if isinstance(node.get("condition"), str) and "type" not in node:
+            yield "predicate discriminator 'condition' was renamed to 'type' in 26.3"
+        for key, value in node.items():
+            if key == "terms" and isinstance(value, list):
+                for term in value:
+                    if isinstance(term, list):
+                        yield "bare-list shorthand for all_of was removed in 26.3; write the minecraft:all_of object"
+            yield from legacy_predicate_shapes(value)
+    elif isinstance(node, list):
+        for item in node:
+            yield from legacy_predicate_shapes(item)
+
+
 def validate_json_shapes(root: Path, parsed: dict[Path, object], report: Report) -> None:
     for path, data in parsed.items():
         parts = path.relative_to(root).parts
+        relative = path.relative_to(root)
+        if "loot_table" in parts and isinstance(data, dict):
+            for severity, message in legacy_loot_shapes(data):
+                (report.fail if severity == "error" else report.warn)(f"{message}: {relative}")
+        if "predicate" in parts:
+            for message in legacy_predicate_shapes(data):
+                report.fail(f"{message}: {relative}")
+        if "advancement" in parts and isinstance(data, dict):
+            display = data.get("display")
+            has_background = isinstance(display, dict) and "background" in display
+            if isinstance(display, dict) and "parent" not in data and not has_background:
+                report.fail(f"Visible root advancement must declare display.background (26.3): {relative}")
+            if "parent" in data and has_background:
+                report.fail(f"Only a root advancement may declare display.background (26.3): {relative}")
         if "advancement" in parts and not isinstance(data, dict):
             report.fail(f"Advancement root must be an object: {path.relative_to(root)}")
         elif "loot_table" in parts and not isinstance(data, dict):
             report.fail(f"Loot-table root must be an object: {path.relative_to(root)}")
         elif "dialog" in parts and not isinstance(data, dict):
             report.fail(f"Dialog root must be an object: {path.relative_to(root)}")
-        elif "predicate" in parts and not isinstance(data, (dict, list)):
-            report.fail(f"Predicate root must be an object or list: {path.relative_to(root)}")
+        elif "predicate" in parts and not isinstance(data, dict):
+            report.fail(f"Predicate root must be an object (the bare-list all_of shorthand was removed in 26.3): {path.relative_to(root)}")
         elif "tags" in parts and "function" in parts:
             if not isinstance(data, dict) or not isinstance(data.get("values"), list):
                 report.fail(f"Function tag must contain a values list: {path.relative_to(root)}")

@@ -15,6 +15,10 @@ All notable changes to Spectral Frequency will be documented in this file.
 
 ### Changed
 
+- **Minecraft 26.3 target**
+  - Spectral Frequency 1.0 now targets Minecraft Java 26.3 (data-pack format 121.0). Java 26.2 and earlier are not supported.
+  - Loot tables and predicates were migrated to the 26.3 key names.
+  - Release validation now rejects 26.2-era loot, predicate, and advancement shapes.
 - **1.0 installation and presentation**
   - The previously planned mandatory resource-pack rebuild has been superseded.
   - Spectral Frequency 1.0 will ship as a datapack-only release.

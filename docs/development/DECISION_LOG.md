@@ -16,6 +16,8 @@ This file records decisions that future work must not casually reverse.
 
 ## DEC-002 — Java 26.2 is the current technical target
 
+> **Superseded by DEC-027.** Retained as history; the current target is Java 26.3.
+
 **Decision:** The stabilization branch targets Minecraft Java 26.2 and data-pack format 107.1.
 
 **Consequence:** Do not migrate to 26.3 syntax until the project formally changes targets and records a schema/compatibility decision.
@@ -259,3 +261,21 @@ Future optional resource-pack work would require a new explicit design decision 
 **Active release destinations:** GitHub Releases, CurseForge, and Planet Minecraft.
 
 **Consequence:** Current README files, release checklists, wiki instructions, badges, links, and publication workflows must not list Modrinth as an active 1.0 release destination.
+
+---
+
+## DEC-027 — Java 26.3 is the 1.0 technical target
+
+**Decision:** Spectral Frequency 1.0 targets Minecraft Java 26.3 and data-pack format 121.0 (`min_format` and `max_format` both `[121, 0]`). This supersedes DEC-002.
+
+**Reason:** 1.0 has not been published. Releasing a brand-new 1.0 on a version that is already behind would immediately require a port. Retargeting before release costs one mechanical migration instead of a second release.
+
+**Compatibility decision:**
+
+- Java 26.2 and earlier are **not supported** by the 1.0 build. 26.3 renamed loot-table and predicate keys without aliases, so a single pack cannot load on both. Overlays were considered and rejected because they would double the maintained surface for an unreleased pack.
+- The datapack-owned persistent-data schema is **unchanged at 102**. The Minecraft format change does not alter any `sf:` storage, scoreboard, or profile layout, so no `SCHEMA_MIGRATIONS.md` entry is required. Minecraft save version, datapack release version, and datapack schema remain three independent axes.
+- Existing development worlds are upgraded by Minecraft itself when opened on 26.3. Existing-world migration must be re-verified on 26.3 for the release candidate.
+
+**Migration scope:** Loot tables (`function` → `type`, `functions` → `modifier`) and predicates (`condition` → `type`). No other 26.3 breaking change applies to current source; the validator now rejects the 26.2 shapes and the removed 26.3 tokens so they cannot return.
+
+**Consequence:** Release-checklist items verified on 26.2 must be re-verified on 26.3 before the release candidate is approved. Do not adopt syntax from a later Minecraft version without a further decision.

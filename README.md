@@ -1,12 +1,12 @@
 # Spectral Frequency
 
-**A vanilla-native paranormal-investigation datapack for Minecraft Java 26.2.**
+**A vanilla-native paranormal-investigation datapack for Minecraft Java 26.3.**
 
 *Detect. Identify. Contain. Remember.*
 
 > **Development status:** Spectral Frequency 1.0 is currently undergoing final stabilization, presentation cleanup, and release-quality auditing. It is not yet a public 1.0 release build.
 
-[![Minecraft](https://img.shields.io/badge/Minecraft%20Java-26.2-5A9B45)](https://www.minecraft.net/)
+[![Minecraft](https://img.shields.io/badge/Minecraft%20Java-26.3-5A9B45)](https://www.minecraft.net/)
 [![Release](https://img.shields.io/badge/Release-1.0%20Unreleased-7A5CFF)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
@@ -62,8 +62,8 @@ This keeps installation simple and allows the datapack to remain visually integr
 
 | Component | Target |
 |---|---|
-| Minecraft | Java Edition 26.2 |
-| Data-pack format | 107.1 |
+| Minecraft | Java Edition 26.3 |
+| Data-pack format | 121.0 |
 | Namespace | `sf` |
 | Public release | Spectral Frequency 1.0 |
 | Resource pack | Not required |

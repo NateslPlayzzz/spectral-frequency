@@ -22,7 +22,7 @@ Details:
 
 ## Testing completed
 
-- [ ] Parses on Minecraft Java 26.2
+- [ ] Parses on Minecraft Java 26.3
 - [ ] Clean single-player world
 - [ ] Clean multiplayer server
 - [ ] Existing-world migration

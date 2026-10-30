@@ -77,7 +77,7 @@ body:
     id: minecraft
     attributes:
       label: Minecraft Java version
-      placeholder: "26.2"
+      placeholder: "26.3"
     validations:
       required: true
 

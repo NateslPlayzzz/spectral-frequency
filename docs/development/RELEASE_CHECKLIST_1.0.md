@@ -2,6 +2,8 @@
 
 A checked box means evidence exists.
 
+> **26.3 retarget (DEC-027):** Items checked before the retarget were verified on Java 26.2. They must be re-verified on Java 26.3 before the release candidate is approved.
+
 Spectral Frequency 1.0 is release-certified primarily for **single-player**.
 
 Multiplayer is available as an **experimental / best-effort mode**. Exhaustive multiplayer regression is not required for 1.0 release approval unless testing exposes a severe defect that threatens worlds, progression, or ordinary server operation.
@@ -22,14 +24,15 @@ Multiplayer is available as an **experimental / best-effort mode**. Exhaustive m
 
 ## 2. Technical target and validation
 
-- [x] Minecraft Java target is 26.2
-- [x] Data-pack format is exactly 107.1
+- [x] Minecraft Java target is 26.3
+- [ ] Data-pack format is exactly 121.0 (confirm `pack_data = 121.0` from `version` on a 26.3 server)
 - [x] Namespace is `sf`
 - [ ] Validator self-tests pass
 - [ ] Full release validator passes with warnings treated as errors
 - [ ] All JSON parses
 - [ ] All static function and datapack resource references resolve
-- [ ] No 26.3-only syntax remains
+- [x] No 26.2-era loot, predicate, or advancement syntax remains (validator-enforced)
+- [ ] 26.3 in-game smoke pass: every tool detects via `weapon.mainhand`, loot-table items give correctly, `in_darkness` and chance predicates fire, advancement tab background renders, all nine dialogs open
 - [ ] No obsolete embedded ZIP or nested datapack wrapper remains
 - [ ] `/reload` produces no relevant datapack errors
 - [ ] `/function sf:dev/health` reports healthy after sustained runtime

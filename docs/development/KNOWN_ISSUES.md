@@ -11,6 +11,7 @@ The content, presentation, technical-hygiene, resource-pack, and packaging audit
 
 ## Must audit before 1.0
 
+- Full Java 26.3 in-game verification (tool detection via slot sources, loot tables, predicates, advancement tab, dialogs, `/reload`)
 - Evidence and Journal lifecycle regression coverage
 - Hunt participant isolation in multiplayer
 - Server-specific behavior and multiplayer behavior where practical
@@ -66,6 +67,7 @@ The content, presentation, technical-hygiene, resource-pack, and packaging audit
 
 ## Accepted 1.0 limitations
 
+- Java 26.2 and earlier are not supported; 26.3 loot and predicate key renames have no aliases
 - One global live investigation at a time
 - Attuned Bench uses native dialogs and an attuned barrel rather than a fully animated fabrication station
 - Remnant uses a temporary Echo Shard visual before the resource-pack rebuild

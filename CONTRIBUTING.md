@@ -52,8 +52,8 @@ Do not combine unrelated systems into one pull request unless they form one atom
 
 The current development target is:
 
-- Minecraft Java 26.2
-- Data-pack format 107.1
+- Minecraft Java 26.3
+- Data-pack format 121.0
 - Namespace `sf`
 
 Do not introduce syntax from a later Minecraft version without an approved target-change decision.

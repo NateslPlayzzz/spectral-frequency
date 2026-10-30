@@ -343,6 +343,8 @@ def legacy_loot_shapes(node: object) -> Iterable[tuple[str, str]]:
     Item-component payloads are arbitrary data, so they are never inspected.
     """
     if isinstance(node, dict):
+        if "type" not in node and "min" in node and "max" in node and set(node) <= {"min", "max"}:
+            yield "error", "untyped min/max number provider; 26.3 requires \"type\": \"minecraft:uniform\""
         is_entry = node.get("type") in LOOT_ENTRY_TYPES
         for key, value in node.items():
             if key == "components":

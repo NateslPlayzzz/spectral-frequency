@@ -227,5 +227,19 @@ class ValidatorTests(unittest.TestCase):
         report = validator.validate(root)
         self.assertEqual([], report.errors)
 
+    def test_untyped_uniform_count_fails(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/loot_table/reward/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "modifier": [{"type": "minecraft:set_count", "count": {"min": 1, "max": 3}}]}]}]})
+        report = validator.validate(root)
+        self.assertTrue(any("untyped min/max number provider" in error for error in report.errors))
+
+    def test_typed_uniform_count_passes(self) -> None:
+        temporary, root = self.make_repo()
+        self.addCleanup(temporary.cleanup)
+        self.write_json(root, "data/sf/loot_table/reward/x.json", {"pools": [{"rolls": 1, "entries": [{"type": "minecraft:item", "name": "minecraft:stick", "modifier": [{"type": "minecraft:set_count", "count": {"type": "minecraft:uniform", "min": 1, "max": 3}}]}]}]})
+        report = validator.validate(root)
+        self.assertEqual([], report.errors)
+
 if __name__ == "__main__":
     unittest.main()
